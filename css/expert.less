@@ -1,0 +1,529 @@
+body {
+    width: 10rem;
+    max-width: 10rem;
+    /* 达人特权 */
+    article {
+        width: 10rem;
+        height: 5.386667rem;
+        text-align: center;
+        .explain {
+            color: #222222;
+            font-size: .373333rem;
+            font-family: 'PingFang-SC-Bold';
+            font-weight: 600;
+            position: relative;
+            width: 10rem;
+            height: 2.106667rem;
+            line-height: 2.106667rem;
+            &::after {
+                content: '';
+                width: .72rem;
+                height: .053333rem;
+                position: absolute;
+                left: 4.64rem; // bottom: .266667rem;
+                bottom: .586667rem;
+            }
+        }
+        .prerogative {
+            width: 10rem;
+            height: 3.333333rem;
+            display: flex;
+            .prerogative_left,
+            .prerogative_center,
+            .prerogative_right {
+                width: 33.33333%;
+                text-align: center;
+                font-family: 'PingFang-SC-Medium';
+                font-size: .373333rem;
+                color: #666666;
+            }
+            .prerogative_left {
+                .video_01 {
+                    margin: 0 auto;
+                    width: 2.213333rem;
+                    height: 1.04rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                p {
+                    margin-top: .373333rem;
+                }
+            }
+            .prerogative_center {
+                .daren {
+                    margin: 0 auto;
+                    width: 1.6rem;
+                    height: .986667rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                p {
+                    padding-top: .453333rem;
+                }
+            }
+            .prerogative_right {
+                .shalou {
+                    margin: 0 auto;
+                    width: .853333rem;
+                    height: 1.173333rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                p {
+                    padding-top: .373333rem;
+                }
+            }
+        }
+    }
+    /* 成为知儿达人的说明 */
+    .zhierdaren {
+        width: 10rem;
+        height: 1.306667rem;
+        p {
+            color: #999999;
+            font-size: .373333rem;
+            font-family: 'PingFang-SC-Medium';
+            text-align: center;
+        }
+    }
+    /* 申请条件 */
+    .requirement {
+        width: 10rem;
+        height: 9.333333rem;
+        /* 申请条件标题 */
+        .requirement_title {
+            width: 10rem;
+            height: 1.12rem;
+            h2 {
+                font-size: .373333rem;
+                color: #222222;
+                position: relative;
+                text-align: center;
+                &::after {
+                    content: '';
+                    width: .72rem;
+                    height: .053333rem;
+                    position: absolute;
+                    bottom: -.24rem;
+                    left: 4.64rem;
+                }
+            }
+        }
+        /* ==============第一种布局==================== */
+        // /* 完善资料 */
+        // .information {
+        //     width: 8.4rem;
+        //     height: 1.2rem;
+        //     margin: 0 auto;
+        //     .info {
+        //         float: left;
+        //         padding-top: .213333rem;
+        //         position: relative;
+        //         p {
+        //             color: #222222;
+        //             font-size: .293333rem;
+        //             font-family: 'PingFang-SC-Bold';
+        //             font-weight: 600;
+        //         }
+        //         .info_img {
+        //             position: absolute;
+        //             top: .24rem;
+        //             right: -.506667rem;
+        //             width: .426667rem;
+        //             height: .32rem;
+        //         }
+        //     }
+        //     .info_gl {
+        //         float: right;
+        //         width: 1.866667rem;
+        //         height: .8rem;
+        //         color: #999999;
+        //         border: .026667rem solid #999999;
+        //         a {
+        //             font-size: .32rem;
+        //             display: block;
+        //             width: 100%;
+        //             height: 100%;
+        //             text-align: center;
+        //             line-height: .8rem;
+        //             font-family: 'PingFang-SC-Medium';
+        //         }
+        //     }
+        // }
+        // /* 等级攻略 */
+        // .strategy {
+        //     width: 8.4rem;
+        //     height: 1.2rem;
+        //     margin: 0 auto;
+        //     .strategy_dj {
+        //         float: left;
+        //         padding-top: .213333rem;
+        //         position: relative;
+        //         p {
+        //             color: #222222;
+        //             font-size: .293333rem;
+        //             font-family: 'PingFang-SC-Bold';
+        //             font-weight: 600;
+        //         }
+        //         .strategy_dj_img {
+        //             position: absolute;
+        //             top: .24rem;
+        //             right: -.506667rem;
+        //             width: .426667rem;
+        //             height: .32rem;
+        //         }
+        //     }
+        //     .strategy_gl {
+        //         float: right;
+        //         width: 1.866667rem;
+        //         height: .8rem;
+        //         color: #999999;
+        //         border: .026667rem solid #999999;
+        //         a {
+        //             font-size: .32rem;
+        //             display: block;
+        //             width: 100%;
+        //             height: 100%;
+        //             text-align: center;
+        //             line-height: .8rem;
+        //             font-family: 'PingFang-SC-Medium';
+        //         }
+        //     }
+        // }
+        // /* 发布功课 */
+        // .lesson {
+        //     width: 8.4rem;
+        //     height: 1.2rem;
+        //     margin: 0 auto;
+        //     .lesson_fb {
+        //         float: left;
+        //         padding-top: .213333rem;
+        //         position: relative;
+        //         p {
+        //             color: #222222;
+        //             font-size: .293333rem;
+        //             font-family: 'PingFang-SC-Bold';
+        //             font-weight: 600;
+        //         }
+        //         .lesson_gl_img {
+        //             position: absolute;
+        //             top: .24rem;
+        //             right: -.506667rem;
+        //             width: .426667rem;
+        //             height: .32rem;
+        //         }
+        //     }
+        //     .lesson_gl {
+        //         float: right;
+        //         width: 1.866667rem;
+        //         height: .8rem;
+        //         color: #999999;
+        //         border: .026667rem solid #999999;
+        //         a {
+        //             font-size: .32rem;
+        //             display: block;
+        //             width: 100%;
+        //             height: 100%;
+        //             text-align: center;
+        //             line-height: .8rem;
+        //             font-family: 'PingFang-SC-Medium';
+        //         }
+        //     }
+        // }
+        // /* 发布功课 */
+        // .stroll {
+        //     width: 8.4rem;
+        //     height: 1.2rem;
+        //     margin: 0 auto;
+        //     .stroll_gg {
+        //         float: left;
+        //         padding-top: .213333rem;
+        //         position: relative;
+        //         p {
+        //             color: #222222;
+        //             font-size: .293333rem;
+        //             font-family: 'PingFang-SC-Bold';
+        //             font-weight: 600;
+        //         }
+        //         .stroll_gg_img {
+        //             position: absolute;
+        //             top: .24rem;
+        //             right: -.506667rem;
+        //             width: .426667rem;
+        //             height: .32rem;
+        //         }
+        //     }
+        //     .stroll_gl {
+        //         float: right;
+        //         width: 1.866667rem;
+        //         height: .8rem;
+        //         color: #999999;
+        //         border: .026667rem solid #999999;
+        //         a {
+        //             font-size: .32rem;
+        //             display: block;
+        //             width: 100%;
+        //             height: 100%;
+        //             text-align: center;
+        //             line-height: .8rem;
+        //             font-family: 'PingFang-SC-Medium';
+        //         }
+        //     }
+        // }
+        // /* 申请达人按钮 */
+        // .daren_btn {
+        //     background: #262B2E;
+        //     width: 2.4rem;
+        //     height: .933333rem;
+        //     border-radius: .133333rem;
+        //     margin: .293333rem auto auto auto;
+        //     a {
+        //         display: block;
+        //         width: 100%;
+        //         height: 100%;
+        //         text-align: center;
+        //         line-height: .933333rem;
+        //         color: #fff;
+        //         font-size: .373333rem;
+        //         font-weight: 600;
+        //     }
+        // }
+        /* ==============第二种布局==================== */
+        /* 完善资料 */
+        .information {
+            width: 8.4rem;
+            height: 1.2rem;
+            margin: 0 auto;
+            display: flex;
+            .information_left {
+                flex-grow: 1;
+                .info {
+                    display: flex;
+                    padding-top: .213333rem;
+                    p {
+                        color: #222222;
+                        font-size: .293333rem;
+                        font-family: 'PingFang-SC-Bold';
+                        font-weight: 600;
+                        padding-right: .133333rem;
+                    }
+                    .info_i {
+                        width: .426667rem;
+                        height: .32rem;
+                        display: block;
+                        margin-top: .106667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .information_right {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+                .info_gl {
+                    width: 1.866667rem;
+                    height: .8rem;
+                    color: #999999;
+                    border: .026667rem solid #999999;
+                    border-radius: .133333rem;
+                    a {
+                        font-size: .32rem;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: .8rem;
+                        font-family: 'PingFang-SC-Medium';
+                    }
+                }
+            }
+        }
+        /* 等级攻略 */
+        .strategy {
+            width: 8.4rem;
+            height: 1.2rem;
+            margin: 0 auto;
+            display: flex;
+            .strategy_left {
+                flex-grow: 1;
+                .strategy_dj {
+                    display: flex;
+                    padding-top: .213333rem;
+                    p {
+                        color: #222222;
+                        font-size: .293333rem;
+                        font-family: 'PingFang-SC-Bold';
+                        font-weight: 600;
+                        padding-right: .133333rem;
+                    }
+                    .strategy_i {
+                        width: .426667rem;
+                        height: .32rem;
+                        display: block;
+                        margin-top: .106667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .strategy_right {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+                .strategy_gl {
+                    width: 1.866667rem;
+                    height: .8rem;
+                    color: #999999;
+                    border: .026667rem solid #999999;
+                    border-radius: .133333rem;
+                    a {
+                        font-size: .32rem;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: .8rem;
+                        font-family: 'PingFang-SC-Medium';
+                    }
+                }
+            }
+        }
+        /* 发布功课 */
+        .lesson {
+            width: 8.4rem;
+            height: 1.2rem;
+            margin: 0 auto;
+            display: flex;
+            .lesson_left {
+                flex-grow: 1;
+                .lesson_gk {
+                    display: flex;
+                    padding-top: .213333rem;
+                    p {
+                        color: #222222;
+                        font-size: .293333rem;
+                        font-family: 'PingFang-SC-Bold';
+                        font-weight: 600;
+                        padding-right: .133333rem;
+                    }
+                    .lesson_i {
+                        width: .426667rem;
+                        height: .32rem;
+                        display: block;
+                        margin-top: .106667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .lesson_right {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+                .lesson_gl {
+                    width: 1.866667rem;
+                    height: .8rem;
+                    color: #999999;
+                    border: .026667rem solid #999999;
+                    border-radius: .133333rem;
+                    a {
+                        font-size: .32rem;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: .8rem;
+                        font-family: 'PingFang-SC-Medium';
+                    }
+                }
+            }
+        }
+        /* 逛逛耳圈 */
+        .stroll {
+            width: 8.4rem;
+            height: 1.2rem;
+            margin: 0 auto;
+            display: flex;
+            .stroll_left {
+                flex-grow: 1;
+                .stroll_er {
+                    display: flex;
+                    padding-top: .213333rem;
+                    p {
+                        color: #222222;
+                        font-size: .293333rem;
+                        font-family: 'PingFang-SC-Bold';
+                        font-weight: 600;
+                        padding-right: .133333rem;
+                    }
+                    .stroll_i {
+                        width: .426667rem;
+                        height: .32rem;
+                        display: block;
+                        margin-top: .106667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .stroll_right {
+                flex-grow: 1;
+                display: flex;
+                justify-content: flex-end;
+                .stroll_gl {
+                    width: 1.866667rem;
+                    height: .8rem;
+                    color: #999999;
+                    border: .026667rem solid #999999;
+                    border-radius: .133333rem;
+                    a {
+                        font-size: .32rem;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: .8rem;
+                        font-family: 'PingFang-SC-Medium';
+                    }
+                }
+            }
+        }
+        /* 申请达人按钮 */
+        .daren_btn {
+            background: #262B2E;
+            width: 2.4rem;
+            height: .933333rem;
+            border-radius: .133333rem;
+            margin: .266667rem auto auto auto;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: .933333rem;
+                color: #fff;
+                font-size: .373333rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

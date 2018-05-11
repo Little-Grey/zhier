@@ -1,0 +1,150 @@
+/*css 初始化 */
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+div,
+span,
+a,
+fieldset,
+legend,
+img,
+textarea,
+select,
+input,
+img,
+fieldset,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,
+img,
+input,
+button {
+    border: none; // /*在低版本的ie浏览器里面不支持*/
+    outline-style: none;
+    outline: none; // -webkit-appearance: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+select,
+input {
+    vertical-align: middle;
+}
+
+/*禁止手动修改大小*/
+
+textarea {
+    resize: none;
+}
+
+/*去掉图片底部默认空白缝隙*/
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*合并外连线*/
+
+table {
+    /*表格的单元格边框默认是不会重合的，这个属性可以让表格的边框重合在一起，看起来更加细一些*/
+    border-collapse: collapse;
+}
+
+body {
+    // font: 12px/150% Arial, Verdana, "\5b8b\4f53";//150%行高，12是字体
+    font: 12px "Microsoft YaHei", Arial, DengXian, Simsun, SimHei, sans-serif;
+    /*unitedCode的写法，宋体的写法*/
+    color: #666;
+    background: #fff;
+}
+
+/*清除浮动*/
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s,
+i,
+em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+/*css初始化完成*/
+
+/* 公共头部 */
+/* 头部 */
+.header {
+    width: 10rem;
+    height: 1.173333rem;
+    background: #262B2E;
+    position: relative;
+    .header_bg {
+        width: .533333rem;
+        height: .533333rem;
+        background: url(../images/back_01.png) no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: .32rem;
+        left: .266667rem;
+    }
+    .header_grade {
+        color: #fff;
+        font-size: .48rem;
+        height: 1.173333rem;
+        text-align: center;
+        line-height: 1.173333rem;
+    }
+}
