@@ -5,141 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="Access-Control-Allow-Origin" content="*" /> -->
     <title>达人中心</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/becomeExpert.css">
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
 
 <body>
     <!-- 成为达人页面 -->
     <!-- 头部 -->
-    <header class="header">
-        <!-- 返回图标 -->
-        <i class="header_bg"></i>
-        <h1 class="header_grade">等级中心</h1>
-    </header>
+    <div id="app" v-cloak="">
+        <header class="header">
+            <!-- 返回图标 -->
+            <i class="header_bg"></i>
+            <h1 class="header_grade">等级中心</h1>
+        </header>
 
-    <!-- 成为达人 -->
-    <section class="become_daren">
-        <h2>你已经是达人啦~</h2>
-    </section>
+        <!-- 成为达人 -->
+        <section class="become_daren">
+            <h2>你已经是达人啦~</h2>
+        </section>
 
-    <!-- 达人头像信息 -->
-    <section class="personal_info">
-        <!-- 用户左边信息 -->
-        <div class="personal_info_left">
-            <div class="info_left_head">
-                <img src="./images/daren_04.png" alt="">
-            </div>
-        </div>
-        <!-- 用户右边信息 -->
-        <div class="personal_info_right">
-            <p>来自异星人的喵喵挂紫气qwq</p>
-            <span>Lv.3</span>
-            <span>普通达人</span>
-        </div>
-    </section>
-
-
-    <!-- 达人特权一 -->
-    <section class="privilege_noe">
-        <!-- 达人特权一title -->
-        <div class="privilege_title">
-            <div class="title_left">
-                <div class="prerogative_01">
-                    <h3>特权 ①</h3>
+        <!-- 达人头像信息 -->
+        <section class="personal_info">
+            <!-- 用户左边信息 -->
+            <div class="personal_info_left">
+                <div class="info_left_head">
+                    <img :src="msg.avatar" alt="">
                 </div>
             </div>
-            <div class="title_right_02">
-                <p>达人专属视频发布功能</p>
+            <!-- 用户右边信息 -->
+
+            <div class="personal_info_right" id="info_mas">
+                <p v-text="msg.nickname"></p>
+                <span>Lv.{{msg.level}}</span>
+                <span v-show="msg.master == 'NONE'">普通达人</span>
             </div>
-        </div>
-        <!-- 特权视频内容 -->
-        <div class="privilege_video">
-            <!-- 左边视频内容 -->
-            <div class="privilege_left">
-                <div class="privilege_video_left">
-                    <div class="privilege_img">
-                        <img src="./images/privilege_01.png" alt="">
-                        <!-- 播放按钮 -->
-                        <i class="privilege_play"></i>
-                    </div>
-                    <div class="privilege_state">
-                        <p>外拍妆容了解一下</p>
-                        <p>菠萝桔</p>
+        </section>
+
+
+        <!-- 达人特权一 -->
+        <section class="privilege_noe">
+            <!-- 达人特权一title -->
+            <div class="privilege_title">
+                <div class="title_left">
+                    <div class="prerogative_01">
+                        <h3>特权 ①</h3>
                     </div>
                 </div>
+                <div class="title_right_02">
+                    <p>达人专属视频发布功能</p>
+                </div>
             </div>
-            <!-- 右边视频内容 -->
-            <div class="privilege_right">
-                <div class="privilege_video_right">
-                    <div class="privilege_img">
-                        <img src="./images/privilege_02.png" alt="">
-                        <!-- 播放按钮 -->
-                        <i class="privilege_play"></i>
+            <!-- 特权视频内容 -->
+            <div class="privilege_video">
+                <!-- 左边视频内容 -->
+                <div class="privilege_left">
+                    <div class="privilege_video_left">
+                        <div class="privilege_img">
+                            <img src="./images/privilege_01.png" alt="">
+                            <!-- 播放按钮 -->
+                            <i class="privilege_play"></i>
+                        </div>
+                        <div class="privilege_state">
+                            <p>外拍妆容了解一下</p>
+                            <p>菠萝桔</p>
+                        </div>
                     </div>
-                    <div class="privilege_state">
-                        <p>简单几招辨别过期化妆品</p>
-                        <p>Peter丶Lis</p>
+                </div>
+                <!-- 右边视频内容 -->
+                <div class="privilege_right">
+                    <div class="privilege_video_right">
+                        <div class="privilege_img">
+                            <img src="./images/privilege_02.png" alt="">
+                            <!-- 播放按钮 -->
+                            <i class="privilege_play"></i>
+                        </div>
+                        <div class="privilege_state">
+                            <p>简单几招辨别过期化妆品</p>
+                            <p>Peter丶Lis</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 达人特权二 -->
-    <section class="privilege_two">
-        <!-- 达人特权二title -->
-        <div class="privilege_title">
-            <!-- 特权标志 -->
-            <div class="title_left">
-                <div class="prerogative_01">
-                    <h3>特权 ②</h3>
+        <!-- 达人特权二 -->
+        <section class="privilege_two">
+            <!-- 达人特权二title -->
+            <div class="privilege_title">
+                <!-- 特权标志 -->
+                <div class="title_left">
+                    <div class="prerogative_01">
+                        <h3>特权 ②</h3>
+                    </div>
+                </div>
+                <!-- 特权title -->
+                <div class="title_right_02">
+                    <p>达人专属标识</p>
+                    <p>个人头像标识点亮，羡煞旁人</p>
                 </div>
             </div>
-            <!-- 特权title -->
-            <div class="title_right_02">
-                <p>达人专属标识</p>
-                <p>个人头像标识点亮，羡煞旁人</p>
-            </div>
-        </div>
-        <!-- 特权头像内容 -->
-        <div class="privilege_head">
-            <!-- 达人一 -->
-            <div class="privilege_daren">
-                <div class="privilege_daren_img">
-                    <img src="./images/daren_02.png" alt="">
-                    <!-- 达人小图标 -->
-                    <i></i>
+            <!-- 特权头像内容 -->
+            <div class="privilege_head">
+                <!-- 达人一 -->
+                <div class="privilege_daren">
+                    <div class="privilege_daren_img">
+                        <img src="./images/daren_02.png" alt="">
+                        <!-- 达人小图标 -->
+                        <i></i>
+                    </div>
+                </div>
+                <!-- 达人二 -->
+                <div class="privilege_daren">
+                    <div class="privilege_daren_img">
+                        <img src="./images/daren_03.png" alt="">
+                        <!-- 达人小图标 -->
+                        <i></i>
+                    </div>
+                </div>
+                <!-- 达人三 -->
+                <div class="privilege_daren">
+                    <div class="privilege_daren_img">
+                        <img src="./images/daren_04.png" alt="">
+                        <!-- 达人小图标 -->
+                        <i></i>
+                    </div>
                 </div>
             </div>
-            <!-- 达人二 -->
-            <div class="privilege_daren">
-                <div class="privilege_daren_img">
-                    <img src="./images/daren_03.png" alt="">
-                     <!-- 达人小图标 -->
-                     <i></i>
-                </div>
-            </div>
-            <!-- 达人三 -->
-            <div class="privilege_daren">
-                <div class="privilege_daren_img">
-                    <img src="./images/daren_04.png" alt="">
-                     <!-- 达人小图标 -->
-                     <i></i>
-                </div>
-            </div>
-        </div>
 
-    </section>
+        </section>
 
 
-    <!-- 底部 -->
-    <footer class="footer">
-        <p>更多特权敬请期待</p>
-    </footer>
 
+        <!-- 底部 -->
+        <footer class="footer">
+            <p>更多特权敬请期待</p>
+        </footer>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="./common/flexible/flexible.js"></script>
+    <script src="./common/common.js"></script>
+    <script src="./js/becomeExpert.js"></script>
 </body>
 
 </html>

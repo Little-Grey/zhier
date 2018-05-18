@@ -65,14 +65,12 @@ body .personal_info .personal_info_right p {
 }
 body .personal_info .personal_info_right span {
   color: #16A5AF;
+  padding: .373333rem 0 0 0;
+  font-size: .32rem;
 }
 body .personal_info .personal_info_right span:nth-child(2) {
   padding-top: .453333rem;
   font-size: .293333rem;
-}
-body .personal_info .personal_info_right span:nth-child(3) {
-  padding: .373333rem 0 0 0;
-  font-size: .32rem;
 }
 body .privilege_noe {
   width: 10rem;

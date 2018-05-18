@@ -38,6 +38,9 @@ button {
   outline-style: none;
   outline: none;
 }
+[v-cloak] {
+  display: none;
+}
 ul,
 ol {
   list-style: none;

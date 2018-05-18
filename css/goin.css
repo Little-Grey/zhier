@@ -36,11 +36,12 @@ body .header_bg .header_btn {
   height: 1.493333rem;
   background: #fff;
   position: absolute;
-  bottom: 2.96rem;
+  bottom: 3.04rem;
   left: 2.213333rem;
   border-radius: .8rem;
   border: .053333rem solid #1C1C1C;
   animation: gun 1.5s infinite linear;
+  transform-origin: bottom;
 }
 body .header_bg .header_btn a {
   display: block;

@@ -8,188 +8,149 @@
     <title>达人中心</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/expert.css">
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
 
 <body>
-    <!-- 未成为达人页面 -->
-    <!-- 头部 -->
-    <header class="header">
-        <!-- 返回图标 -->
-        <i class="header_bg"></i>
-        <h1 class="header_grade">等级中心</h1>
-    </header>
-    <!-- 达人特权 -->
-    <article>
-        <h2 class="explain">达人特权</h2>
-        <div class="prerogative">
-            <div class="prerogative_left">
-                <div class="video_01">
-                    <img src="./images/video_01.png" alt="">
+    <div id="app">
+        <!-- 未成为达人页面 -->
+        <!-- 头部 -->
+        <header class="header">
+            <!-- 返回图标 -->
+            <i class="header_bg"></i>
+            <h1 class="header_grade">等级中心</h1>
+        </header>
+        <!-- 达人特权 -->
+        <article>
+            <h2 class="explain">达人特权</h2>
+            <div class="prerogative">
+                <div class="prerogative_left">
+                    <div class="video_01">
+                        <img src="./images/video_01.png" alt="">
+                    </div>
+                    <p>发布视频</p>
                 </div>
-                <p>发布视频</p>
-            </div>
-            <div class="prerogative_center">
-                <div class="daren">
-                    <img src="./images/daren_01.png" alt="">
+                <div class="prerogative_center">
+                    <div class="daren">
+                        <img src="./images/daren_01.png" alt="">
+                    </div>
+                    <p>标识凸显</p>
                 </div>
-                <p>标识凸显</p>
-            </div>
-            <div class="prerogative_right">
-                <div class="shalou">
-                    <img src="./images/shalou_01.png" alt="">
+                <div class="prerogative_right">
+                    <div class="shalou">
+                        <img src="./images/shalou_01.png" alt="">
+                    </div>
+                    <p>期待更多</p>
                 </div>
-                <p>期待更多</p>
             </div>
-        </div>
-    </article>
+        </article>
 
-    <!-- 成为知儿达人的说明 -->
-    <section class="zhierdaren">
-        <p>你还未成为知耳达人，满足以下条件即可申请。</p>
-    </section>
+        <!-- 成为知儿达人的说明 -->
+        <section class="zhierdaren">
+            <p>你还未成为知耳达人，满足以下条件即可申请。</p>
+        </section>
 
-    <!-- 申请条件 -->
-    <section class="requirement">
-        <!-- 申请条件标题 -->
-        <div class="requirement_title">
-            <h2>申请条件</h2>
-        </div>
-        <!-- ==============这里是第一种布局============ -->
-        <!-- 完善资料 -->
-        <!-- <div class="information">
-            <div class="info">
-                <p>个人资料填写完整</p>
-                <img class="info_img" src="images/gou_01.png" alt="">
+        <!-- 申请条件 -->
+        <section class="requirement">
+            <!-- 申请条件标题 -->
+            <div class="requirement_title">
+                <h2>申请条件</h2>
             </div>
-            <div class="info_gl">
-                <p>
-                    <a href="javascript:;">完善攻略</a>
-                </p>
+            <!-- 完善资料 -->
+            <div class="information">
+                <div class="information_left">
+                    <div class="info">
+                        <p>个人资料填写完整</p>
+                        <i class="info_i" v-cloak>
+                            <img v-if="!msg.info_optimize" src="./images/cha_01.png" alt="">
+                            <img v-if="msg.info_optimize" src="./images/gou_01.png" alt="">
+                        </i>
+                    </div>
+                </div>
+                <div class="information_right">
+                    <div class="info_gl">
+                        <p>
+                            <a href="javascript:;">完善攻略</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div> -->
-        <!-- 等级攻略 -->
-        <!-- <div class="strategy">
-            <div class="strategy_dj">
-                <p>等级达到3级</p>
-                <img class="strategy_dj_img" src="images/gou_01.png" alt="">
+            <!-- 等级攻略 -->
+            <div class="strategy">
+                <div class="strategy_left">
+                    <div class="strategy_dj">
+                        <p>等级达到3级</p>
+                        <i class="strategy_i">
+                            <img v-if="!msg.level" src="images/cha_01.png" alt="">
+                            <img v-if="msg.level" src="images/gou_01.png" alt="">
+                        </i>
+                    </div>
+                </div>
+                <div class="strategy_right">
+                    <div class="strategy_gl">
+                        <p>
+                            <a href="javascript:;">等级攻略</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="strategy_gl">
-                <p>
-                    <a href="javascript:;">等级攻略</a>
-                </p>
+            <!-- 发布功课 -->
+            <div class="lesson">
+                <div class="lesson_left">
+                    <div class="lesson_gk">
+                        <p>发布过10篇功课</p>
+                        <i class="lesson_i">
+                            <img v-if="!msg.article_diary_num" src="images/cha_01.png" alt="">
+                            <img v-if="msg.article_diary_num" src="images/gou_01.png" alt="">
+                        </i>
+                    </div>
+                </div>
+                <div class="lesson_right">
+                    <div class="lesson_gl">
+                        <p>
+                            <a href="javascript:;">发布功课</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div> -->
-        <!-- 发布功课 -->
-        <!-- <div class="lesson">
-            <div class="lesson_fb">
-                <p>发布过10篇功课</p>
-                <img class="lesson_gl_img" src="images/gou_01.png" alt="">
+            <!-- 逛逛耳圈 -->
+            <div class="stroll">
+                <div class="stroll_left">
+                    <div class="stroll_er">
+                        <p>个人资料填写完整</p>
+                        <i class="stroll_i">
+                            <img v-if="!msg.comment_num" src="images/cha_01.png" alt="">
+                            <img v-if="msg.comment_num" src="images/gou_01.png" alt="">
+                        </i>
+                    </div>
+                </div>
+                <div class="stroll_right">
+                    <div class="stroll_gl">
+                        <p>
+                            <a href="javascript:;">完善攻略</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="lesson_gl">
-                <p>
-                    <a href="javascript:;">发布功课</a>
-                </p>
+            <!-- 申请达人按钮 -->
+            <div class="daren_btn">
+                <!-- 黑色按钮 -->
+                <a v-if="msg.comment_num && msg.article_diary_num && msg.level && msg.info_optimize" href="javascript:;" @click="clickApply()" :class="{'cur':isColro}">{{info}}</a>
+                <!-- 灰色按钮-只要上面的条件不成立,就会执行这个 -->
+                <a v-else-if="is" class="jinyong" href="javascript:;">申请达人</a>
+                
+                <!-- <a v-else-if="msg.comment_num || msg.article_diary_num || msg.level || msg.info_optimize" class="jinyong111" href="javascript:;">申请达人</a> -->
             </div>
-        </div> -->
-        <!-- 逛逛耳圈 -->
-        <!-- <div class="stroll">
-            <div class="stroll_gg">
-                <p>评论超过100条</p>
-                <img class="stroll_gg_img" src="images/gou_01.png" alt="">
-            </div>
-            <div class="stroll_gl">
-                <p>
-                    <a href="javascript:;">逛逛耳圈</a>
-                </p>
-            </div>
-        </div> -->
-        <!-- 申请达人按钮 -->
-        <!-- <div class="daren_btn">
-            <a href="javascript:;">申请达人</a>
-        </div> -->
+
+        </section>
 
 
-        <!-- ==============这里是另外一种布局============ -->
-        <!-- 完善资料 -->
-        <div class="information">
-            <div class="information_left">
-                <div class="info">
-                    <p>个人资料填写完整</p>
-                    <i class="info_i">
-                        <img src="images/gou_01.png" alt="">
-                    </i>
-                </div>
-            </div>
-            <div class="information_right">
-                <div class="info_gl">
-                    <p>
-                        <a href="javascript:;">完善攻略</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- 等级攻略 -->
-        <div class="strategy">
-            <div class="strategy_left">
-                <div class="strategy_dj">
-                    <p>等级达到3级</p>
-                    <i class="strategy_i">
-                        <img src="images/gou_01.png" alt="">
-                    </i>
-                </div>
-            </div>
-            <div class="strategy_right">
-                <div class="strategy_gl">
-                    <p>
-                        <a href="javascript:;">等级攻略</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- 发布功课 -->
-        <div class="lesson">
-            <div class="lesson_left">
-                <div class="lesson_gk">
-                    <p>发布过10篇功课</p>
-                    <i class="lesson_i">
-                        <img src="images/gou_01.png" alt="">
-                    </i>
-                </div>
-            </div>
-            <div class="lesson_right">
-                <div class="lesson_gl">
-                    <p>
-                        <a href="javascript:;">发布功课</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- 逛逛耳圈 -->
-        <div class="stroll">
-            <div class="stroll_left">
-                <div class="stroll_er">
-                    <p>个人资料填写完整</p>
-                    <i class="stroll_i">
-                        <img src="images/gou_01.png" alt="">
-                    </i>
-                </div>
-            </div>
-            <div class="stroll_right">
-                <div class="stroll_gl">
-                    <p>
-                        <a href="javascript:;">完善攻略</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- 申请达人按钮 -->
-        <div class="daren_btn">
-            <a href="javascript:;">申请达人</a>
-        </div>
 
-    </section>
-
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="./common/flexible/flexible.js"></script>
+    <script src="./common/common.js"></script>
+    <script src="./js/expert.js"></script>
 </body>
 
 </html>
