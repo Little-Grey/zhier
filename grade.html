@@ -26,7 +26,7 @@
             <div class="portrait_experience">
                 <i class="portrait_experience_i"></i>
                 <span>
-                    <a href="javascript:;">经验值说明</a>
+                    <a href="experience.html">经验值说明</a>
                 </span>
             </div>
             <!-- 阴影的圆 -->
@@ -56,26 +56,32 @@
             <!-- 进度条 -->
             <div class="progress">
                 <!-- 底部div -->
-                <div class="static_propress"></div>
-                <!-- 进度条div -->
-                <div class="dynamic_propress"></div>
+                <div class="static_propress" ref="static_propress"></div>
+                <!-- 左边固定进度条div -->
+                <div class="dynamic_propress" ref="dynamic_propress"></div>
+                <!-- 右边动态进度条div -->
+                <div class="state_propress">
+                    <!-- 进度 -->
+                    <div class="state_propress_div" ref="state_propress_div"></div>
+                </div>
                 <!-- 左边的小圆 -->
-                <div class="left_progress">
-                    <i class="left_propress_i"></i>
+                <div class="left_progress common_style">
+                    <i class="propress_i"></i>
                 </div>
                 <!-- 中间的小圆 -->
-                <div class="center_progress">
-                    <i class="center_progress_i"></i>
+                <div class="center_progress common_style big_box">
+                    <i class="propress_i big_box_i"></i>
                 </div>
                 <!-- 右边的小圆 -->
-                <div class="right_propress">
-                    <i class="right_propress_i"></i>
+                <div class="right_propress common_style">
+                    <i class="propress_i"></i>
                 </div>
                 <!-- 等级 -->
                 <div class="progress_dj">
-                    <h3>Lv.1</h3>
-                    <h2>Lv.2</h2>
-                    <h3>Lv.3</h3>
+                    <h3 v-show="show">Lv.{{levelLeft}}</h3>
+                    <h2>Lv.{{msg.level}}</h2>
+                    <!-- <h2>Lv.{{dengji}}</h2> -->
+                    <h3>Lv.{{levelRight}}</h3>
                 </div>
             </div>
         </section>
@@ -153,7 +159,7 @@
 
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="./common/flexible/flexible.js"></script>
-    <script src="./common/common.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/grade.js"></script>
 </body>
 

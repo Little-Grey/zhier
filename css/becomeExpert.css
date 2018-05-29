@@ -6,6 +6,7 @@ body {
   /* 达人特权一 */
   /* 达人特权二 */
   /* 底部 */
+  /* loading */
 }
 body .become_daren {
   width: 10rem;
@@ -43,6 +44,7 @@ body .personal_info .personal_info_left .info_left_head img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  object-fit: cover;
 }
 body .personal_info .personal_info_left::after {
   content: '';
@@ -341,4 +343,20 @@ body .footer p {
   font-weight: 600;
   display: flex;
   justify-content: center;
+}
+body #loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 1.866667rem;
+  height: 1.866667rem;
+}
+body #loading #loading_info {
+  background: url(../images/donghua_01.gif) no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
 }

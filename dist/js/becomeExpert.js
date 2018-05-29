@@ -1,0 +1,1 @@
+"use strict";new Vue({el:"#app",data:{msg:{}},created:function(){this.getuser()},methods:{getuser:function(){var e=this;$.ajax({type:"get",url:baseUrl+"/v1/member/info?time=123&sign=ABC&target_member_id=1000",beforeSend:function(){$("#loading").show()},complete:function(){$("#loading").hide()},success:function(t){e.msg=t.data},error:function(e){console.log(e)}})}}});

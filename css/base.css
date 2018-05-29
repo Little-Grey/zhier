@@ -84,6 +84,7 @@ body {
 a {
   color: #666;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 a:hover {
   color: #C81623;

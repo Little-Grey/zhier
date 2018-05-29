@@ -73,6 +73,7 @@ body .section_portrait .head_circle .head_child img {
   width: 2.266667rem;
   height: 2.266667rem;
   border-radius: 50%;
+  object-fit: cover;
 }
 body .section_portrait .head_circle .head_child .head_sun {
   height: .533333rem;
@@ -112,7 +113,7 @@ body .section_portrait .jy span:nth-child(2) {
   font-size: .346667rem;
 }
 body .section_portrait .progress {
-  width: 10rem;
+  width: 100%;
   height: .133333rem;
   background: pink;
   /*伸缩布局*/
@@ -121,14 +122,15 @@ body .section_portrait .progress {
   left: 0;
   bottom: -0.053333rem;
   /* 底部div */
-  /* 进度条div */
+  /* 左边固定进度条div */
+  /* 右边动态进度条div */
   /* 左边的小圆 */
   /* 中间的小圆 */
   /* 右边的小圆 */
   /* 等级 */
 }
 body .section_portrait .progress .static_propress {
-  width: 10rem;
+  width: 100%;
   height: .133333rem;
   background: #eeeeee;
   position: absolute;
@@ -136,7 +138,7 @@ body .section_portrait .progress .static_propress {
   left: 0;
 }
 body .section_portrait .progress .dynamic_propress {
-  width: 6.106667rem;
+  width: 45%;
   height: .133333rem;
   background: #16a5af;
   border-radius: 0 .133333rem .133333rem 0;
@@ -144,57 +146,60 @@ body .section_portrait .progress .dynamic_propress {
   bottom: 0;
   left: 0;
 }
-body .section_portrait .progress .left_progress {
-  width: .4rem;
-  height: .4rem;
-  background: #fff;
-  border-radius: 50%;
+body .section_portrait .progress .state_propress {
+  width: 2.773333rem;
+  height: .133333rem;
   position: absolute;
-  bottom: 50%;
-  left: 1.253333rem;
-  transform: translateY(50%);
+  top: 0;
+  left: 5.253333rem;
+  /* 进度 */
 }
-body .section_portrait .progress .left_progress .left_propress_i {
-  width: .266667rem;
-  height: .266667rem;
+body .section_portrait .progress .state_propress .state_propress_div {
+  width: 100%;
   background: #16a5af;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+  height: 100%;
+}
+body .section_portrait .progress .left_progress {
+  left: 15%;
 }
 body .section_portrait .progress .center_progress {
+  left: 45%;
+}
+body .section_portrait .progress .center_progress.big_box {
   width: .8rem;
   height: .8rem;
   background: rgba(22, 165, 175, 0.1);
   position: absolute;
   bottom: 50%;
   left: 4.613333rem;
+  -webkit-transform: translateY(50%);
   transform: translateY(50%);
   border-radius: 50%;
 }
-body .section_portrait .progress .center_progress .center_progress_i {
+body .section_portrait .progress .center_progress.big_box .big_box_i {
   width: .533333rem;
   height: .533333rem;
-  background: #16A5AF;
+  background: #16a5af;
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
 body .section_portrait .progress .right_propress {
+  left: 80%;
+}
+body .section_portrait .progress .common_style {
   width: .4rem;
   height: .4rem;
   background: #fff;
   position: absolute;
   bottom: 50%;
-  right: 1.253333rem;
   transform: translateY(50%);
   border-radius: 50%;
 }
-body .section_portrait .progress .right_propress .right_propress_i {
+body .section_portrait .progress .common_style .propress_i {
   width: .266667rem;
   height: .266667rem;
   background: #eee;
@@ -208,26 +213,31 @@ body .section_portrait .progress .progress_dj {
   width: 10rem;
   height: .826667rem;
   padding-top: .4rem;
-  display: flex;
+  position: relative;
 }
 body .section_portrait .progress .progress_dj h3 {
   line-height: .826667rem;
   font-family: 'PingFang-SC-Medium';
+  position: absolute;
 }
 body .section_portrait .progress .progress_dj h3:nth-child(1) {
-  padding-left: 1.12rem;
   font-size: .32rem;
+  top: .373333rem;
+  left: 1.36rem;
 }
 body .section_portrait .progress .progress_dj h3:nth-child(3) {
   font-size: .32rem;
-  padding-left: 2.8rem;
+  top: .373333rem;
+  right: 1.493333rem;
 }
 body .section_portrait .progress .progress_dj h2 {
   line-height: .826667rem;
   font-size: .48rem;
   font-family: 'PingFang-SC-Bold';
   font-weight: 700;
-  padding-left: 2.906667rem;
+  position: absolute;
+  top: .373333rem;
+  left: 4.64rem;
 }
 body .section_mission {
   position: relative;

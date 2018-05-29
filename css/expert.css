@@ -4,6 +4,7 @@ body {
   /* 达人特权 */
   /* 成为知儿达人的说明 */
   /* 申请条件 */
+  /* loading */
 }
 body article {
   width: 10rem;
@@ -356,4 +357,20 @@ body .requirement .daren_btn .jinyong {
   color: #fff;
   font-size: .373333rem;
   font-weight: 600;
+}
+body #loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 1.866667rem;
+  height: 1.866667rem;
+}
+body #loading #loading_info {
+  background: url(../images/donghua_01.gif) no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
