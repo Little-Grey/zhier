@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>达人中心</title>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/expert.css">
+    <link rel="stylesheet" href="./css/base.css?version=1.0.0">
+    <link rel="stylesheet" href="./css/expert.css?version=1.0.0">
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
 
@@ -15,11 +15,11 @@
     <div id="app">
         <!-- 未成为达人页面 -->
         <!-- 头部 -->
-        <header class="header">
-            <!-- 返回图标 -->
+        <!-- <header class="header">
+            返回图标
             <i class="header_bg"></i>
             <h1 class="header_grade">达人中心</h1>
-        </header>
+        </header> -->
         <!-- 达人特权 -->
         <article>
             <h2 class="explain">达人特权</h2>
@@ -71,7 +71,7 @@
                 <div class="information_right">
                     <div class="info_gl">
                         <p>
-                            <a @click="myFunction()" data-id="1" href="javascript:;">完善攻略</a>
+                            <a @click="myFunction_inforMation()" data-id="COMPLETE_INFO" href="javascript:;">完善攻略</a>
                         </p>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                 <div class="strategy_right">
                     <div class="strategy_gl">
                         <p>
-                            <a href="javascript:;">等级攻略</a>
+                            <a @click="myFunction_strategy()" href="javascript:;" data-id="GRADE_STRATEGY">等级攻略</a>
                         </p>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                 <div class="lesson_right">
                     <div class="lesson_gl">
                         <p>
-                            <a href="javascript:;">发布功课</a>
+                            <a @click="myFunction_lesson()" data-id="PUBLISH_WORK" href="javascript:;">发布功课</a>
                         </p>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                 <div class="stroll_right">
                     <div class="stroll_gl">
                         <p>
-                            <a href="javascript:;">完善攻略</a>
+                            <a href="javascript:;" @click="myFunction_stroll()" data-id="GO_ZHIER_CIRCLE">完善攻略</a>
                         </p>
                     </div>
                 </div>
@@ -154,8 +154,8 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="./common/flexible/flexible.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/expert.js"></script>
+    <script src="./js/common.js?version=1.0.0"></script>
+    <script src="./js/expert.js?version=1.0.0"></script>
 </body>
 
 </html>

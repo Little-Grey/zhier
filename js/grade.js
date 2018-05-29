@@ -27,7 +27,7 @@ new Vue({
                 if (r != null) return unescape(r[2]);
                 return null;
             }
-            var member_Id = getQueryString("id");
+            var member_Id = getQueryString("member_id");
             console.log(member_Id);
             $.ajax({
                 type: 'get',

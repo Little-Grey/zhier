@@ -20,7 +20,7 @@ new Vue({
             }
             // console.log(getQueryString("id"));
 
-            var member_Id = getQueryString("id");
+            var member_Id = getQueryString("member_id");
             console.log(member_Id);
             var _this = this;
             $.ajax({
@@ -84,8 +84,26 @@ new Vue({
             })
         },
         // 安卓调用方法
-        myFunction() {
-            var inpObj = $('.info_gl>p>a').attr("data-id");
+        myFunction_inforMation() {
+            var inpOb = $('.info_gl>p>a').attr("data-id");
+            inpOb = inpOb + "";
+            console.log(inpOb);
+            window.android.get(inpOb);
+        },
+        myFunction_strategy() {
+            var inpObj = $('.strategy_gl>p>a').attr("data-id");
+            inpObj = inpObj + "";
+            console.log(inpObj);
+            window.android.get(inpObj);
+        },
+        myFunction_lesson() {
+            var inpObj = $('.lesson_gl>p>a').attr("data-id");
+            inpObj = inpObj + "";
+            console.log(inpObj);
+            window.android.get(inpObj);
+        },
+        myFunction_stroll() {
+            var inpObj = $('.stroll_gl>p>a').attr("data-id");
             inpObj = inpObj + "";
             console.log(inpObj);
             window.android.get(inpObj);
