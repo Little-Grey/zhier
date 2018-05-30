@@ -19,7 +19,7 @@ body .header_bg .head_header {
   border-radius: 50%;
   border: .053333rem solid #fff;
   position: absolute;
-  top: 5.706667rem;
+  top: 5.4375rem;
   left: 3.333333rem;
   overflow: hidden;
 }
@@ -35,33 +35,26 @@ body .header_bg .header_name {
   padding-top: .106667rem;
   text-shadow: .026667rem .026667rem 0 #fff;
   position: absolute;
-  top: 9.125rem;
+  top: 8.875rem;
   left: 50%;
   transform: translateX(-50%);
 }
 body .header_bg .header_btn {
-  width: 5.52rem;
-  height: 1.493333rem;
-  background: #fff;
+  width: 5.573333rem;
+  height: 1.813333rem;
   position: absolute;
   bottom: 3.04rem;
   left: 2.213333rem;
-  border-radius: .8rem;
-  border: .053333rem solid #1C1C1C;
-  animation: gun 1.5s infinite linear;
-  transform-origin: bottom;
 }
 body .header_bg .header_btn a {
   display: block;
   width: 100%;
   height: 100%;
-  color: #222222;
-  font-size: .853333rem;
-  font-weight: 700;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: .8rem;
+}
+body .header_bg .header_btn a img {
+  width: 100%;
+  height: 100%;
 }
 body .header_bg #loading {
   position: absolute;
@@ -84,10 +77,7 @@ body .header_bg #loading #loading_info {
   0% {
     transform: rotateX(0deg);
   }
-  50% {
-    transform: rotateX(50deg);
-  }
   100% {
-    transform: rotateX(0deg);
+    transform: rotateX(38deg);
   }
 }

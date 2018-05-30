@@ -5,7 +5,7 @@ new Vue({
         levelLeft: 0, //左边的
         levelRight: 0, //右边的
         show: true,
-        // dengji: 9, //假数据
+        // dengji: 3, //假数据
         // level: 0, //假数据
         // exp: 270,//假数据
         // exp_up:271//假数据
@@ -41,15 +41,16 @@ new Vue({
                 },
                 success: function (res) {
                     console.log(res.data);
+                    console.log(res.data.level)
                     // 等级
                     _this.level = res.data.level;
                     if (_this.level >= 1) {
                         console.log('哈哈哈哈');
                         _this.show = false;
                     }
-                    if (_this.level >= _this.level) {
+                    if (_this.level) {
                         console.log('嘿嘿嘿嘿');
-                        _this.show = false;
+                        _this.show = true;
                         _this.levelLeft = res.data.level - 1;
                         _this.levelRight = res.data.level + 1;
                     }
@@ -73,7 +74,13 @@ new Vue({
                     _this.exp = res.data.exp;
                     _this.exp_up = res.data.exp_up;
 
-                    _this.exp >= _this.exp_up ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp / _this.exp_up * 100) + '%';
+                    // _this.exp >= _this.exp_up ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp / _this.exp_up * 100) + '%';
+
+                    _this.exp == 0 ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp/(_this.exp + _this.exp_up) * 100) + '%';
+
+                    // _this.exp >= _this.exp_up ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp + _this.exp_up )* 100 + '%';
+
+                    // exp / (exp+exp_up) * 100 %
 
                     // 把数据负值给定义的msg
                     _this.msg = res.data;

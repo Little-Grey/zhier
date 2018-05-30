@@ -46,7 +46,7 @@ new Vue({
                         _this.isColro = true;
                     };
                     if (res.data.master == 'COMMON' || res.data.master == 'OFFICIAL') {
-                        window.location.href = "becomeExpert.html";
+                        window.location.href = "becomeExpert.html?member_id="+ member_Id;
                     };
                     // 把数据负值给data的定义的空对象
                     _this.msg = res.data;

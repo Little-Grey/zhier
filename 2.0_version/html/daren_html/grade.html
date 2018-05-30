@@ -39,7 +39,7 @@
                     <!-- <img :src="msg.avatar" alt=""> -->
                     <img v-show="msg.avatar" :src="msg.avatar" alt="">
                     <!-- 默认图片 -->
-                    <img v-show="!msg.avatar" src="../../images/daren_img//default.png" alt="">
+                    <img v-show="!msg.avatar" src="../../images/daren_img/default.png" alt="">
                     <!-- 等级 -->
                     <div class="head_sun">
                         <!-- Lv.2 -->
@@ -96,7 +96,7 @@
                 <!-- 发布功课 -->
                 <div class="release_homework">
                     <div class="homework">
-                        <img src="../../images/daren_img//homework.png" alt="">
+                        <img src="../../images/daren_img/homework.png" alt="">
                     </div>
                     <div class="homework_content">
                         <h3>发布功课</h3>
@@ -106,7 +106,7 @@
                 <!-- 发布PO图 -->
                 <div class="release_PO">
                     <div class="Po">
-                        <img src="../../images/daren_img//PO.png" alt="">
+                        <img src="../../images/daren_img/PO.png" alt="">
                     </div>
                     <div class="Po_content">
                         <h3>发布PO图</h3>
@@ -116,7 +116,8 @@
                 <!-- 发布视频 -->
                 <div class="release_video">
                     <div class="video">
-                        <img src="../../images/daren_img//video.png" alt="">
+                        <img v-show="msg.level >= 3" src="../../images/daren_img/cha_01.png" alt="">
+                        <img v-show="msg.level < 3" src="../../images/daren_img/video.png" alt="">
                     </div>
                     <div class="video_content">
                         <h3>发布视频</h3>
@@ -128,7 +129,7 @@
                 <!-- 发布问答 -->
                 <div class="release_ask">
                     <div class="ask">
-                        <img src="../../images/daren_img//ask.png" alt="">
+                        <img src="../../images/daren_img/ask.png" alt="">
                     </div>
                     <div class="ask_content">
                         <h3>发布问答</h3>
@@ -138,7 +139,7 @@
                 <!-- 文章置顶 -->
                 <div class="release_stick">
                     <div class="stick">
-                        <img src="../../images/daren_img//stick.png" alt="">
+                        <img src="../../images/daren_img/stick.png" alt="">
                     </div>
                     <div class="stick_content">
                         <h3>文章置顶</h3>
@@ -148,7 +149,7 @@
                 <!-- 分享知耳 -->
                 <div class="release_zhier">
                     <div class="zhier">
-                        <img src="../../images/daren_img//zhier.png" alt="">
+                        <img src="../../images/daren_img/zhier.png" alt="">
                     </div>
                     <div class="zhier_content">
                         <h3>分享知耳</h3>

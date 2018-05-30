@@ -4,27 +4,27 @@ body {
   /* 经验值说明标题 */
   /* 经验说明 */
 }
-body article {
+body .article {
   width: 10rem;
   height: 2rem;
   text-align: center;
   line-height: 2rem;
 }
-body article .explain {
+body .article .explain {
   color: #222222;
   font-size: .373333rem;
   font-family: 'PingFang-SC-Bold';
   font-weight: 600;
   position: relative;
 }
-body article .explain::after {
+body .article .explain::after {
   content: '';
   width: .72rem;
   height: .053333rem;
   background: #16A5AF;
   position: absolute;
   left: 4.64rem;
-  bottom: .266667rem;
+  bottom: .346667rem;
 }
 body .section_text {
   width: 8.933333rem;
@@ -32,8 +32,8 @@ body .section_text {
   margin: 0 auto;
 }
 body .section_text ul {
-  width: 100%;
-  height: 100%;
+  width: 8.933333rem;
+  height: 9.306667rem;
 }
 body .section_text ul li {
   position: relative;
@@ -44,14 +44,8 @@ body .section_text ul li {
   /* 左边的小圆点 */
 }
 body .section_text ul li span {
-  font-weight: 600;
+  font-weight: 700;
   color: #222;
-}
-body .section_text ul li:nth-child(9) {
-  padding: 0;
-}
-body .section_text ul li:nth-child(9)::after {
-  display: none;
 }
 body .section_text ul li::after {
   content: '';
@@ -60,6 +54,6 @@ body .section_text ul li::after {
   background: #16A5AF;
   border-radius: 50%;
   position: absolute;
-  top: .213333rem;
+  top: .1875rem;
   left: 0;
 }

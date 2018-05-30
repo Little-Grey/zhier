@@ -156,7 +156,7 @@ body .section_portrait .progress .state_propress {
   /* 进度 */
 }
 body .section_portrait .progress .state_propress .state_propress_div {
-  width: 100%;
+  width: 0%;
   background: #16a5af;
   height: 100%;
 }

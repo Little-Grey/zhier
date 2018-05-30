@@ -156,7 +156,7 @@ body .privilege_noe .privilege_video .privilege_left .privilege_video_left .priv
 }
 body .privilege_noe .privilege_video .privilege_left .privilege_video_left .privilege_state p:nth-child(1) {
   color: #222;
-  font-size: .346667rem;
+  font-size: 0.32rem;
 }
 body .privilege_noe .privilege_video .privilege_left .privilege_video_left .privilege_state p:nth-child(2) {
   color: #16A5AF;
@@ -201,7 +201,7 @@ body .privilege_noe .privilege_video .privilege_right .privilege_video_right .pr
 }
 body .privilege_noe .privilege_video .privilege_right .privilege_video_right .privilege_state p:nth-child(1) {
   color: #222;
-  font-size: .346667rem;
+  font-size: .32rem;
 }
 body .privilege_noe .privilege_video .privilege_right .privilege_video_right .privilege_state p:nth-child(2) {
   color: #16A5AF;
