@@ -1,0 +1,68 @@
+body {
+    width: 10rem;
+    max-width: 10rem;
+    /* 经验值说明标题 */
+    article {
+        width: 10rem;
+        height: 2rem;
+        // background: pink;
+        text-align: center;
+        line-height: 2rem;
+        .explain {
+            color: #222222;
+            font-size: .373333rem;
+            font-family: 'PingFang-SC-Bold';
+            font-weight: 600;
+            position: relative;
+            &::after {
+                content: '';
+                width: .72rem;
+                height: .053333rem;
+                background: #16A5AF;
+                position: absolute;
+                left: 4.64rem;
+                bottom: .266667rem;
+            }
+        }
+    }
+    /* 经验说明 */
+    .section_text {
+        width: 8.933333rem;
+        height: 9.306667rem;
+        // background: yellowgreen;
+        margin: 0 auto;
+        ul {
+            width: 100%;
+            height: 100%;
+            li {
+                position: relative;
+                font-family: 'PingFang SC';
+                color: #666666;
+                // font-size: .373333rem;
+                font-size: .186667rem;
+                padding-left: .32rem;
+                span {
+                    font-weight: 600;
+                    color: #222;
+                }
+                &:nth-child(9) {
+                    padding:0;
+                    &::after{
+                        display: none;
+                    }
+                }
+                /* 左边的小圆点 */
+                &::after{
+                    content:'';
+                    width: .133333rem;
+                    height: .133333rem;
+                    background: #16A5AF;
+                    border-radius: 50%;
+                    position: absolute;
+                    top:.213333rem;
+                    left:0;
+                }
+            }
+        }
+    }
+}

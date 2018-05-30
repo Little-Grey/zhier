@@ -1,0 +1,442 @@
+body {
+  width: 10rem;
+  max-width: 10rem;
+  /* 头部样式在公共less里面 */
+  /* 头像部分 */
+  /* 任务部分 */
+  /* loading */
+}
+body .section_portrait {
+  width: 10rem;
+  height: 6.053333rem;
+  background: url(../../images/daren_img/bg_01.png) no-repeat;
+  background-size: contain;
+  position: relative;
+  /* 经验值说明 */
+  /* 阴影上面的圆 */
+  /* 用户名称 */
+  /* 经验值 */
+  /* 进度条 */
+}
+body .section_portrait .portrait_experience {
+  float: right;
+  margin: .666667rem .8rem 0 0;
+  display: flex;
+  align-items: center;
+  /* 阴影的圆 */
+}
+body .section_portrait .portrait_experience .portrait_experience_i {
+  background: url(../../images/daren_img/say_01.png) no-repeat;
+  background-size: contain;
+  width: .32rem;
+  height: .32rem;
+  margin: 0 .053333rem 0 0;
+}
+body .section_portrait .portrait_experience span {
+  font-size: .293333rem;
+}
+body .section_portrait .portrait_experience span a {
+  color: #999999;
+}
+body .section_portrait .portrait_experience::after {
+  content: '';
+  width: 2.64rem;
+  height: 2.64rem;
+  background: #16a5af;
+  opacity: 0.1;
+  position: absolute;
+  top: 1.013333rem;
+  left: 3.92rem;
+  border-radius: 50%;
+  padding: .133333rem;
+}
+body .section_portrait .head_circle {
+  width: 2.56rem;
+  height: 2.56rem;
+  position: relative;
+  top: .906667rem;
+  left: 3.653333rem;
+  border-radius: 50%;
+  border: .066667rem solid #262B2E;
+  background: #fff;
+  overflow: hidden;
+  /* 包裹头像的div */
+}
+body .section_portrait .head_circle .head_child {
+  margin: .133333rem;
+  width: 2.266667rem;
+  height: 2.266667rem;
+  border-radius: 50%;
+  position: relative;
+  /* 等级 */
+}
+body .section_portrait .head_circle .head_child img {
+  width: 2.266667rem;
+  height: 2.266667rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+body .section_portrait .head_circle .head_child .head_sun {
+  height: .533333rem;
+  width: 1.76rem;
+  background: #fff;
+  position: absolute;
+  bottom: -0.15625rem;
+  left: .24rem;
+  text-align: center;
+  line-height: 0.3125rem;
+}
+body .section_portrait .head_circle .head_child .head_sun span {
+  font-size: .266667rem;
+  color: #3f1f1f;
+}
+body .section_portrait .user {
+  position: absolute;
+  bottom: 1.733333rem;
+  left: 4.053333rem;
+}
+body .section_portrait .user h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_portrait .jy {
+  position: absolute;
+  bottom: .826667rem;
+  left: 3.866667rem;
+}
+body .section_portrait .jy span {
+  color: #222222;
+}
+body .section_portrait .jy span:nth-child(1) {
+  font-size: .64rem;
+}
+body .section_portrait .jy span:nth-child(2) {
+  font-size: .346667rem;
+}
+body .section_portrait .progress {
+  width: 100%;
+  height: .133333rem;
+  background: pink;
+  /*伸缩布局*/
+  /* 从侧轴开始的地方对齐*/
+  position: absolute;
+  left: 0;
+  bottom: -0.053333rem;
+  /* 底部div */
+  /* 左边固定进度条div */
+  /* 右边动态进度条div */
+  /* 左边的小圆 */
+  /* 中间的小圆 */
+  /* 右边的小圆 */
+  /* 等级 */
+}
+body .section_portrait .progress .static_propress {
+  width: 100%;
+  height: .133333rem;
+  background: #eeeeee;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+body .section_portrait .progress .dynamic_propress {
+  width: 45%;
+  height: .133333rem;
+  background: #16a5af;
+  border-radius: 0 .133333rem .133333rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+body .section_portrait .progress .state_propress {
+  width: 2.773333rem;
+  height: .133333rem;
+  position: absolute;
+  top: 0;
+  left: 5.253333rem;
+  /* 进度 */
+}
+body .section_portrait .progress .state_propress .state_propress_div {
+  width: 100%;
+  background: #16a5af;
+  height: 100%;
+}
+body .section_portrait .progress .left_progress {
+  left: 15%;
+}
+body .section_portrait .progress .center_progress {
+  left: 45%;
+}
+body .section_portrait .progress .center_progress.big_box {
+  width: .8rem;
+  height: .8rem;
+  background: rgba(22, 165, 175, 0.1);
+  position: absolute;
+  bottom: 50%;
+  left: 4.613333rem;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  border-radius: 50%;
+}
+body .section_portrait .progress .center_progress.big_box .big_box_i {
+  width: .533333rem;
+  height: .533333rem;
+  background: #16a5af;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+body .section_portrait .progress .right_propress {
+  left: 80%;
+}
+body .section_portrait .progress .common_style {
+  width: .4rem;
+  height: .4rem;
+  background: #fff;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  border-radius: 50%;
+}
+body .section_portrait .progress .common_style .propress_i {
+  width: .266667rem;
+  height: .266667rem;
+  background: #eee;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+body .section_portrait .progress .progress_dj {
+  width: 10rem;
+  height: .826667rem;
+  padding-top: .4rem;
+  position: relative;
+}
+body .section_portrait .progress .progress_dj h3 {
+  line-height: .826667rem;
+  font-family: 'PingFang-SC-Medium';
+  position: absolute;
+}
+body .section_portrait .progress .progress_dj h3:nth-child(1) {
+  font-size: .32rem;
+  top: .373333rem;
+  left: 1.36rem;
+}
+body .section_portrait .progress .progress_dj h3:nth-child(3) {
+  font-size: .32rem;
+  top: .373333rem;
+  right: 1.493333rem;
+}
+body .section_portrait .progress .progress_dj h2 {
+  line-height: .826667rem;
+  font-size: .48rem;
+  font-family: 'PingFang-SC-Bold';
+  font-weight: 700;
+  position: absolute;
+  top: .373333rem;
+  left: 4.64rem;
+}
+body .section_mission {
+  position: relative;
+  margin: 1.76rem auto 0 auto;
+  width: 9.2rem;
+  height: 8.373333rem;
+  background: #fff;
+  border-radius: .066667rem .066667rem 0 0;
+  box-shadow: 0 -0.053333rem 0.08rem rgba(38, 43, 46, 0.25);
+  font-family: 'PingFang-SC-Medium';
+}
+body .section_mission .mission_top {
+  width: 100%;
+  height: 4.186667rem;
+  display: flex;
+  /* 发布功课 */
+  /* 发布PO图 */
+  /* 发布视频 */
+}
+body .section_mission .mission_top .release_homework,
+body .section_mission .mission_top .release_PO,
+body .section_mission .mission_top .release_video {
+  width: 33.33333%;
+  height: 100%;
+}
+body .section_mission .mission_top .release_homework .homework {
+  width: 1.573333rem;
+  height: 1.44rem;
+  margin: .826667rem auto 0 auto;
+}
+body .section_mission .mission_top .release_homework .homework img {
+  width: 100%;
+  height: 100%;
+}
+body .section_mission .mission_top .release_homework .homework_content {
+  text-align: center;
+  padding-top: .373333rem;
+}
+body .section_mission .mission_top .release_homework .homework_content h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_mission .mission_top .release_homework .homework_content p {
+  color: #999999;
+  font-size: .293333rem;
+  padding-top: .133333rem;
+}
+body .section_mission .mission_top .release_PO .Po {
+  width: 1.573333rem;
+  height: 1.44rem;
+  margin: .906667rem auto 0 auto;
+}
+body .section_mission .mission_top .release_PO .Po img {
+  width: 100%;
+  height: 100%;
+}
+body .section_mission .mission_top .release_PO .Po_content {
+  text-align: center;
+  padding-top: .32rem;
+}
+body .section_mission .mission_top .release_PO .Po_content h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_mission .mission_top .release_PO .Po_content p {
+  color: #999999;
+  font-size: .293333rem;
+  padding-top: .133333rem;
+}
+body .section_mission .mission_top .release_video .video {
+  width: 1.573333rem;
+  height: 1.573333rem;
+  margin: .906667rem auto 0 auto;
+}
+body .section_mission .mission_top .release_video .video img {
+  width: 100%;
+  height: 100%;
+}
+body .section_mission .mission_top .release_video .video_content {
+  text-align: center;
+  padding-top: .213333rem;
+}
+body .section_mission .mission_top .release_video .video_content h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_mission .mission_top .release_video .video_content p {
+  color: #999999;
+  font-size: .293333rem;
+  padding-top: .106667rem;
+}
+body .section_mission .mission_bottom {
+  width: 100%;
+  height: 4.186667rem;
+  display: flex;
+  /* 发布问答 */
+  /* 文章置顶 */
+  /* 分享知耳 */
+}
+body .section_mission .mission_bottom .release_ask,
+body .section_mission .mission_bottom .release_stick,
+body .section_mission .mission_bottom .release_zhier {
+  width: 33.33333%;
+  height: 100%;
+}
+body .section_mission .mission_bottom .release_ask .ask {
+  width: 1.573333rem;
+  height: 1.44rem;
+  margin: .48rem auto 0 auto;
+}
+body .section_mission .mission_bottom .release_ask .ask img {
+  width: 100%;
+  height: 100%;
+}
+body .section_mission .mission_bottom .release_ask .ask_content {
+  text-align: center;
+  padding-top: .266667rem;
+}
+body .section_mission .mission_bottom .release_ask .ask_content h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_mission .mission_bottom .release_ask .ask_content p {
+  color: #999999;
+  font-size: .293333rem;
+  padding-top: .16rem;
+}
+body .section_mission .mission_bottom .release_stick .stick {
+  width: 1.706667rem;
+  height: 1.44rem;
+  margin: .666667rem auto 0 auto;
+}
+body .section_mission .mission_bottom .release_stick .stick img {
+  width: 100%;
+  height: 100%;
+}
+body .section_mission .mission_bottom .release_stick .stick_content {
+  text-align: center;
+  padding-top: .08rem;
+}
+body .section_mission .mission_bottom .release_stick .stick_content h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_mission .mission_bottom .release_stick .stick_content p {
+  color: #999999;
+  font-size: .293333rem;
+  padding-top: .16rem;
+}
+body .section_mission .mission_bottom .release_zhier .zhier {
+  width: 1.253333rem;
+  height: 1.44rem;
+  margin: .533333rem auto 0 auto;
+}
+body .section_mission .mission_bottom .release_zhier .zhier img {
+  width: 100%;
+  height: 100%;
+}
+body .section_mission .mission_bottom .release_zhier .zhier_content {
+  text-align: center;
+  padding-top: .226667rem;
+}
+body .section_mission .mission_bottom .release_zhier .zhier_content h3 {
+  color: #222222;
+  font-size: .373333rem;
+}
+body .section_mission .mission_bottom .release_zhier .zhier_content p {
+  padding-top: .133333rem;
+  color: #999999;
+  font-size: .106667rem;
+}
+body .section_mission::after {
+  content: '';
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-width: .266667rem;
+  transform: rotate(315deg);
+  border-style: solid;
+  border-color: #fff #fff transparent transparent;
+  box-shadow: 2px -2px 2px #ccc;
+}
+body #loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  width: 1.866667rem;
+  height: 1.866667rem;
+}
+body #loading #loading_info {
+  background: url(../../images/daren_img/donghua_01.gif) no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

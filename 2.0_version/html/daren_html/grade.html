@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>等级中心</title>
+    <link rel="stylesheet" href="../../common/base.css?version=1.0.0">
+    <link rel="stylesheet" href="../../css/daren_css/grade.css?version=1.0.0">
+    <script src="../../common/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 头部 -->
+        <!-- <header class="header">
+            返回图标
+            <i class="header_bg"></i>
+            <h1 class="header_grade">等级中心</h1>
+        </header> -->
+
+        <!-- 头像部分 -->
+        <section class="section_portrait">
+            <!-- 经验值说明 -->
+            <div class="portrait_experience">
+                <i class="portrait_experience_i"></i>
+                <span>
+                    <a href="experience.html">经验值说明</a>
+                </span>
+            </div>
+            <!-- 阴影的圆 -->
+            <!-- <i class="portrait_circle_i"></i> -->
+            <!-- 阴影上面的圆 -->
+            <div class="head_circle">
+                <!-- 包裹头像的div -->
+                <div class="head_child">
+                    <!-- <img :src="msg.avatar" alt=""> -->
+                    <img v-show="msg.avatar" :src="msg.avatar" alt="">
+                    <!-- 默认图片 -->
+                    <img v-show="!msg.avatar" src="../../images/daren_img//default.png" alt="">
+                    <!-- 等级 -->
+                    <div class="head_sun">
+                        <!-- Lv.2 -->
+                        <span>Lv.{{msg.level}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 用户名称 -->
+            <div class="user">
+                <h3 class="user_h3">{{msg.nickname}}</h3>
+            </div>
+            <!-- 经验值 -->
+            <div class="jy">
+                <span>{{msg.exp}}</span>
+                <span>经验值</span>
+            </div>
+            <!-- 进度条 -->
+            <div class="progress">
+                <!-- 底部div -->
+                <div class="static_propress" ref="static_propress"></div>
+                <!-- 左边固定进度条div -->
+                <div class="dynamic_propress" ref="dynamic_propress"></div>
+                <!-- 右边动态进度条div -->
+                <div class="state_propress">
+                    <!-- 进度 -->
+                    <div class="state_propress_div" ref="state_propress_div"></div>
+                </div>
+                <!-- 左边的小圆 -->
+                <div class="left_progress common_style">
+                    <i class="propress_i"></i>
+                </div>
+                <!-- 中间的小圆 -->
+                <div class="center_progress common_style big_box">
+                    <i class="propress_i big_box_i"></i>
+                </div>
+                <!-- 右边的小圆 -->
+                <div class="right_propress common_style">
+                    <i class="propress_i"></i>
+                </div>
+                <!-- 等级 -->
+                <div class="progress_dj">
+                    <h3 v-show="show">Lv.{{levelLeft}}</h3>
+                    <h2>Lv.{{msg.level}}</h2>
+                    <!-- <h2>Lv.{{dengji}}</h2> -->
+                    <h3>Lv.{{levelRight}}</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 任务部分 -->
+        <section class="section_mission">
+            <div class="mission_top">
+                <!-- 发布功课 -->
+                <div class="release_homework">
+                    <div class="homework">
+                        <img src="../../images/daren_img//homework.png" alt="">
+                    </div>
+                    <div class="homework_content">
+                        <h3>发布功课</h3>
+                        <p>+10经验值</p>
+                    </div>
+                </div>
+                <!-- 发布PO图 -->
+                <div class="release_PO">
+                    <div class="Po">
+                        <img src="../../images/daren_img//PO.png" alt="">
+                    </div>
+                    <div class="Po_content">
+                        <h3>发布PO图</h3>
+                        <p>+5经验值</p>
+                    </div>
+                </div>
+                <!-- 发布视频 -->
+                <div class="release_video">
+                    <div class="video">
+                        <img src="../../images/daren_img//video.png" alt="">
+                    </div>
+                    <div class="video_content">
+                        <h3>发布视频</h3>
+                        <p>+20经验值</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mission_bottom">
+                <!-- 发布问答 -->
+                <div class="release_ask">
+                    <div class="ask">
+                        <img src="../../images/daren_img//ask.png" alt="">
+                    </div>
+                    <div class="ask_content">
+                        <h3>发布问答</h3>
+                        <p>+2经验值</p>
+                    </div>
+                </div>
+                <!-- 文章置顶 -->
+                <div class="release_stick">
+                    <div class="stick">
+                        <img src="../../images/daren_img//stick.png" alt="">
+                    </div>
+                    <div class="stick_content">
+                        <h3>文章置顶</h3>
+                        <p>+50经验值</p>
+                    </div>
+                </div>
+                <!-- 分享知耳 -->
+                <div class="release_zhier">
+                    <div class="zhier">
+                        <img src="../../images/daren_img//zhier.png" alt="">
+                    </div>
+                    <div class="zhier_content">
+                        <h3>分享知耳</h3>
+                        <p>+5经验值</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 三角形 -->
+        </section>
+  <!-- loading -->
+  <section id="loading">
+        <i id="loading_info"></i>
+    </section>
+
+</header>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../common/common.js?version=1.0.0"></script>
+    <script src="../../js/daren_js/grade.js?version=1.0.0"></script>
+</body>
+
+</html>

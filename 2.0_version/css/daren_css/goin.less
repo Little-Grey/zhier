@@ -1,0 +1,96 @@
+body {
+    width: 10rem;
+    max-width: 10rem;
+    .header_bg {
+        width: 10rem;
+        height: 16.213333rem;
+        background: url(../../images/daren_img/goin_01.png) no-repeat;
+        background-size: contain;
+        position: relative;
+        /* 头像 */
+        .head_header {
+            width: 3.253333rem;
+            height: 3.253333rem;
+            border-radius: 50%;
+            border: .053333rem solid #fff;
+            position: absolute;
+            top: 5.706667rem;
+            left: 3.333333rem;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        /* 用户名称 */
+        .header_name {
+            font-size: .48rem;
+            color: #16A5AF;
+            text-align: center;
+            padding-top: .106667rem;
+            text-shadow: .026667rem .026667rem 0 #fff;
+            position: absolute;
+            top: 9.125rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* 按钮 */
+        .header_btn {
+            width: 5.52rem;
+            height: 1.493333rem;
+            background: #fff;
+            position: absolute; // bottom: 2.96rem;
+            bottom: 3.04rem;
+            left: 2.213333rem;
+            border-radius: .8rem;
+            border: .053333rem solid #1C1C1C;
+            animation: gun 1.5s infinite linear;
+            transform-origin: bottom;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: #222222;
+                font-size: .853333rem;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: .8rem;
+            }
+        }
+           /* loading */
+           #loading{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            display: none;
+            width: 1.866667rem;
+            height: 1.866667rem;
+            #loading_info{
+                background: url(../../images/daren_img/donghua_01.gif) no-repeat;
+                background-size:contain;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+    }
+    
+}
+
+/* 动画效果 */
+
+@keyframes gun {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(50deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}

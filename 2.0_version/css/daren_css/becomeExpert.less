@@ -1,0 +1,369 @@
+body {
+    width: 10rem;
+    max-width: 10rem;
+    /* 成为达人 */
+    .become_daren {
+        width: 10rem;
+        height: 1.12rem;
+        border-bottom: 1px solid #eee;
+        h2 {
+            color: #222;
+            font-size: .373333rem;
+            font-family: 'PingFang-SC-Medium';
+            text-align: center;
+            line-height: 1.12rem;
+        }
+    }
+    /* 达人头像信息 */
+    .personal_info {
+        width: 10rem;
+        height: 3.12rem;
+        display: flex;
+        /* 用户左边信息 */
+        .personal_info_left {
+            flex: 2 0 0;
+            position: relative;
+            .info_left_head {
+                width: 2.186667rem;
+                height: 2.186667rem;
+                background: #eee;
+                margin: .32rem 0 0 .986667rem;
+                overflow: hidden;
+                border-radius: 50%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+            /* 达人小图标 */
+            &::after {
+                content: '';
+                width: 1.253333rem;
+                height: .746667rem;
+                background: url(../../images/daren_img//daren_01.png) no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 1.573333rem;
+                left: 2.293333rem;
+            }
+        }
+        /* 用户右边信息 */
+        .personal_info_right {
+            flex: 3 0 0;
+            p {
+                font-family: 'PingFang-SC-Bold';
+                color: #222;
+                font-size: .4rem;
+                padding-top: 1.04rem;
+            }
+            span {
+                color: #16A5AF;
+                padding: .373333rem 0 0 0;
+                font-size: .32rem;
+                &:nth-child(2) {
+                    padding-top: .453333rem;
+                    font-size: .293333rem;
+                }
+                // &:nth-child(3) {
+                //     padding: .373333rem 0 0 0;
+                //     font-size: .32rem;
+                // }
+            }
+        }
+    }
+    /* 达人特权一 */
+    .privilege_noe {
+        width: 10rem;
+        height: 5.6rem;
+        /* 达人特权一title */
+        .privilege_title {
+            display: flex;
+            width: 10rem;
+            height: 1.333333rem;
+            .title_left {
+                flex: 1;
+                .prerogative_01 {
+                    width: 2.133333rem;
+                    height: .8rem;
+                    border-radius: 0 .066667rem .533333rem 0;
+                    background: #262B2E;
+                    h3 {
+                        font-family: 'PingFang-SC-Medium';
+                        font-size: .373333rem;
+                        color: #fff;
+                        text-align: center;
+                        line-height: .8rem;
+                    }
+                }
+            }
+            .title_right_02 {
+                flex: 3;
+                p {
+                    font-size: .373333rem;
+                    color: #222;
+                    padding-top: .266667rem;
+                    padding-left: .773333rem;
+                    font-weight: 600;
+                }
+            }
+        }
+        .privilege_video {
+            width: 10rem;
+            height: 4.506667rem;
+            display: flex;
+            /* 左边视频内容 */
+            .privilege_left {
+                display: flex;
+                flex: 1;
+                .privilege_video_left {
+                    width: 4.453333rem;
+                    height: 3.866667rem;
+                    margin: .24rem auto 0 auto;
+                    .privilege_img {
+                        width: 4.453333rem;
+                        height: 2.4rem;
+                        border-radius: .066667rem;
+                        position: relative;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .privilege_play {
+                            width: 1.333333rem;
+                            height: 1.333333rem;
+                            background: url(../../images/daren_img//play_01.png) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    .privilege_state {
+                        background: #fafafa;
+                        height: 1.44rem;
+                        p {
+                            padding: .133333rem 0 0 .133333rem;
+                            font-family: 'PingFang-SC-Medium';
+                            &:nth-child(1) {
+                                color: #222;
+                                font-size: .346667rem;
+                            }
+                            &:nth-child(2) {
+                                color: #16A5AF;
+                                font-size: .293333rem;
+                            }
+                        }
+                    }
+                }
+            }
+            /* 右边视频内容 */
+            .privilege_right {
+                display: flex;
+                flex: 1;
+                .privilege_video_right {
+                    width: 4.453333rem;
+                    height: 3.866667rem;
+                    margin: .24rem auto 0 auto;
+                    .privilege_img {
+                        width: 4.453333rem;
+                        height: 2.4rem;
+                        border-radius: .066667rem;
+                        position: relative;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .privilege_play {
+                            width: 1.333333rem;
+                            height: 1.333333rem;
+                            background: url(../../images/daren_img//play_01.png) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    .privilege_state {
+                        background: #fafafa;
+                        height: 1.44rem;
+                        p {
+                            padding: .133333rem 0 0 .133333rem;
+                            font-family: 'PingFang-SC-Medium';
+                            &:nth-child(1) {
+                                color: #222;
+                                font-size: .346667rem;
+                            }
+                            &:nth-child(2) {
+                                color: #16A5AF;
+                                font-size: .293333rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 达人特权二 */
+    .privilege_two {
+        width: 10rem;
+        height: 5.146667rem; // background: pink;
+        /* 达人特权二title */
+        .privilege_title {
+            display: flex;
+            width: 10rem;
+            height: 1.626667rem;
+            /* 特权标志 */
+            .title_left {
+                flex: 1;
+                .prerogative_01 {
+                    width: 2.133333rem;
+                    height: .8rem;
+                    border-radius: 0 .066667rem .533333rem 0;
+                    background: #262B2E;
+                    h3 {
+                        font-family: 'PingFang-SC-Medium';
+                        font-size: .373333rem;
+                        color: #fff;
+                        text-align: center;
+                        line-height: .8rem;
+                    }
+                }
+            }
+            /* 特权title */
+            .title_right_02 {
+                flex: 3;
+                p {
+                    &:nth-child(1) {
+                        font-size: .373333rem;
+                        color: #222;
+                        padding: .266667rem 0 0 1.253333rem;
+                        font-weight: 600;
+                    }
+                    &:nth-child(2) {
+                        font-family: 'PingFang-SC-Medium';
+                        font-weight: 100;
+                        color: #222;
+                        font-size: .32rem;
+                        padding: .133333rem 0 0 .293333rem;
+                    }
+                }
+            }
+        }
+        /* 达人特权二title */
+        .privilege_head {
+            width: 10rem;
+            height: 3.493333rem;
+            display: flex;
+            .privilege_daren {
+                width: 2.666667rem;
+                height: 2.666667rem;
+                /* 达人一 */
+                &:nth-child(1) {
+                    flex: 1;
+                    .privilege_daren_img {
+                        position: relative;
+                        margin: 0 auto;
+                        width: 2.666667rem;
+                        height: 2.666667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        /* 达人小图标 */
+                        i {
+                            width: 1.146667rem;
+                            height: .773333rem;
+                            background: url(../../images/daren_img//daren_01.png) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            bottom: .133333rem;
+                            right: -.266667rem;
+                        }
+                    }
+                }
+                /* 达人二 */
+                &:nth-child(2) {
+                    flex: 1;
+                    .privilege_daren_img {
+                        position: relative;
+                        margin: 0 auto;
+                        width: 2.666667rem;
+                        height: 2.666667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        /* 达人小图标 */
+                        i {
+                            width: 1.146667rem;
+                            height: .773333rem;
+                            background: url(../../images/daren_img//daren_01.png) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            bottom: .133333rem;
+                            right: -.266667rem;
+                        }
+                    }
+                }
+                /* 达人三 */
+                &:nth-child(3) {
+                    flex: 1;
+                    .privilege_daren_img {
+                        position: relative;
+                        margin: 0 auto;
+                        width: 2.666667rem;
+                        height: 2.666667rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        /* 达人小图标 */
+                        i {
+                            width: 1.146667rem;
+                            height: .773333rem;
+                            background: url(../../images/daren_img//daren_01.png) no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            bottom: .133333rem;
+                            right: -.266667rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* 底部 */
+    .footer {
+        width: 10rem;
+        height: 1.013333rem;
+        p {
+            color: #222;
+            font-size: .373333rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+        }
+    }
+        /* loading */
+        #loading{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            display: none;
+            width: 1.866667rem;
+            height: 1.866667rem;
+            #loading_info{
+                background: url(../../images/daren_img//donghua_01.gif) no-repeat;
+                background-size:contain;
+                width: 100%;
+                height: 100%;
+                display: block;
+                
+            }
+        }
+}

@@ -1,0 +1,21 @@
+body {
+  width: 10rem;
+  max-width: 10rem;
+}
+body .wrapper {
+  padding: .266667rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+body .wrapper header {
+  height: .826667rem;
+  width: 100%;
+  border-bottom: .013333rem solid #eee;
+}
+body .wrapper header h2 {
+  line-height: .826667rem;
+  font-size: .533333rem;
+}
+body .wrapper p {
+  padding-top: .266667rem;
+  font-size: .293333rem;
+}
