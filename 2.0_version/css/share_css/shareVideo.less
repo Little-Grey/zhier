@@ -1,0 +1,199 @@
+@f: #fff;
+@2: #222;
+@9: #999;
+@6: #666;
+@b: #bbb;
+body {
+    width: 10rem;
+    max-width: 10rem; // background:green;
+    .wrapper {
+        width: 9.466667rem;
+        margin: 0 auto;
+        background: #16A5AF;
+        /* 小白必看 */
+        .must {
+            width: 9.36rem;
+            height: 4.625rem;
+            background: @f;
+            margin: 0 .053333rem;
+            .must_top {
+                color: @2;
+                font-size: .48rem;
+                font-weight: 700;
+                padding: .4rem .4rem .373333rem .346667rem
+            }
+            .must_center {
+                color: @9;
+                font-size: .266667rem;
+                padding: 0 0 .266667rem .346667rem;
+            }
+            .must_bottom {
+                // display: flex;
+                width: 100%;
+                img {
+                    float: left;
+                    width: .8rem;
+                    height: .8rem;
+                    background: red;
+                    border-radius: 50%;
+                    margin-left: .373333rem;
+                }
+                .must_name {
+                    float: left;
+                    padding-left: .133333rem;
+                    p {
+                        font-size: .32rem;
+                        &:nth-child(1) {
+                            color: @9;
+                        }
+                        &:nth-child(2) {
+                            color: @b;
+                        }
+                    }
+                }
+                .must_span {
+                    // display: flex;
+                    float: right;
+                    padding-right: .4rem; // justify-content:flex-end;
+                    // display: block;
+                    color: @9;
+                    font-size: .32rem;
+                }
+            }
+        }
+        /* video */
+        .video {
+            width: 9.36rem;
+            background: @f;
+            margin: 0 .053333rem;
+            /* 图片+播放按钮 */
+            .video_top {
+                margin: 0 auto;
+                width: 8.933333rem;
+                height: 5.333333rem;
+                background: red;
+                position: relative;
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: url(../../images/share_img/share_video_01.png) no-repeat;
+                    background-size: cover;
+                    width: 1.493333rem;
+                    height: 1.493333rem;
+                    &::after {
+                        content: '01:00';
+                        font-size: .373333rem;
+                        color: @f;
+                        font-weight: 100;
+                        display: block;
+                        padding: 1.786667rem 0 0 .24rem;
+                    }
+                }
+            }
+            /* 文字介绍 */
+            .introduce {
+                padding: 0 .266667rem;
+                text-align: left;
+                p {
+                    font-size: .373333rem;
+                    color: @2;
+                    line-height: .5625rem;
+                    &:nth-child(1) {
+                        padding-top: .32rem;
+                    }
+                    &:nth-child(2) {
+                        padding: .4rem 0 .613333rem 0;
+                    }
+                }
+            }
+            /* 点击/查看量 */
+            .examine {
+                margin: 0 .266667rem; // background: red;
+                display: flex;
+                text-align: center;
+                width: 8.8rem;
+                height: .8rem;
+                border-top: .013333rem solid @2;
+                border-bottom: .013333rem solid @2;
+                span {
+                    font-size: .373333rem;
+                    color: @2;
+                    flex: 1;
+                    height: .8rem;
+                    line-height: .8rem;
+                    position: relative;
+                    &:nth-child(1) {
+                        &::after {
+                            content: '';
+                            width: .293333rem;
+                            height: .24rem;
+                            background: url(../../images/share_img/comment_01.png) no-repeat;
+                            background-size: cover;
+                            position: absolute;
+                            top: .266667rem;
+                            left: .533333rem;
+                        }
+                    }
+                    &:nth-child(2) {
+                        &::after {
+                            content: '';
+                            width: .4rem;
+                            height: .24rem;
+                            background: url(../../images/share_img/comment_01.png) no-repeat;
+                            background-size: cover;
+                            position: absolute;
+                            top: .266667rem;
+                            left: .533333rem;
+                        }
+                    }
+                    &:nth-child(3) {
+                        &::after {
+                            content: '';
+                            width: .293333rem;
+                            height: .24rem;
+                            background: url(../../images/share_img/collect_01.png) no-repeat;
+                            background-size: cover;
+                            position: absolute;
+                            top: .266667rem;
+                            left: .533333rem;
+                        }
+                    }
+                }
+            }
+        }
+        /* 点击评论按钮 */
+        .btn {
+            width: 9.36rem;
+            height: 1.946667rem;
+            background: @f;
+            margin: 0 .053333rem 0 .053333rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .btn_discuss {
+                width: 3.333333rem;
+                height: .933333rem;
+                color: @2;
+                border-radius: .48rem;
+                border: 1px solid @2;
+                text-align: center;
+                line-height: .933333rem;
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    font-size: .4rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .dibian {
+        background: #16A5AF;
+        width: 9.466667rem;
+        height: .053333rem;
+        margin: 0 auto;
+    }
+}

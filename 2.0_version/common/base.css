@@ -107,14 +107,14 @@ em {
 }
 /*css初始化完成*/
 /* 公共头部 */
-/* 头部 */
-.header {
+/* 达人头部 */
+.header_daren {
   width: 10rem;
   height: 1.173333rem;
   background: #262B2E;
   position: relative;
 }
-.header .header_bg {
+.header_daren .header_bg {
   width: .533333rem;
   height: .533333rem;
   background: url(../images/back_01.png) no-repeat;
@@ -123,10 +123,37 @@ em {
   top: .32rem;
   left: .266667rem;
 }
-.header .header_grade {
+.header_daren .header_grade {
   color: #fff;
   font-size: .48rem;
   height: 1.173333rem;
   text-align: center;
   line-height: 1.173333rem;
+}
+.header_Share {
+  width: 9.466667rem;
+  height: 1.066667rem;
+  background: #16A5AF;
+  display: flex;
+  align-items: center;
+}
+.header_Share .header_img {
+  width: .453333rem;
+  height: .666667rem;
+  margin: 0 0 0 .266667rem;
+  background: url(../images/share_img/share_zhier_01.png) no-repeat;
+  background-size: contain;
+}
+.header_Share .header_text {
+  padding: 0 0 0 .266667rem;
+}
+.header_Share .header_text p:nth-child(1) {
+  font-size: .373333rem;
+  color: #fff;
+  font-weight: 600;
+}
+.header_Share .header_text p:nth-child(2) {
+  font-size: .24rem;
+  color: #fff;
+  font-weight: 100;
 }

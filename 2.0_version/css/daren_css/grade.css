@@ -91,9 +91,10 @@ body .section_portrait .head_circle .head_child .head_sun span {
   color: #3f1f1f;
 }
 body .section_portrait .user {
+  width: 100%;
   position: absolute;
   bottom: 1.733333rem;
-  left: 4.053333rem;
+  text-align: center;
 }
 body .section_portrait .user h3 {
   color: #222222;
