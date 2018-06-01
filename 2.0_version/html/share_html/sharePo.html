@@ -7,13 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../../common/base.css">
-    <link rel="stylesheet" href="../../css/share_css/shareVideo.css">
+    <link rel="stylesheet" href="../../css/share_css/sharePo.css">
     <script src="../../common/flexible.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
 
 <body>
-
     <div id="app">
         <div class="wrapper">
             <!-- 分享页面的知耳头部 -->
@@ -26,37 +25,39 @@
                     <p>A profound beauty community</p>
                 </div>
             </header>
-            <!-- 小白必看 -->
-            <article class="must">
-                <h2 class="must_top">{{msg.title}}</h2>
-                <!-- <h2 class="must_top">小白必看！好用又不贵的化妆神器都在这里啦！！</h2> -->
-                <p class="must_center">2018-08-08</p>
-                <div class="must_bottom">
-                    <img :src="msg.member_avatar" alt="">
-                    <div class="must_name">
+            <!-- 基本信息 -->
+            <section class="user">
+                <ul class="user_ul">
+                    <li>
+                        <img :src="msg.member_avatar" alt="">
+                    </li>
+                    <li>
                         <p>{{msg.member_nickname}}</p>
                         <p>18岁 | 冷一白 | 混油 | 广州</p>
-                    </div>
-                    <span class="must_span">视频</span>
-                </div>
-            </article>
-            <!-- video -->
-            <section class="video">
+                    </li>
+                    <li>
+                        <span>PO图</span>
+                    </li>
+                </ul>
+                <p class="date">2018-08-08</p>
+            </section>
+            <!-- Po -->
+            <section class="Po">
                 <!-- 图片+播放按钮 -->
-                <div class="video_top">
-                    <img :src="msg.cover" alt="">
-                    <i></i>
-                    <span>0{{msg.duration}}:00</span>
+                <div class="Po_top">
+                    <img :src="msg.image" alt="">
                 </div>
                 <!-- 文字介绍 -->
                 <div class="introduce">
+                    <!-- <p>化妆这件事</p>
+                <p>化妆这件事</p> -->
                     <p>{{msg.content}}</p>
                     <p>{{msg.content}}</p>
                 </div>
                 <!-- 点击/查看量 -->
                 <div class="examine">
+                    <span>{{msg.collection_num}}</span>
                     <span>{{msg.view_num}}</span>
-                    <span>{{msg.comment_num}}</span>
                     <span>{{msg.like_num}}</span>
                 </div>
             </section>
@@ -67,25 +68,25 @@
                 </div>
             </section>
         </div>
+
+        <div class="footer">
+            <ul class="footer_ul">
+                <li></li>
+                <li>
+                    <p>知耳</p>
+                    <p>有深度的美妆社区</p>
+                </li>
+                <li>
+                    <a href="javascript:;">下载APP</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <!-- 固定定位下载App按钮 -->
-    <div class="footer">
-        <ul class="footer_ul">
-            <li></li>
-            <li>
-                <p>知耳</p>
-                <p>有深度的美妆社区</p>
-            </li>
-            <li>
-                <a href="javascript:;">下载APP</a>
-            </li>
-        </ul>
-    </div>
 
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="../../common/common.js"></script>
-    <script src="../../js/share_js/shareVideo.js"></script>
+    <script src="../../js/share_js/sharePo.js"></script>
 </body>
 
 </html>

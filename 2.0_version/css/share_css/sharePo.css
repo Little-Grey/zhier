@@ -1,64 +1,70 @@
 body {
   width: 10rem;
   max-width: 10rem;
+  /* 底边 */
+  /* 顶出来的空间 */
 }
 body .wrapper {
   width: 9.466667rem;
   margin: 0 auto;
   background: #16A5AF;
   margin-bottom: 1.386667rem;
-  /* 小白必看 */
-  /* video */
+  /* 基本信息 */
+  /* Po */
   /* 点击评论按钮 */
 }
-body .wrapper .must {
+body .wrapper .user {
   width: 9.36rem;
-  height: 3.6rem;
+  height: 2.373333rem;
   background: #fff;
   margin: 0 .053333rem;
 }
-body .wrapper .must .must_top {
-  color: #222;
-  font-size: .48rem;
-  font-weight: 700;
-  padding: 0.4rem 0.4rem 0.373333rem 0.346667rem;
-}
-body .wrapper .must .must_center {
-  color: #999;
-  font-size: .266667rem;
-  padding: 0 0 .266667rem .346667rem;
-}
-body .wrapper .must .must_bottom {
+body .wrapper .user .user_ul {
   width: 100%;
+  height: 1.6rem;
 }
-body .wrapper .must .must_bottom img {
+body .wrapper .user .user_ul li {
   float: left;
+}
+body .wrapper .user .user_ul li:nth-child(1) {
+  border-radius: 50%;
   width: .8rem;
   height: .8rem;
-  border-radius: 50%;
-  margin-left: .373333rem;
+  margin: .4rem 0 0 .373333rem;
+}
+body .wrapper .user .user_ul li:nth-child(1) img {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
-body .wrapper .must .must_bottom .must_name {
-  float: left;
-  padding-left: .133333rem;
+body .wrapper .user .user_ul li:nth-child(2) {
+  margin: .4rem 0 0 .133333rem;
 }
-body .wrapper .must .must_bottom .must_name p {
+body .wrapper .user .user_ul li:nth-child(2) p {
   font-size: .32rem;
 }
-body .wrapper .must .must_bottom .must_name p:nth-child(1) {
-  color: #999;
+body .wrapper .user .user_ul li:nth-child(2) p:nth-child(1) {
+  color: #666;
 }
-body .wrapper .must .must_bottom .must_name p:nth-child(2) {
+body .wrapper .user .user_ul li:nth-child(2) p:nth-child(2) {
   color: #bbb;
+  font-weight: 100;
 }
-body .wrapper .must .must_bottom .must_span {
+body .wrapper .user .user_ul li:nth-child(3) {
+  margin: .666667rem .293333rem 0 0;
   float: right;
-  padding-right: .4rem;
-  color: #999;
-  font-size: .32rem;
 }
-body .wrapper .video {
+body .wrapper .user .user_ul li:nth-child(3) span {
+  font-size: .32rem;
+  color: #999;
+}
+body .wrapper .user .date {
+  color: #999;
+  font-size: .266667rem;
+  padding-left: .346667rem;
+}
+body .wrapper .Po {
   width: 9.36rem;
   background: #fff;
   margin: 0 .053333rem;
@@ -66,53 +72,33 @@ body .wrapper .video {
   /* 文字介绍 */
   /* 点击/查看量 */
 }
-body .wrapper .video .video_top {
+body .wrapper .Po .Po_top {
   margin: 0 auto;
   width: 8.933333rem;
   height: 5.333333rem;
   position: relative;
 }
-body .wrapper .video .video_top img {
+body .wrapper .Po .Po_top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body .wrapper .video .video_top i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: url(../../images/share_img/share_video_01.png) no-repeat;
-  background-size: cover;
-  width: 1.493333rem;
-  height: 1.493333rem;
-}
-body .wrapper .video .video_top span {
-  font-size: .373333rem;
-  color: #fff;
-  font-weight: 100;
-  display: block;
-  position: absolute;
-  top: 3.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-body .wrapper .video .introduce {
+body .wrapper .Po .introduce {
   padding: 0 .266667rem;
   text-align: left;
 }
-body .wrapper .video .introduce p {
+body .wrapper .Po .introduce p {
   font-size: .373333rem;
   color: #222;
   line-height: .5625rem;
 }
-body .wrapper .video .introduce p:nth-child(1) {
+body .wrapper .Po .introduce p:nth-child(1) {
   padding-top: .32rem;
 }
-body .wrapper .video .introduce p:nth-child(2) {
+body .wrapper .Po .introduce p:nth-child(2) {
   padding: .4rem 0 .613333rem 0;
 }
-body .wrapper .video .examine {
+body .wrapper .Po .examine {
   margin: 0 .266667rem;
   display: flex;
   text-align: center;
@@ -121,7 +107,7 @@ body .wrapper .video .examine {
   border-top: 0.013333rem solid #222;
   border-bottom: 0.013333rem solid #222;
 }
-body .wrapper .video .examine span {
+body .wrapper .Po .examine span {
   font-size: .373333rem;
   color: #222;
   flex: 1;
@@ -129,19 +115,9 @@ body .wrapper .video .examine span {
   line-height: .8rem;
   position: relative;
 }
-body .wrapper .video .examine span:nth-child(1)::after {
+body .wrapper .Po .examine span:nth-child(1)::after {
   content: '';
   width: .293333rem;
-  height: .24rem;
-  background: url(../../images/share_img/comment_04.png) no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: .266667rem;
-  left: .533333rem;
-}
-body .wrapper .video .examine span:nth-child(2)::after {
-  content: '';
-  width: .4rem;
   height: .24rem;
   background: url(../../images/share_img/comment_01.png) no-repeat;
   background-size: cover;
@@ -149,7 +125,17 @@ body .wrapper .video .examine span:nth-child(2)::after {
   top: .266667rem;
   left: .533333rem;
 }
-body .wrapper .video .examine span:nth-child(3)::after {
+body .wrapper .Po .examine span:nth-child(2)::after {
+  content: '';
+  width: .4rem;
+  height: .24rem;
+  background: url(../../images/share_img/comment_04.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: .266667rem;
+  left: .533333rem;
+}
+body .wrapper .Po .examine span:nth-child(3)::after {
   content: '';
   width: .293333rem;
   height: .24rem;
@@ -184,4 +170,10 @@ body .wrapper .btn .btn_discuss a {
   display: block;
   font-size: .4rem;
   font-weight: 600;
+}
+body .dibian {
+  background: #16A5AF;
+  width: 9.466667rem;
+  height: .053333rem;
+  margin: 0 auto;
 }

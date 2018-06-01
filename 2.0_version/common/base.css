@@ -157,3 +157,54 @@ em {
   color: #fff;
   font-weight: 100;
 }
+/* 固定定位下载App按钮 */
+.footer {
+  width: 10rem;
+  height: 1.386667rem;
+  background: #ffffff;
+  box-shadow: 0.026667rem 0px 0.106667rem rgba(51, 51, 51, 0.55);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.footer .footer_ul {
+  width: 100%;
+  height: 100%;
+}
+.footer .footer_ul li:nth-child(1) {
+  float: left;
+  width: .933333rem;
+  height: .933333rem;
+  background: url(../images/share_img/zhier_01.png) no-repeat;
+  background-size: cover;
+  margin: .24rem 0 0 .24rem;
+}
+.footer .footer_ul li:nth-child(2) {
+  float: left;
+  margin: .213333rem 0 0 .266667rem;
+}
+.footer .footer_ul li:nth-child(2) p:nth-child(1) {
+  font-size: .373333rem;
+  color: #333;
+}
+.footer .footer_ul li:nth-child(2) p:nth-child(2) {
+  font-size: .32rem;
+  color: #999;
+}
+.footer .footer_ul li:nth-child(3) {
+  float: right;
+  width: 2.213333rem;
+  height: .933333rem;
+  background: #333;
+  border-radius: .053333rem;
+  margin: .24rem .24rem 0 0;
+}
+.footer .footer_ul li:nth-child(3) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: .933333rem;
+  font-size: .32rem;
+  color: #fff;
+}
