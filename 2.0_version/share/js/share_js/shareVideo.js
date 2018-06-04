@@ -1,0 +1,1 @@
+"use strict";new Vue({el:"#app",data:{msg:{}},created:function(){this.getVideo()},methods:{getVideo:function(){var e=this;$.ajax({type:"get",url:baseUrl+"/v1/article/video?article_id=1742",success:function(t){console.log(t),e.msg=t.data},error:function(e){console.log(e)}})}}});

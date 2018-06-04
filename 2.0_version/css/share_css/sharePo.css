@@ -1,17 +1,44 @@
 body {
   width: 10rem;
   max-width: 10rem;
-  /* 底边 */
-  /* 顶出来的空间 */
+  /* 固定定位下载App按钮 */
 }
 body .wrapper {
   width: 9.466667rem;
   margin: 0 auto;
   background: #16A5AF;
   margin-bottom: 1.386667rem;
+  /* 分享页面的知耳头部 */
   /* 基本信息 */
   /* Po */
   /* 点击评论按钮 */
+}
+body .wrapper .header_Share {
+  width: 9.466667rem;
+  height: 1.066667rem;
+  background: #16A5AF;
+  display: flex;
+  align-items: center;
+}
+body .wrapper .header_Share .header_img {
+  width: .453333rem;
+  height: .666667rem;
+  margin: 0 0 0 .266667rem;
+  background: url(../../images/share_img/share_zhier_01.png) no-repeat;
+  background-size: contain;
+}
+body .wrapper .header_Share .header_text {
+  padding: 0 0 0 .266667rem;
+}
+body .wrapper .header_Share .header_text p:nth-child(1) {
+  font-size: .373333rem;
+  color: #fff;
+  font-weight: 600;
+}
+body .wrapper .header_Share .header_text p:nth-child(2) {
+  font-size: .24rem;
+  color: #fff;
+  font-weight: 100;
 }
 body .wrapper .user {
   width: 9.36rem;
@@ -42,13 +69,9 @@ body .wrapper .user .user_ul li:nth-child(2) {
   margin: .4rem 0 0 .133333rem;
 }
 body .wrapper .user .user_ul li:nth-child(2) p {
-  font-size: .32rem;
-}
-body .wrapper .user .user_ul li:nth-child(2) p:nth-child(1) {
+  padding-top: .213333rem;
   color: #666;
-}
-body .wrapper .user .user_ul li:nth-child(2) p:nth-child(2) {
-  color: #bbb;
+  font-size: .32rem;
   font-weight: 100;
 }
 body .wrapper .user .user_ul li:nth-child(3) {
@@ -171,9 +194,53 @@ body .wrapper .btn .btn_discuss a {
   font-size: .4rem;
   font-weight: 600;
 }
-body .dibian {
-  background: #16A5AF;
-  width: 9.466667rem;
-  height: .053333rem;
-  margin: 0 auto;
+body .footer {
+  width: 10rem;
+  height: 1.386667rem;
+  background: #ffffff;
+  box-shadow: 0.026667rem 0px 0.106667rem rgba(51, 51, 51, 0.55);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+body .footer .footer_ul {
+  width: 100%;
+  height: 100%;
+}
+body .footer .footer_ul li:nth-child(1) {
+  float: left;
+  width: .933333rem;
+  height: .933333rem;
+  background: url(../../images/share_img/zhier_01.png) no-repeat;
+  background-size: cover;
+  margin: .24rem 0 0 .24rem;
+}
+body .footer .footer_ul li:nth-child(2) {
+  float: left;
+  margin: .213333rem 0 0 .266667rem;
+}
+body .footer .footer_ul li:nth-child(2) p:nth-child(1) {
+  font-size: .373333rem;
+  color: #333;
+}
+body .footer .footer_ul li:nth-child(2) p:nth-child(2) {
+  font-size: .32rem;
+  color: #999;
+}
+body .footer .footer_ul li:nth-child(3) {
+  float: right;
+  width: 2.213333rem;
+  height: .933333rem;
+  background: #333;
+  border-radius: .053333rem;
+  margin: .24rem .24rem 0 0;
+}
+body .footer .footer_ul li:nth-child(3) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: .933333rem;
+  font-size: .32rem;
+  color: #fff;
 }

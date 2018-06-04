@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入swiper.css -->
+    <link href="https://cdn.bootcss.com/Swiper/4.2.0/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/base.css">
+    <link rel="stylesheet" href="../../css/probation_css/exchange.css">
+    <script src="../../common/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 头部 -->
+        <header class="header">
+            <!-- 轮播图 -->
+            <div class="header_carousel">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
+
+            </div>
+            <!-- 左上角右上角小按钮 -->
+            <div class="header_top">
+                <img src="../../images/probation_img/back_01.png" alt="">
+                <img src="../../images/probation_img/share_01.png" alt="">
+                <div class="header_box">
+                    <p>开始倒计时</p>
+                    <p>70:54:32</p>
+                </div>
+            </div>
+            <!-- 轮播图下面的说明 -->
+            <div class="header_state">
+                <div class="header_state_top">
+                    <p>IPSA明净亮肌磨砂面膜IPSA明净亮肌磨砂面膜IPSA明净亮肌磨砂面膜IPSA明净亮肌磨砂面膜</p>
+                </div>
+                <div class="header_state_center">
+                    <div class="requirement">
+                        <span>申请条件：</span>
+                        <span>900</span>
+                        <span>知币</span>
+                    </div>
+                    <!-- 小头像 -->
+                    <div class="Plebz">
+                        <span>
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </span>
+                        <span>
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </span>
+                        <span>
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </span>
+                        <span>
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </span>
+                        <span>
+                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+                        </span>
+                    </div>
+                </div>
+                <!-- 限量多少份 -->
+                <div class="header_state_bottom">
+                    <div class="quantity_left">
+                        <span>限量</span>
+                        <span>100</span>
+                        <span>份</span>
+                    </div>
+                    <div class="quantity_right">
+                        <span>389</span>
+                        <span>人参与</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 下面部分 -->
+        <section class="activity">
+            <div class="activity_img">
+                <img src="../../images/probation_img/header_02.jpeg" alt="">
+            </div>
+            <div class="activity_declare">
+                <div class="activity_declare_top">
+                    <h2>活动说明</h2>
+                    <p>1.将从申请热度榜的用户中抽出试用数量的名额。</p>
+                    <p>2.可以通过分享我的热度页面给好友，增加自己在申请榜中的排名。</p>
+                    <p>3.该活动的解释权归知耳所有。</p>
+                </div>
+                <!-- 按钮 -->
+                <div class="activity_declare_btn">
+                    <a href="javascripg:;">立即申请 <span>(900知币)</span></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <!-- 引入swiperjs -->
+    <script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
+    <script src="../../js/probation_js/exchange.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal', //横向切换
+            loop: true, //无限循环
+
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction', //小圆点的类型
+            }
+        })
+    </script>
+</body>
+
+</html>

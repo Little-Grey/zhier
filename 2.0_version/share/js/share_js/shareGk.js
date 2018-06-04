@@ -1,0 +1,1 @@
+"use strict";new Vue({el:"#app",data:{msg:{},products:{},isShow:!0},created:function(){this.getGk()},methods:{getGk:function(){var t=this;$.ajax({type:"get",url:baseUrl+"/v1/article/diary?article_id=1677&category_id=38",success:function(e){t.msg=e.data,t.products=e.data.product[0]},error:function(t){console.log(t)}})}}});

@@ -9,149 +9,172 @@
     <link rel="stylesheet" href="../../common/base.css">
     <link rel="stylesheet" href="../../css/share_css/shareGk.css">
     <script src="../../common/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <!-- 分享页面的知耳头部 -->
-        <header class="header_Share">
-            <!-- 背景图片 -->
-            <i class="header_img"></i>
-            <!-- 文案 -->
-            <div class="header_text">
-                <p>知耳</p>
-                <p>A profound beauty community</p>
-            </div>
-        </header>
-        <!-- 小白必看 -->
-        <article class="must">
-            <h2 class="must_top">小白必看！好用又不贵的化妆神器都在这里啦！！</h2>
-            <p class="must_center">2018-08-08</p>
-            <div class="must_bottom">
-                <img src="" alt="">
-                <div class="must_name">
-                    <p>精致的猪猪女孩</p>
-                    <p>18岁 | 冷一白 | 混油 | 广州</p>
+    <div id="app">
+        <div class="wrapper">
+            <!-- 分享页面的知耳头部 -->
+            <header class="header_Share">
+                <!-- 背景图片 -->
+                <i class="header_img"></i>
+                <!-- 文案 -->
+                <div class="header_text">
+                    <p>知耳</p>
+                    <p>A profound beauty community</p>
                 </div>
-                <span class="must_span">功课</span>
-            </div>
-        </article>
-        <!-- SK2 -->
-        <section class="sk">
-            <ul class="sk_ul">
-                <li>
-                    <p>SK2氨基酸洗面奶</p>
-                </li>
-                <li>
-                    <i>成分</i>
-                    <span>成分成分成分成分成分成分成分成分成分成</span>
-                </li>
-                <li>
-                    <i>补充</i>
-                    <span>成分成分成分成分成分成分成分成分成分成</span>
-                </li>
-                <li>
-                    <i>优点</i>
-                    <span>优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优...</span>
-                </li>
-                <li>
-                    <i>缺点</i>
-                    <span>优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优点优点优点优点优优点优点优点优点优点优...</span>
-                </li>
-                <li>
-                    <i>使用评分：</i>
-                    <div class="comment">
-                        <img src="../../images/share_img/comment_02.png" alt="">
-                        <img src="../../images/share_img/comment_02.png" alt="">
-                        <img src="../../images/share_img/comment_02.png" alt="">
-                        <img src="../../images/share_img/comment_02.png" alt="">
-                        <img src="../../images/share_img/comment_03.png" alt="">
+            </header>
+            <!-- 小白必看 -->
+            <article class="must">
+                <h2 class="must_top">{{msg.title}}</h2>
+                <p class="must_center">2018-08-08</p>
+                <div class="must_bottom">
+                    <img :src="msg.member_avatar" alt="">
+                    <div class="must_name">
+                        <p>{{msg.member_nickname}}</p>
+                        <p>{{msg.age}}岁 | {{msg.skin_color}} | {{msg.skin_type}} | {{msg.city_area_name}}</p>
                     </div>
+                    <span class="must_span">功课</span>
+                </div>
+            </article>
+            <!-- SK2 -->
+            <section class="sk">
+                <ul class="sk_ul">
+                    <li>
+                        <p>{{products.category_name}}</p>
+                    </li>
+                    <li>
+                        <i>成分</i>
+                        <span>{{products.core}}</span>
+                    </li>
+                    <li>
+                        <i>补充</i>
+                        <span>{{products.extend}}</span>
+                    </li>
+                    <li>
+                        <i>优点</i>
+                        <span>{{products.advantages}}</span>
+                    </li>
+                    <li>
+                        <i>缺点</i>
+                        <span>{{products.disadvantages}}</span>
+                    </li>
+                    <li>
+                        <i>使用评分：</i>
+                        <div class="comment">
+                            <!-- 第一课星星 -->
+                            <img v-if="products.score == 1" src="../../images/share_img/comment_03.png" alt="">
+                            <img v-if="products.score >= 2" src="../../images/share_img/comment_02.png" alt="">
 
-                    <span>（4.5分）</span>
-                </li>
-            </ul>
-        </section>
-        <!-- 用户上传的图片 -->
-        <section class="up_img">
-            <div class="up_box">
-                <!-- 九宫图 -->
-                <ul class="up_box_ul">
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
-                    </li>
-                    <li>
-                        <img src="" alt="">
+                            <!-- 第二颗星星 -->
+                            <img v-if="products.score == 3" src="../../images/share_img/comment_03.png" alt="">
+                            <img v-if="products.score >= 4" src="../../images/share_img/comment_02.png" alt="">
+
+                            <!-- 第三课星星 -->
+                            <img v-if="products.score == 5" src="../../images/share_img/comment_03.png" alt="">
+                            <img v-if="products.score >= 6" src="../../images/share_img/comment_02.png" alt="">
+
+                            <!-- 第四颗星星 -->
+                            <img v-if="products.score == 7" src="../../images/share_img/comment_03.png" alt="">
+                            <img v-if="products.score >= 8" src="../../images/share_img/comment_02.png" alt="">
+
+                            <!-- 第五颗星星 -->
+                            <img v-if="products.score == 9" src="../../images/share_img/comment_03.png" alt="">
+                            <img v-if="products.score >= 10" src="../../images/share_img/comment_02.png" alt="">
+                        </div>
+                        <!-- 分数 -->
+                        <span>（{{products.score}}.0）</span>
                     </li>
                 </ul>
-            </div>
-        </section>
+            </section>
+            <!-- 用户上传的图片 -->
+            <section class="up_img">
+                <div class="up_box">
+                    <!-- 九宫图 -->
+                    <ul class="up_box_ul">
+                        <!-- <li v-for="item in products.image">
+                            <img :src="item" alt="">
+                        </li> -->
+                        <li v-for="item in products.image">
+                            <img :src="item" alt="">
+                        </li>
+                        <!-- <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                        </li> -->
+                    </ul>
+                </div>
+            </section>
 
-        <!-- 点击查看更多产品 -->
-        <section class="click_blook">
-            <div class="click_blook_btn">
-                点击查看更多产品
-            </div>
-        </section>
+            <!-- 点击查看更多产品 -->
+            <section class="click_blook">
+                <div class="click_blook_btn">
+                    点击查看更多产品
+                </div>
+            </section>
 
 
 
 
-        <!-- text文案 -->
-        <section class="text">
-            <div class="introduce">
-                <p>这款隔离霜已经火了n多年，好用不贵，特别适合新手，轻薄服帖，不会有特别难涂的现象。隔离霜里含有一些珍珠粉，所以涂上之后会有一些提亮肤色的效果，也会令后面的妆容很服帖。其实对于刚开始上手的化妆小白来说，足够用了。</p>
-            </div>
-            <!-- 点击/查看量 -->
-            <div class="examine">
-                <span>1920</span>
-                <span>1.2w</span>
-                <span>3.3w</span>
-            </div>
-        </section>
-        <!-- 点击评论按钮 -->
-        <section class="btn">
-            <div class="btn_discuss">
-                <a href="javascript:;">点击评论</a>
-            </div>
-        </section>
+            <!-- text文案 -->
+            <section class="text">
+                <div class="introduce">
+                    <p>{{msg.content}}</p>
+                </div>
+                <!-- 点击/查看量 -->
+                <div class="examine">
+                    <span>{{msg.comment_num}}</span>
+                    <span>{{msg.view_num}}</span>
+                    <span>{{msg.like_num}}</span>
+                </div>
+            </section>
+            <!-- 点击评论按钮 -->
+            <section class="btn">
+                <div class="btn_discuss">
+                    <a href="javascript:;">点击评论</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- 固定定位下载App按钮 -->
+        <div class="footer">
+            <ul class="footer_ul">
+                <li></li>
+                <li>
+                    <p>知耳</p>
+                    <p>有深度的美妆社区</p>
+                </li>
+                <li>
+                    <a href="javascript:;">下载APP</a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <!-- 固定定位下载App按钮 -->
-    <div class="footer">
-        <ul class="footer_ul">
-            <li></li>
-            <li>
-                <p>知耳</p>
-                <p>有深度的美妆社区</p>
-            </li>
-            <li>
-                <a href="javascript:;">下载APP</a>
-            </li>
-        </ul>
-    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../common/common.js"></script>
+    <script src="../../js/share_js/shareGk.js"></script>
 </body>
 
 </html>

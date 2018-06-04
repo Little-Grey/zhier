@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="../../common/base.css">
     <link rel="stylesheet" href="../../css/share_css/shareAnswers.css">
     <script src="../../common/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
 
 <body>
-
+    <div id="app">
     <div class="wrapper">
         <!-- 分享页面的知耳头部 -->
         <header class="header_Share">
@@ -26,13 +27,12 @@
         </header>
         <!-- 小白必看 -->
         <article class="must">
-            <h2 class="must_top">小白必看！好用又不贵的化妆神器都在这里啦！！</h2>
+            <h2 class="must_top">{{msg.title}}</h2>
             <p class="must_center">2018-08-08</p>
             <div class="must_bottom">
-                <img src="" alt="">
+                <img :src="msg.member_avatar" alt="">
                 <div class="must_name">
-                    <p>精致的猪猪女孩</p>
-                    <p>18岁 | 冷一白 | 混油 | 广州</p>
+                    <p>{{msg.member_nickname}}</p>
                 </div>
                 <span class="must_span">问答</span>
             </div>
@@ -41,15 +41,15 @@
         <section class="text">
             <!-- 文字介绍 -->
             <div class="introduce">
-                <p>化妆这件事，虽然不是每个人女人都需要，但却是每个女人都需要会！因为你可能不知道哪一天你会很需要，或者只是就很想化个妆～虽然化妆都套路是熟能生巧，但是比起技巧，选择好用的彩妆产品也是颜值变高的神助攻！</p>
-                <p>化妆这件事，虽然不是每个人女人都需要，但却是每个女人都需要会！因为你可能不知道哪一天你会很需要，或者只是就很想化个妆～虽然化妆都套路是熟能生巧，但是比起技巧，选择好用的彩妆产品也是颜值变高的神助攻！</p>
-                <p>这款隔离霜已经火了n多年，好用不贵，特别适合新手，轻薄服帖，不会有特别难涂的现象。隔离霜里含有一些珍珠粉，所以涂上之后会有一些提亮肤色的效果，也会令后面的妆容很服帖。其实对于刚开始上手的化妆小白来说，足够用了。</p>
+                <p>{{msg.content}}</p>
+                <p>{{msg.content}}</p>
+                <p>{{msg.content}}</p>
             </div>
             <!-- 点击/查看量 -->
             <div class="examine">
-                <span>1920</span>
-                <span>1.2w</span>
-                <span>3.3w</span>
+                <span>{{msg.comment_num}}</span>
+                <span>{{msg.view_num}}</span>
+                <span>{{msg.like_num}}</span>
             </div>
         </section>
         <!-- 点击评论按钮 -->
@@ -73,6 +73,10 @@
             </li>
         </ul>
     </div>
+</div>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../common/common.js"></script>
+    <script src="../../js/share_js/shareAnswers.js"></script>
 </body>
 
 </html>

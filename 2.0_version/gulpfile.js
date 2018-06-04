@@ -10,16 +10,12 @@ const gulp = require('gulp'), //引入gulp
 
 // 达人的css---直接运行   gulp darencss
 gulp.task('darencss', () => {
-    // gulp.src('./common/*.css')//公共样式的base
     gulp.src('./css/daren_css/*.css')//达人的css-daren
-    // gulp.src('./css/explain_css/*.css')//知耳说明的css-explain
         .pipe(autoprefixer())
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
-        // .pipe(gulp.dest('dist/common'));//公共样式的base
         .pipe(gulp.dest('official/css/daren_css'));//达人的css-daren
-        // .pipe(gulp.dest('dist/css/explain_css'));//知耳说明的css-explain
 });
 // 知耳说明的css---直接运行   gulp explaincss
 gulp.task('explaincss', () => {
@@ -30,7 +26,19 @@ gulp.task('explaincss', () => {
         }))
         .pipe(gulp.dest('official/css/explain_css'));//知耳说明的css-explain
 });
-// 公共css---直接运行   gulp commoncss
+// 分享页面的css---直接运行   gulp sharecss
+gulp.task('sharecss', () => {
+    gulp.src('./css/share_css/*.css')//知耳说明的css-explain
+        .pipe(autoprefixer())
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(gulp.dest('share/css/share_css'));//知耳说明的css-explain
+});
+
+// ============================公共css============================
+
+// 正式版公共css---直接运行   gulp commoncss
 gulp.task('commoncss', () => {
     gulp.src('./common/*.css')//公共样式的base
         .pipe(autoprefixer())
@@ -39,14 +47,21 @@ gulp.task('commoncss', () => {
         }))
         .pipe(gulp.dest('official/common'));//公共样式的base
 });
+// 测试版公共css---直接运行   gulp commoncss
+gulp.task('testcommoncss', () => {
+    gulp.src('./common/*.css')//公共样式的base
+        .pipe(autoprefixer())
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(gulp.dest('share/common'));//公共样式的base
+});
 
 // ============================js============================
 
 // 达人的js---直接运行   gulp darenjs
 gulp.task('darenjs', () => {
-    // return gulp.src('js/*.js') //*星号代表所有
     return gulp.src('./js/daren_js/*.js') //达人的js-daren
-    // return gulp.src('./common/*.js') //公共的js-common
         .pipe(babel({
             presets: ['es2015']
         }))
@@ -55,10 +70,23 @@ gulp.task('darenjs', () => {
             cache: true
         }))
         .pipe(gulp.dest('official/js/daren_js')); //达人的js-daren
-        // .pipe(gulp.dest('dist/common')); //公共的js-common
+});
+// 分享页面的js---直接运行   gulp sharejs
+gulp.task('sharejs', () => {
+    return gulp.src('./js/share_js/*.js') //分享页面的js-sharejs
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(uglify({
+            outSourceMap: false,
+            cache: true
+        }))
+        .pipe(gulp.dest('share/js/share_js')); //分享页面的js-sharejs
 });
 
-// 公共的js---直接运行   gulp commonjs
+// ============================公共的js============================
+
+// 正式公共的js---直接运行   gulp commonjs
 gulp.task('commonjs', () => {
     return gulp.src('./common/*.js') //公共的js-common
         .pipe(babel({
@@ -70,22 +98,31 @@ gulp.task('commonjs', () => {
         }))
         .pipe(gulp.dest('official/common')); //公共的js-common
 });
+// 测试公共的js---直接运行   gulp commonjs
+gulp.task('testcommonjs', () => {
+    return gulp.src('./common/*.js') //公共的js-common
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(uglify({
+            outSourceMap: false,
+            cache: true
+        }))
+        .pipe(gulp.dest('share/common')); //公共的js-common
+});
 
 // ============================html============================
 
 
 // 达人的html---直接运行   gulp darenhtml
 gulp.task('darenhtml', () => {
-    // return gulp.src('html/*.html')
     return gulp.src('./html/daren_html/*.html')//达人的html-daren
-    // return gulp.src('./html/explain_html/*.html')//达人的html-explain
         .pipe(htmlmin({
             minifyJS: true, //压缩页面的JS
             removeComments: true, //清楚HTML注释
             collapseWhitespace: true //压缩html
         }))
         .pipe(gulp.dest('official/html/daren_html'));//达人的html-daren
-        // .pipe(gulp.dest('dist/html/explain_html'));//达人的html-explain
 });
 
 // 达人说明的html---直接运行   gulp explainhtml
@@ -98,13 +135,29 @@ gulp.task('explainhtml', () => {
         }))
         .pipe(gulp.dest('official/html/explain_html'));//达人的html-explain
 });
+// 分享页面的html---直接运行   gulp sharehtml
+gulp.task('sharehtml', () => {
+    return gulp.src('./html/share_html/*.html')//分享页面的html-sharehtml
+        .pipe(htmlmin({
+            minifyJS: true, //压缩页面的JS
+            removeComments: true, //清楚HTML注释
+            collapseWhitespace: true //压缩html
+        }))
+        .pipe(gulp.dest('share/html/share_html'));//分享页面的html-sharehtml
+});
 
 
 // ============================img============================
 
-// 压缩图片---直接运行   gulp img
+// 达人的压缩图片---直接运行   gulp img
 gulp.task('img', () => {
     return gulp.src('./images/daren_img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('official/images/daren_img'));
+});
+// 分享页面的压缩图片---直接运行   gulp img
+gulp.task('shareimg', () => {
+    return gulp.src('./images/share_img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('share/images/share_img'));
 });
