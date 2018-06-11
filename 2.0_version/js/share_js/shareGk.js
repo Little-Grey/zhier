@@ -22,10 +22,20 @@ new Vue({
     },
     methods: {
         getGk: function () {
+            // 获取url的方法
+            function getQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+            }
+
+            var article_id = getQueryString("article_id");
             var _this = this;
             $.ajax({
                 type: 'get',
-                url: baseUrl + '/v1/article/diary?article_id=1677&category_id=38',
+                url: baseUrl + '/v1/article/diary?article_id='+article_id,
+                // url: baseUrl + '/v1/article/diary?article_id=1677&category_id=38',
                 success: function (res) {
                     // console.log(res.data);
                     _this.msg = res.data;

@@ -1,0 +1,317 @@
+body {
+    width: 10rem;
+    max-width: 10rem; // .bg {
+    //     width: 10rem;
+    .bg_html {
+        background: url(../../images/probation_img/bg_01.png) no-repeat;
+        background-position: 100% 100%;
+        background-size: cover;
+        height: 16.25rem;
+        width: 10rem;
+        overflow: hidden;
+        /* 头部个人信息 */
+        .header_get {
+            width: 100%;
+            height: 2.8rem;
+            .header_get_ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                li {
+                    &:nth-child(1) {
+                        width: 1.386667rem;
+                        height: 1.386667rem;
+                        border-radius: 50%;
+                        margin: 0 0 0 1.573333rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+                    }
+                    &:nth-child(2) {
+                        color: #fff;
+                        font-size: .4rem;
+                        margin: 0 0 0 .4rem;
+                    }
+                }
+            }
+        }
+        /* 产品图片 */
+        .product_get {
+            height: 6.4rem;
+            width: 10rem;
+            .product_get_img {
+                width: 6.826667rem;
+                height: 6.4rem;
+                background: url(../../images/probation_img/product_01.png) no-repeat;
+                background-size: contain;
+                margin: 0 auto;
+                position: relative;
+                img {
+                    width: 6.746667rem;
+                    height: 6.293333rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+        /* 底部 */
+        .footer {
+            width: 10rem;
+            .footer_top {
+                height: 4.426667rem;
+                display: flex;
+                align-items: center;
+                width: 10rem;
+                .footer_text {
+                    width: 4.373333rem;
+                    height: 1.973333rem;
+                    background: url(../../images/probation_img/douhao.png) no-repeat;
+                    background-size: contain;
+                    margin: 0 auto;
+                    font-family: 'MicrosoftYaHei';
+                    text-align: center;
+                    h2 {
+                        width: 3.2rem;
+                        font-size: .48rem;
+                        color: #eee;
+                        padding-left: .506667rem;
+                        line-height: .6875rem;
+                    }
+                    p {
+                        width: 3.413333rem;
+                        color: #eee;
+                        font-size: .426667rem;
+                        padding-left: .506667rem;
+                        line-height: .6875rem;
+                    }
+                }
+            }
+            .footer_bottom {
+                height: 2.613333rem;
+                width: 10rem;
+                display: flex;
+                justify-content: center;
+                /* 邀请好友助力 */
+                .footer_btn {
+                    width: 6.586667rem;
+                    height: 1.066667rem;
+                    a {
+                        float: left;
+                        border-radius: .533333rem;
+                        width: 2.933333rem;
+                        height: 100%;
+                        font-size: .4rem;
+                        color: #000;
+                        text-align: center;
+                        line-height: 1.066667rem;
+                        color: #fff;
+                        border: 1px solid #fff;
+                        &:nth-child(2) {
+                            width: 2.96rem;
+                            margin-left: .533333rem;
+                            background: #fff;
+                            color: #222;
+                        }
+                    }
+                }
+            }
+        }
+        /* 登录 */
+        .enter {
+            width: 10rem;
+            height: 8.133333rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            /* 模态框 */
+            .modal {
+                // background: rgba(0, 0, 0, .2);
+                width: 10rem;
+                height: 8.133333rem;
+                position: absolute;
+                top:-8.133333rem;
+                left:0;
+            }
+            .enter_phone {
+                width: 6.693333rem;
+                height: 6.666667rem;
+                /* 手机 */
+                .phone {
+                    width: 100%;
+                    height: .906667rem;
+                    border-bottom: 1px solid #E8E8E8;
+                    label {
+                        font-size: .4rem;
+                        color: #222;
+                        padding-left: .266667rem;
+                    }
+                }
+                /* 验证码 */
+                .security {
+                    width: 100%;
+                    height: .906667rem;
+                    border-bottom: 1px solid #E8E8E8;
+                    padding-top: .4rem;
+                    label {
+                        font-size: .4rem;
+                        color: #222;
+                        padding-left: .266667rem;
+                    }
+                }
+                /* 获取验证码 */
+                .getSecurity {
+                    font-size: .4rem;
+                    color: #222;
+                    padding: .666667rem 0 .666667rem .266667rem;
+                    h3{
+                        display: inline-block;
+                        border:1px solid #222;
+                        border-radius: .4rem;
+                        height: .625rem;
+                        width: 2.5rem;
+                        text-align: center;
+                        line-height: .625rem;
+                    }
+
+                }
+                /* 登录按钮 */
+                .logInBtn {
+                    width: 100%;
+                    height: 1.066667rem;
+                    i {
+                        width: 100%;
+                        height: 100%;
+                        line-height: 1.066667rem;
+                        font-size: .48rem;
+                        color: #fff;
+                        display: block;
+                        text-align: center; // padding:.32rem 2.826667rem .32rem 2.826667rem;
+                        background: #262B2E;
+                        border-radius: .133333rem;
+                        letter-spacing: .133333rem;
+                    }
+                }
+                /* 同意 */
+                .consent {
+                    width: 100%;
+                    height: 1.493333rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .consent_i {
+                        width: .48rem;
+                        height: .48rem;
+                        display: block;
+                        padding-top: .0625rem;
+                        /* 自定义多选框 */
+                        input[type=checkbox] {
+                            display: block;
+                            position: relative;
+                            margin: 0;
+                            padding: 0;
+                            width: .453333rem;
+                            height: .453333rem;
+                            outline: none;
+                            cursor: pointer;
+                            vertical-align: -.04rem;
+                            border: 1px solid #108cee;
+                            -webkit-appearance: none;
+                            -webkit-transition: all 0.3s;
+                            -moz-transition: all 0.3s;
+                            -ms-transition: all 0.3s;
+                            -o-transition: all 0.3s;
+                            transition: all 0.3s;
+                            -moz-transition: all .3s;
+                            -webkit-transition: all .3s;
+                            transition: all .3s;
+                            &:checked {
+                                background-color: #fff;
+                            }
+                            &:checked:before {
+                                top: .0625rem;
+                                left: .0625rem;
+                                width: .25rem;
+                                height: .09375rem;
+                                content: '';
+                                color: #16A5AF;
+                                position: absolute;
+                                border-bottom: solid 2px currentColor;
+                                border-left: solid 2px currentColor;
+                                -webkit-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                            }
+                        }
+                    }
+                    p {
+                        padding-left: .16rem;
+                        font-size: .4rem;
+                        color: #222;
+                        span {
+                            color: #16A5AF;
+                            border-bottom: 1px solid #16A5AF;
+                        }
+                    }
+                }
+            }
+        }
+        /* 点击好友助力,显示出来的模态 */
+        .global{
+            width: 100%;
+            height: 16.25rem;
+            background: rgba(0, 0, 0, .5);
+            // background: rgba(214, 28, 28, 0.5);
+            position: absolute;
+            top:0;
+            left: 0;
+            &::after{
+                content:'';
+                width: 1.626667rem;
+                height: 1.36rem;
+                background:url(../../images/probation_img/global_modal.png) no-repeat;
+                background-size: contain;
+                position: absolute;
+                top:.533333rem;
+                right: .4rem;
+            }
+            &::before{
+                content:'点击右上角分享给小伙伴吧';
+                color:#fff;
+                font-size:.48rem;
+                position: absolute;
+                top:2.133333rem;
+                left: 1.786667rem;
+            }
+        }
+    }
+}
+
+/* 动画效果 */
+
+@keyframes popup {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    } 
+    100% {
+        transform: translateY(-8.133333rem);
+        opacity: 1;
+    }
+}
+@keyframes popup_drop {
+    0% {
+        transform: translateY(-8.133333rem);
+        opacity: 1;
+    } 
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+

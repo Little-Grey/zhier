@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>知耳试用</title>
+    <link rel="stylesheet" href="../../common/base.css">
+    <link rel="stylesheet" href="../../css/probation_css/probationHand.css">
+    <script src="../../common/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- bg -->
+        <div class="bg_html">
+            <!-- 头部个人信息 -->
+            <header class="header_get">
+                <ul class="header_get_ul">
+                    <li>
+                        <img src="../../images/probation_img/header_01.jpeg" alt="">
+                    </li>
+                    <li>
+                        <span>Twelve_12</span>
+                    </li>
+                </ul>
+            </header>
+            <!-- 产品图片 -->
+            <section class="product_get">
+                <div class="product_get_img">
+                    <img src="../../images/probation_img/header_01.jpeg" alt="">
+                </div>
+            </section>
+            <!-- 底部 -->
+            <footer class="footer">
+                <div class="footer_top">
+                    <div class="footer_text">
+                        <h2>知耳</h2>
+                        <p>我在参加试用活动请支持一下我吧</p>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div v-show="help" class="footer_btn">
+                        <a href="javascript:;">查看我的排行</a>
+                        <a @click="btnClickFriend" href="javascript:;">邀请好友助力</a>
+                    </div>
+
+                    <!-- 思路:判断,后台返回一个字段,如果分享出去了,我就判断是不是这个原来的id进来,如果是原来的id进来,就显示上面的,如果是一个其他的id,就显示这个,要让他先登录 -->
+                    <div v-show="register" class="footer_btn logIn">
+                        <a href="javascript:;">我也要参加</a>
+                        <a @click="btnLogIn" href="javascript:;">登录</a>
+                    </div>
+                    <!-- 登录猴,就显示这个状态,其他隐藏,然后点击支持ta,就调用接口,把数据穿过后台 -->
+                    <div v-show="support" class="footer_btn">
+                        <a href="javascript:;">我也要参加</a>
+                        <a @click="btnClick" href="javascript:;">支持ta</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- 登录页面 -->
+            <section class="enter">
+                <!-- 模态框- 点击模态框,按钮退回去. -->
+                <div @click="btnModal" class="modal"></div>
+                <div class="enter_phone">
+                    <!-- 手机  -->
+                    <div class="phone">
+                        <label>手机:</label>
+                        <input type="text">
+                    </div>
+                    <!-- 验证码 -->
+                    <div class="security">
+                        <label>验证码:</label>
+                        <input type="text">
+                    </div>
+                    <!-- 获取验证码 -->
+                    <div class="getSecurity">
+                        <h3 class="getSecurity_h3">获取验证码</h3>
+                    </div>
+                    <!-- 登录按钮 -->
+                    <div @click="btnRegister" class="logInBtn">
+                        <i>登陆</i>
+                    </div>
+                    <!-- 同意 -->
+                    <div class="consent">
+                        <i class="consent_i">
+                            <input id="checkbox_id" checked="checked" name="is_invoice" type="checkbox">
+                        </i>
+                        <p>我同意
+                            <span>知耳用户协议</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        <!-- 点击好友助力,显示出来的模态 -->
+        <i @click="btnClickGloval" v-show="globals" class="global"></i>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../js/probation_js/probationHand.js"></script>
+    </script>
+</body>
+
+</html>

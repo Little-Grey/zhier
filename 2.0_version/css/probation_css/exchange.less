@@ -60,7 +60,8 @@ body {
                     height: .48rem;
                 }
             }
-            .header_box {
+            /* 未开始的时候显示,倒计时 */
+            .count_down {
                 z-index: 1;
                 width: 2.666667rem;
                 height: 1.12rem;
@@ -68,6 +69,7 @@ body {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                // display: none;
                 p {
                     color: @f;
                     &:nth-child(1) {
@@ -82,6 +84,56 @@ body {
                     }
                 }
             }
+            /* 倒计时结束之后,就系活动开始,显示数量 */
+            .surplus {
+                z-index: 1;
+                width: 2.666667rem;
+                height: 1.12rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                // display: none;
+                p {
+                    color: @f;
+                    &:nth-child(1) {
+                        font-size: .4rem;
+                        font-weight: 100;
+                        letter-spacing: .08rem;
+                        text-align: center;
+                    }
+                    &:nth-child(2) {
+                        font-size: .64rem;
+                        letter-spacing: .04rem;
+                        padding-left:.1875rem;
+                    }
+                }
+            }
+            /* 数量为空的时候,显示这个 */
+            .loot_all {
+                z-index: 1;
+                // width: 2.666667rem;
+                height: 1.12rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                // display: none;
+                p {
+                    color: @f;
+                    &:nth-child(1) {
+                        font-size: .4rem;
+                        font-weight: 100;
+                        letter-spacing: .08rem;
+                        text-align: center;
+                    }
+                    &:nth-child(2) {
+                        font-size: .64rem;
+                        letter-spacing: .04rem;
+                    }
+                }
+            }
+
         }
         /* 轮播图下面的说明 */
         .header_state {

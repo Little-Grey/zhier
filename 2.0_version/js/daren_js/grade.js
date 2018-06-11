@@ -20,6 +20,16 @@ new Vue({
     methods: {
         getExpert: function () {
             var _this = this;
+            // 判断string字符串里面,是不是纯数字
+            function isNumber(val) {
+                var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+                var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
+                if (regPos.test(val) || regNeg.test(val)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
             // 获取url的方法
             function getQueryString(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -28,11 +38,19 @@ new Vue({
                 return null;
             }
             var member_Id = getQueryString("member_id");
-            console.log(member_Id);
+            // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
+            if (isNumber(member_Id)) {
+                // console.log('是纯数字');
+                url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
+            } else {
+                // console.log('是字符串');
+                url = baseUrl + '/v3/member/info?member_id' + member_Id;
+            };
+
             $.ajax({
                 type: 'get',
-                // url: baseUrl + '/v1/member/info?time=123&sign=ABC&target_member_id=1000',
-                url: baseUrl + '/v1/member/info?target_member_id=' + member_Id,
+                // url: baseUrl + '/v3/member/info?target_member_id=' + member_Id,
+                url: url,
                 beforeSend: function () {
                     $("#loading").show();
                 },
@@ -40,16 +58,16 @@ new Vue({
                     $("#loading").hide();
                 },
                 success: function (res) {
-                    console.log(res.data);
-                    console.log(res.data.level)
+                    // console.log(res.data);
+                    // console.log(res.data.level)
                     // 等级
                     _this.level = res.data.level;
                     if (_this.level == 1) {
-                        console.log('哈哈哈哈');
+                        // console.log('哈哈哈哈');
                         _this.show = false;
                     }
                     if (_this.level) {
-                        console.log('嘿嘿嘿嘿');
+                        // console.log('嘿嘿嘿嘿');
                         // _this.show = true;
                         _this.levelLeft = res.data.level - 1;
                         _this.levelRight = res.data.level + 1;
@@ -76,7 +94,7 @@ new Vue({
 
                     // _this.exp >= _this.exp_up ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp / _this.exp_up * 100) + '%';
                     // (当前得经验/(当前经验+距离升级需要得经验)*100)+'%'
-                    _this.exp == 0 ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp/(_this.exp + _this.exp_up) * 100) + '%';
+                    _this.exp == 0 ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp / (_this.exp + _this.exp_up) * 100) + '%';
 
                     // _this.exp >= _this.exp_up ? _this.$refs.state_propress_div.style.width = 0 + '%' : _this.$refs.state_propress_div.style.width = (_this.exp + _this.exp_up )* 100 + '%';
 

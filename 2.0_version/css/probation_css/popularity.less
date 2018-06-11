@@ -63,7 +63,8 @@ body {
                     height: .48rem;
                 }
             }
-            .header_box {
+             /* 未开始的时候显示,倒计时 */
+             .count_down {
                 z-index: 1;
                 width: 2.666667rem;
                 height: 1.12rem;
@@ -71,6 +72,56 @@ body {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                // display: none;
+                p {
+                    color: @f;
+                    &:nth-child(1) {
+                        font-size: .4rem;
+                        font-weight: 100;
+                        letter-spacing: .08rem;
+                        text-align: center;
+                    }
+                    &:nth-child(2) {
+                        font-size: .64rem;
+                        letter-spacing: .04rem;
+                    }
+                }
+            }
+            /* 倒计时结束之后,就系活动开始,显示数量 */
+            .surplus {
+                z-index: 1;
+                width: 2.666667rem;
+                height: 1.12rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                // display: none;
+                p {
+                    color: @f;
+                    &:nth-child(1) {
+                        font-size: .4rem;
+                        font-weight: 100;
+                        letter-spacing: .08rem;
+                        text-align: center;
+                    }
+                    &:nth-child(2) {
+                        font-size: .64rem;
+                        letter-spacing: .04rem;
+                        padding-left:.1875rem;
+                    }
+                }
+            }
+            /* 数量为空的时候,显示这个 */
+            .loot_all {
+                z-index: 1;
+                // width: 2.666667rem;
+                height: 1.12rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                // display: none;
                 p {
                     color: @f;
                     &:nth-child(1) {
@@ -286,9 +337,14 @@ body {
                         }
                         &:nth-child(4) {
                             font-size: .346667rem;
-                            color: #16A5AF;
                             float: right;
                             padding: .533333rem .266667rem .64rem 0;
+                            a{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                color: #16A5AF;
+                            }
                         }
                     }
                 }
@@ -299,14 +355,37 @@ body {
                         background: @fa;
                         height: 1.6rem;
                         overflow: hidden;
-                        border-bottom: 1px solid @e; // &:nth-child(1) {
+                        border-bottom: 1px solid @e;
+                        &:nth-child(1) {
+                            i {
+                                background: url(../../images/probation_img/one.png) no-repeat;
+                                background-size: contain;
+                                margin: .453333rem 0 .266667rem .266667rem;
+                            }
+                        }
+                        &:nth-child(2) {
+                            i {
+                                background: url(../../images/probation_img/two.png) no-repeat;
+                                background-size: contain;
+                                margin: .453333rem 0 .266667rem .266667rem;
+                            }
+                        }
+                        &:nth-child(3) {
+                            i {
+                                background: url(../../images/probation_img/three.png) no-repeat;
+                                background-size: contain;
+                                margin: .453333rem 0 .266667rem .266667rem;
+                            }
+                        }
                         .heatUl_seniority {
                             .heatUl_i {
                                 width: .586667rem;
                                 height: .8rem;
-                                background: red;
-                                float: left; // margin: .533333rem 0 .746667rem .453333rem;
-                                margin: .453333rem 0 .266667rem .266667rem;
+                                float: left;
+                                margin: .506667rem 0 0 .266667rem;
+                                text-align: center;
+                                font-size: .346667rem;
+                                color: @2;
                             }
                             .heatUl_img {
                                 width: 1.066667rem;

@@ -1,0 +1,114 @@
+body {
+    width: 10rem;
+    max-width: 10rem; // .bg {
+    //     width: 10rem;
+    background: url(../../images/probation_img/bg_01.png) no-repeat;
+    background-position: 100% 100%;
+    background-size: cover;
+    /* 头部个人信息 */
+    .header_get {
+        width: 100%;
+        height: 2.8rem;
+        .header_get_ul {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            li {
+                &:nth-child(1) {
+                    width: 1.386667rem;
+                    height: 1.386667rem;
+                    border-radius: 50%;
+                    margin: 0 0 0 1.573333rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                }
+                &:nth-child(2) {
+                    color: #fff;
+                    font-size: .4rem;
+                    margin: 0 0 0 .4rem;
+                }
+            }
+        }
+    }
+    /* 产品图片 */
+    .product_get {
+        height: 6.4rem;
+        width: 10rem;
+        .product_get_img {
+            width: 6.826667rem;
+            height: 6.4rem;
+            background: url(../../images/probation_img/product_01.png) no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+            position: relative;
+            img {
+                width: 6.746667rem;
+                height: 6.293333rem;
+                background: red;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    /* 底部 */
+    .footer {
+        width: 10rem;
+        .footer_top {
+            height: 4.426667rem;
+            display: flex;
+            align-items: center;
+            width: 10rem;
+            .footer_text {
+                width: 4.373333rem;
+                height: 1.973333rem;
+                background: url(../../images/probation_img/douhao.png) no-repeat;
+                background-size: contain;
+                margin: 0 auto;
+                font-family: 'MicrosoftYaHei';
+                text-align: center;
+                h2 {
+                    width: 3.2rem;
+                    font-size: .48rem;
+                    color: #eee;
+                    padding-left:.506667rem;
+                    line-height: .6875rem;
+                }
+                p {
+                    width: 3.2rem;
+                    color: #eee;
+                    font-size: .426667rem;
+                    padding-left:.506667rem;
+                    line-height: .6875rem;
+                }
+            }
+        }
+        .footer_bottom{
+            height: 2.613333rem;
+            width: 10rem;
+            display: flex;
+            justify-content: center;
+            .footer_btn{
+                width: 2.4rem;
+                height: 1.066667rem;
+                background:#fff;
+                border-radius: .533333rem;
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    font-size:.4rem;
+                    color:#000;
+                    text-align: center;
+                    line-height: 1.066667rem;
+                }
+            }
+        }
+    } 
+}

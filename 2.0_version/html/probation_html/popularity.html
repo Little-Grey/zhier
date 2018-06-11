@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>知耳试用</title>
     <!-- 引入swiper.css -->
     <link href="https://cdn.bootcss.com/Swiper/4.2.0/css/swiper.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../common/base.css">
@@ -42,10 +42,27 @@
             <div class="header_top">
                 <img src="../../images/probation_img/back_01.png" alt="">
                 <img src="../../images/probation_img/share_01.png" alt="">
-                <div class="header_box">
+                <!-- <div class="header_box">
                     <p>开始倒计时</p>
                     <p>70:54:32</p>
-                </div>
+                </div> -->
+                 <!-- 未开始的时候,倒计时 -->
+                 <div v-show="time" class="count_down">
+                        <p>开始倒计时</p>
+                        <p class="time_p"></p>
+                        <!-- <p class="time_p">70:54:32</p> -->
+                    </div>
+                    <!-- 倒计时结束之后,就系活动开始,显示数量.surplus -->
+                    <div v-show="count" class="surplus">
+                            <p>剩余数量</p>
+                            <p>{{counts}}/100</p>
+                            <!-- <p>64/100</p> -->
+                        </div>
+                    <!-- 数量为空的时候,显示这个 -->
+                    <div v-show="over" class="loot_all">
+                            <p>已结束</p>
+                            <p>被抢光啦</p>
+                        </div>
             </div>
             <!-- 轮播图下面的说明 -->
             <div class="header_state">
@@ -117,7 +134,7 @@
                         <i class="myHeat_i">-</i>
                         <img class="myHeat_img" src="../../images/probation_img/header_01.jpeg" alt="">
                         <span>Twelve_12</span>
-                        <span>立即申请</span>
+                        <span><a href="javascript:;">立即申请</a></span>
                     </div>
                     <!-- 排行榜 -->
                     <ul class="heatUl">
@@ -147,7 +164,7 @@
                         </li>
                         <li>
                             <div class="heatUl_seniority">
-                                <i class="heatUl_i"></i>
+                                <i class="heatUl_i">4</i>
                                 <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt="">
                                 <span>Twelve_12</span>
                                 <span>122018</span>
@@ -155,7 +172,7 @@
                         </li>
                         <li>
                             <div class="heatUl_seniority">
-                                <i class="heatUl_i"></i>
+                                <i class="heatUl_i">5</i>
                                 <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt="">
                                 <span>Twelve_12</span>
                                 <span>122018</span>
@@ -163,7 +180,7 @@
                         </li>
                         <li>
                             <div class="heatUl_seniority">
-                                <i class="heatUl_i"></i>
+                                <i class="heatUl_i">6</i>
                                 <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt="">
                                 <span>Twelve_12</span>
                                 <span>122018</span>
@@ -171,7 +188,7 @@
                         </li>
                         <li>
                             <div class="heatUl_seniority">
-                                <i class="heatUl_i"></i>
+                                <i class="heatUl_i">7</i>
                                 <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt="">
                                 <span>Twelve_12</span>
                                 <span>122018</span>

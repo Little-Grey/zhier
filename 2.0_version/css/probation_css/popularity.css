@@ -39,6 +39,9 @@ body .header .header_top {
   left: 0;
   width: 10rem;
   height: 7.466667rem;
+  /* 未开始的时候显示,倒计时 */
+  /* 倒计时结束之后,就系活动开始,显示数量 */
+  /* 数量为空的时候,显示这个 */
 }
 body .header .header_top img {
   position: relative;
@@ -56,7 +59,7 @@ body .header .header_top img:nth-child(2) {
   width: .4rem;
   height: .48rem;
 }
-body .header .header_top .header_box {
+body .header .header_top .count_down {
   z-index: 1;
   width: 2.666667rem;
   height: 1.12rem;
@@ -65,16 +68,60 @@ body .header .header_top .header_box {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-body .header .header_top .header_box p {
+body .header .header_top .count_down p {
   color: #fff;
 }
-body .header .header_top .header_box p:nth-child(1) {
+body .header .header_top .count_down p:nth-child(1) {
   font-size: .4rem;
   font-weight: 100;
   letter-spacing: .08rem;
   text-align: center;
 }
-body .header .header_top .header_box p:nth-child(2) {
+body .header .header_top .count_down p:nth-child(2) {
+  font-size: .64rem;
+  letter-spacing: .04rem;
+}
+body .header .header_top .surplus {
+  z-index: 1;
+  width: 2.666667rem;
+  height: 1.12rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .header .header_top .surplus p {
+  color: #fff;
+}
+body .header .header_top .surplus p:nth-child(1) {
+  font-size: .4rem;
+  font-weight: 100;
+  letter-spacing: .08rem;
+  text-align: center;
+}
+body .header .header_top .surplus p:nth-child(2) {
+  font-size: .64rem;
+  letter-spacing: .04rem;
+  padding-left: .1875rem;
+}
+body .header .header_top .loot_all {
+  z-index: 1;
+  height: 1.12rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .header .header_top .loot_all p {
+  color: #fff;
+}
+body .header .header_top .loot_all p:nth-child(1) {
+  font-size: .4rem;
+  font-weight: 100;
+  letter-spacing: .08rem;
+  text-align: center;
+}
+body .header .header_top .loot_all p:nth-child(2) {
   font-size: .64rem;
   letter-spacing: .04rem;
 }
@@ -276,9 +323,14 @@ body .heat .start .heat_bottom .myHeat span:nth-child(3) {
 }
 body .heat .start .heat_bottom .myHeat span:nth-child(4) {
   font-size: .346667rem;
-  color: #16A5AF;
   float: right;
   padding: .533333rem .266667rem .64rem 0;
+}
+body .heat .start .heat_bottom .myHeat span:nth-child(4) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #16A5AF;
 }
 body .heat .start .heat_bottom .heatUl {
   width: 100%;
@@ -290,12 +342,29 @@ body .heat .start .heat_bottom .heatUl li {
   overflow: hidden;
   border-bottom: 1px solid #eee;
 }
+body .heat .start .heat_bottom .heatUl li:nth-child(1) i {
+  background: url(../../images/probation_img/one.png) no-repeat;
+  background-size: contain;
+  margin: .453333rem 0 .266667rem .266667rem;
+}
+body .heat .start .heat_bottom .heatUl li:nth-child(2) i {
+  background: url(../../images/probation_img/two.png) no-repeat;
+  background-size: contain;
+  margin: .453333rem 0 .266667rem .266667rem;
+}
+body .heat .start .heat_bottom .heatUl li:nth-child(3) i {
+  background: url(../../images/probation_img/three.png) no-repeat;
+  background-size: contain;
+  margin: .453333rem 0 .266667rem .266667rem;
+}
 body .heat .start .heat_bottom .heatUl li .heatUl_seniority .heatUl_i {
   width: .586667rem;
   height: .8rem;
-  background: red;
   float: left;
-  margin: .453333rem 0 .266667rem .266667rem;
+  margin: .506667rem 0 0 .266667rem;
+  text-align: center;
+  font-size: .346667rem;
+  color: #222;
 }
 body .heat .start .heat_bottom .heatUl li .heatUl_seniority .heatUl_img {
   width: 1.066667rem;

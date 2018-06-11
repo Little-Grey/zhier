@@ -11,6 +11,17 @@ new Vue({
     },
     methods: {
         getId: function () {
+            var _this = this;
+            // 判断string字符串里面,是不是纯数字
+            function isNumber(val) {
+                var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+                var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
+                if (regPos.test(val) || regNeg.test(val)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
             // 获取url的方法
             function getQueryString(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -18,15 +29,20 @@ new Vue({
                 if (r != null) return unescape(r[2]);
                 return null;
             }
-            // console.log(getQueryString("id"));
-
             var member_Id = getQueryString("member_id");
-            console.log(member_Id);
-            var _this = this;
+            // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
+            if (isNumber(member_Id)) {
+                // console.log('是纯数字');
+                url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
+            } else {
+                // console.log('是字符串');
+                url = baseUrl + '/v3/member/info?member_id' + member_Id;
+            };
             $.ajax({
                 type: 'get',
                 // url: baseUrl + '/v1/member/info?target_member_id=1000',
-                url: baseUrl + '/v1/member/info?target_member_id=' + member_Id,
+                // url: baseUrl + '/v1/member/info?target_member_id=' + member_Id,
+                url:url,
                 beforeSend: function () {
                     $("#loading").show();
                 },
@@ -34,10 +50,10 @@ new Vue({
                     $("#loading").hide();
                 },
                 success: function (res) {
-                    console.log(res.data);
+                    // console.log(res.data);
 
                     if (res.data.master == 'NONE') {
-                        console.log('none')
+                        // console.log('none')
                         return;
                     };
 
@@ -46,7 +62,7 @@ new Vue({
                         _this.isColro = true;
                     };
                     if (res.data.master == 'COMMON' || res.data.master == 'OFFICIAL') {
-                        window.location.href = "becomeExpert.html?member_id="+ member_Id;
+                        window.location.href = "becomeExpert.html?member_id=" + member_Id;
                     };
                     // 把数据负值给data的定义的空对象
                     _this.msg = res.data;
