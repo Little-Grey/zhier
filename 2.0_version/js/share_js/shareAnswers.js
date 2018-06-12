@@ -27,6 +27,7 @@ new Vue({
                 return null;
             }
             var article_id = getQueryString("article_id");
+            var url = '';
             // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
             if (isNumber(article_id)) {
                 // console.log('是纯数字');

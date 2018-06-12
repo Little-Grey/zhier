@@ -38,12 +38,13 @@ input,
 button {
     border: none; // /*在低版本的ie浏览器里面不支持*/
     outline-style: none;
-    outline: none; 
-    // -webkit-appearance: none;
+    outline: none; // -webkit-appearance: none;
 }
-[v-cloak]{
+
+[v-cloak] {
     display: none;
 }
+
 ul,
 ol {
     list-style: none;
@@ -101,12 +102,17 @@ body {
 a {
     color: #666;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a,
+div,span {
     // 这个点击颜色透明
-    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 a:hover {
-    color: #C81623;
+    // color: #C81623;
 }
 
 h1,
@@ -127,11 +133,12 @@ em {
     text-decoration: none;
 }
 
-
 /*css初始化完成*/
 
 /* 公共头部 */
+
 /* 达人头部 */
+
 .header_daren {
     width: 10rem;
     height: 1.173333rem;
@@ -153,8 +160,9 @@ em {
         text-align: center;
         line-height: 1.173333rem;
     }
-};
+}
 
+;
 // // 分享页面的知耳头部
 // .header_Share{
 //     width: 9.466667rem;
@@ -186,7 +194,6 @@ em {
 //      }
 //  }
 // }
-
 // /* 固定定位下载App按钮 */
 // .footer {
 //     width: 10rem;
@@ -242,4 +249,3 @@ em {
 //         }
 //     }
 // }
-

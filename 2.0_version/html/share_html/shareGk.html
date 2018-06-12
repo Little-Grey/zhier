@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../../common/base.css">
-    <link rel="stylesheet" href="../../css/share_css/shareGk.css">
+    <link rel="stylesheet" href="../../common/base.css?tamp=20180612">
+    <link rel="stylesheet" href="../../css/share_css/shareGk.css?tamp=20180612">
     <script src="../../common/flexible.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
@@ -42,22 +42,23 @@
             <!-- SK2 -->
             <section class="sk">
                 <ul class="sk_ul">
-                    <li>
+                    <li  v-show="products.category_name">
+                        <i></i>
                         <p>{{products.category_name}}</p>
                     </li>
-                    <li>
+                    <li v-show="products.core">
                         <i>成分</i>
                         <span>{{products.core}}</span>
                     </li>
-                    <li>
+                    <li v-show="products.extend">
                         <i>补充</i>
                         <span>{{products.extend}}</span>
                     </li>
-                    <li>
+                    <li v-show="products.advantages">
                         <i>优点</i>
                         <span>{{products.advantages}}</span>
                     </li>
-                    <li>
+                    <li v-show="products.disadvantages">
                         <i>缺点</i>
                         <span>{{products.disadvantages}}</span>
                     </li>
@@ -83,6 +84,7 @@
                             <!-- 第五颗星星 -->
                             <img v-if="products.score == 9" src="../../images/share_img/comment_03.png" alt="">
                             <img v-if="products.score >= 10" src="../../images/share_img/comment_02.png" alt="">
+
                         </div>
                         <!-- 分数 -->
                         <span>（{{products.score}}.0）</span>
@@ -173,8 +175,8 @@
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../../common/common.js"></script>
-    <script src="../../js/share_js/shareGk.js"></script>
+    <script src="../../common/common.js?tamp=20180612"></script>
+    <script src="../../js/share_js/shareGk.js?tamp=20180612"></script>
 </body>
 
 </html>

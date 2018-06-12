@@ -1,1 +1,0 @@
-"use strict";new Vue({el:"#app",data:{msg:{}},created:function(){this.getPo()},methods:{getPo:function(){var e=this;$.ajax({type:"get",url:baseUrl+"/v1/article/po?article_id=1641",success:function(t){console.log(t),e.msg=t.data},error:function(e){console.log(e)}})}}});

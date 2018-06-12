@@ -86,8 +86,10 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
-a:hover {
-  color: #C81623;
+a,
+div,
+span {
+  -webkit-tap-highlight-color: transparent;
 }
 h1,
 h2,
