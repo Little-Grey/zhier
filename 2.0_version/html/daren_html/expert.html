@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>达人中心</title>
-    <link rel="stylesheet" href="../../common/base.css?version=1.0.1">
-    <link rel="stylesheet" href="../../css/daren_css/expert.css?version=1.0.1">
+    <link rel="stylesheet" href="../../common/base.css?tamp=20180613">
+    <link rel="stylesheet" href="../../css/daren_css/expert.css?tamp=20180613">
     <script src="../../common/flexible.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
@@ -72,11 +72,8 @@
                 <div class="information_right">
                     <div class="info_gl">
                         <p>
-                            <a @click="myFunction_inforMation()" data-id="COMPLETE_INFO" href="javascript:;">完善攻略</a>
-                            <!-- <a v-show=" android == 1" @click="myFunction_inforMation()" data-id="COMPLETE_INFO" href="javascript:;">完善攻略安卓</a> -->
-                            <!-- 苹果手机 -->
-                            <!-- <a href="javascript:;">完善攻略苹果</a> -->
-                            <!-- <button v-show=" iphone == 2" data-id="1">完善攻略苹果</button> -->
+                            <!-- <a @click="myFunction_inforMation()" data-id="COMPLETE_INFO" href="javascript:;">完善攻略</a> -->
+                            <input @click="myFunction_inforMation()" data-id="COMPLETE_INFO" type="button" value="完善攻略" />
                         </p>
                     </div>
                 </div>
@@ -95,7 +92,8 @@
                 <div class="strategy_right">
                     <div class="strategy_gl">
                         <p>
-                            <a @click="myFunction_strategy()" href="javascript:;" data-id="GRADE_STRATEGY">等级攻略</a>
+                            <!-- <a @click="myFunction_strategy()" href="javascript:;" data-id="GRADE_STRATEGY">等级攻略</a> -->
+                            <input @click="myFunction_strategy()" data-id="GRADE_STRATEGY" type="button" value="等级攻略" />
                         </p>
                     </div>
                 </div>
@@ -114,7 +112,8 @@
                 <div class="lesson_right">
                     <div class="lesson_gl">
                         <p>
-                            <a @click="myFunction_lesson()" data-id="PUBLISH_WORK" href="javascript:;">发布功课</a>
+                            <!-- <a @click="myFunction_lesson()" data-id="PUBLISH_WORK" href="javascript:;">发布功课</a> -->
+                            <input @click="myFunction_lesson()" data-id="PUBLISH_WORK" type="button" value="发布功课" />
                         </p>
                     </div>
                 </div>
@@ -133,7 +132,8 @@
                 <div class="stroll_right">
                     <div class="stroll_gl">
                         <p>
-                            <a href="javascript:;" @click="myFunction_stroll()" data-id="GO_ZHIER_CIRCLE">逛逛耳圈</a>
+                            <!-- <a href="javascript:;" @click="myFunction_stroll()" data-id="GO_ZHIER_CIRCLE">逛逛耳圈</a> -->
+                            <input @click="myFunction_stroll()" data-id="GO_ZHIER_CIRCLE" type="button" value="逛逛耳圈" />
                         </p>
                     </div>
                 </div>
@@ -158,8 +158,8 @@
 
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../../common/common.js?version=1.0.1"></script>
-    <script src="../../js/daren_js/expert.js?version=1.0.1"></script>
+    <script src="../../common/common.js?tamp=20180613"></script>
+    <script src="../../js/daren_js/expert.js?tamp=20180613"></script>
 </body>
 
 </html>

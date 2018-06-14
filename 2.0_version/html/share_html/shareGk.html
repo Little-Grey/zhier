@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../../common/base.css?tamp=20180612">
-    <link rel="stylesheet" href="../../css/share_css/shareGk.css?tamp=20180612">
+    <link rel="stylesheet" href="../../common/base.css?tamp=20180613">
+    <link rel="stylesheet" href="../../css/share_css/shareGk.css?tamp=20180613">
     <script src="../../common/flexible.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 </head>
@@ -175,68 +175,9 @@
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../../common/common.js?tamp=20180612"></script>
+    <script src="../../common/common.js?tamp=20180613"></script>
     <script type="text/javascript" src="https://qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js"></script>
-    <script src="../../js/share_js/shareGk.js?tamp=20180612"></script>
-    <!-- <script>
-        $(document).ready(function () {
-            console.log(11111);
-            $.ajax({
-                type: 'get',
-                // url: weiXinUrl + '/wechat/v1/config?url=' + window.location.href,
-                url: "https://api.zhiervip.com/wechat/v1/config?url=" + window.location.href,
-                success: function (res) {
-                    console.log(res.data.appid)
-                    console.log(res.data.timestamp)
-                    console.log(res.data.noncestr)
-                    console.log(res.data.signature)
-                    setShareInfo({
-                        title: '父爱，在你看不到的地方',
-                        summary: '父爱如山，感觉不到只因身在此山中',
-                        pic: 'http://qzonestyle.gtimg.cn/aoi/sola/20150617094556_OvfOpoRKRB.png',
-                        url: 'http://qzs.qzone.qq.com/qzone/qzact/act/2015/father-day-m/index.html', // 分享链接'
-                        // url: 'https://m.zhiervip.com', // 分享链接'
-                        WXconfig: {
-                            swapTitleInWX: true,
-                            appId: res.data.appid,
-                            timestamp: res.data.timestamp,
-                            nonceStr: res.data.noncestr,
-                            signature: res.data.signature
-                        }
-                    });
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            })
-        })
-    </script> -->
-
-
-    
-    <!-- $(document).ready(function(){
-
-    $.ajax({
-        type: "get",
-        url: "https://api.zhiervip.com/wechat/v1/config?url=" + window.location.href,
-        success: function(res) {
-            setShareInfo({
-                title:          '父爱，在你看不到的地方', // 分享标题
-                summary:        '父爱如山，感觉不到只因身在此山中', // 分享内容
-                pic:            'http://qzonestyle.gtimg.cn/aoi/sola/20150617094556_OvfOpoRKRB.png', // 分享图片
-                url:            'http://qzs.qzone.qq.com/qzone/qzact/act/2015/father-day-m/index.html', // 分享链接
-                // 微信权限验证配置信息，若不在微信传播，可忽略
-                WXconfig: {
-                    swapTitleInWX: true, // 是否标题内容互换（仅朋友圈，因朋友圈内只显示标题）
-                    appId: res.data.appid, // 公众号的唯一标识
-                    timestamp: res.data.timestamp, // 生成签名的时间戳
-                    nonceStr: res.data.noncestr, // 生成签名的随机串
-                    signature: res.data.signature // 签名
-                }
-            });
-        }
-    })
-}); -->
+    <script src="../../js/share_js/shareGk.js?tamp=20180613"></script>
 </body>
 
 </html>

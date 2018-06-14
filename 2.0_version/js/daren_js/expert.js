@@ -16,14 +16,14 @@ new Vue({
         // window.getId = this.getId;
 
         // 判断移动端是安卓还是ios
-        var u = navigator.userAgent;
-        if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) { //安卓手机
-            console.log("安卓手机");
-            this.android = 1;
-        } else if (u.indexOf('iPhone') > -1) { //苹果手机
-            console.log("苹果手机");
-            this.iphone = 2;
-        };
+        // var u = navigator.userAgent;
+        // if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) { //安卓手机
+        //     console.log("安卓手机");
+        //     this.android = 1;
+        // } else if (u.indexOf('iPhone') > -1) { //苹果手机
+        //     console.log("苹果手机");
+        //     this.iphone = 2;
+        // };
 
     },
     methods: {
@@ -112,40 +112,53 @@ new Vue({
                 }
             })
         },
-        // 安卓调用方法
+        // 安卓——ios调用方法
         myFunction_inforMation() {
-            var inpOb = $('.info_gl>p>a').attr("data-id");
-            inpOb = inpOb + "";
-            console.log(inpOb);
-            // window.webkit.messageHandlers["Native"].postMessage()
-            window.webkit.messageHandlers["Native"].postMessage(inpOb);//ios方法
-            // window.android.get(inpOb);//安卓方法
-            // return inpOb;
-            // console.log(inpOb)
+            var inpObj = $('.info_gl>p>input').attr("data-id");
+            inpObj = inpObj + "";
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            window.webkit.messageHandlers["Native"].postMessage(inpObj);
+            } else {
+            // 安卓传输不了js json对象
+            console.log(inpObj)
+            window.android.get(inpObj); //安卓方法
+            }
         },
         myFunction_strategy() {
-            var inpObj = $('.strategy_gl>p>a').attr("data-id");
+            var inpObj = $('.strategy_gl>p>input').attr("data-id");
             inpObj = inpObj + "";
-            console.log(inpObj);
-            window.android.get(inpObj);
+            // window.android.get(inpObj);
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                window.webkit.messageHandlers["Native"].postMessage(inpObj);
+            } else {
+            //安卓传输不了js json对象
+            console.log(inpObj)
+            window.android.get(inpObj); //安卓方法
+            }
         },
         myFunction_lesson() {
-            var inpObj = $('.lesson_gl>p>a').attr("data-id");
+            var inpObj = $('.lesson_gl>p>input').attr("data-id");
             inpObj = inpObj + "";
-            console.log(inpObj);
-            window.android.get(inpObj);
+            // window.android.get(inpObj);
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                window.webkit.messageHandlers["Native"].postMessage(inpObj);
+            } else {
+            //安卓传输不了js json对象
+            console.log(inpObj)
+            window.android.get(inpObj); //安卓方法
+            }
         },
         myFunction_stroll() {
-            var inpObj = $('.stroll_gl>p>a').attr("data-id");
+            var inpObj = $('.stroll_gl>p>input').attr("data-id");
             inpObj = inpObj + "";
-            console.log(inpObj);
-            window.android.get(inpObj);
-        },
-        // ios方法
-        myIosFunction() {
-            var inpOb = $('.info_gl>p>button').attr("data-id");
-            inpOb = inpOb + "";
-            console.log(inpOb);
+            // window.android.get(inpObj);
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                window.webkit.messageHandlers["Native"].postMessage(inpObj);
+            } else {
+            //安卓传输不了js json对象
+            console.log(inpObj)
+            window.android.get(inpObj); //安卓方法
+            }
         }
     }
 })
