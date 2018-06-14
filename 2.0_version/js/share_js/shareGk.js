@@ -19,6 +19,10 @@ new Vue({
     },
     created() {
         this.getGk();
+        // 判断是不是再微信里面
+        // if (navigator.userAgent.match(/MicroMessenger/i)) {
+            // this.share();
+        // }
     },
     methods: {
         getGk: function () {
@@ -59,12 +63,6 @@ new Vue({
                     // // console.log(res.data);
                     // _this.msg = res.data;
                     // _this.products = res.data.product[0];
-                    // 第一个接口
-                    var obj01 = {
-                        data: {
-
-                        }
-                    }
 
                     // 判断id的类型,然后把数据结构转换
                     if (isNumber(article_id)) {
@@ -72,9 +70,17 @@ new Vue({
                         // V1接口
                         _this.msg = res.data;
                         _this.products = res.data.product[0];
-                    } else { 
+
+                        console.log(res.data);
+                        _this.share(); 
+                        // console.log(res.data.share.desc);
+                        // console.log(res.data.share.image);
+                        // console.log(res.data.share.link);
+                        // console.log(res.data.share.title);
+
+                    } else {
                         // 第二个接口
-                        var obj02 = {
+                        var obj01 = {
                             data: {
                                 'member': {
                                     // 名称
@@ -90,35 +96,70 @@ new Vue({
                                     // 皮肤
                                     'city_area_name': res.data.city_area_name,
                                     // 标题
-                                    'title' : res.data.title
+                                    'title': res.data.title,
+                                    'category_name': res.data.product[0],
+                                    'comment_num': res.data.comment_num,
+                                    'view_num': res.data.view_num,
+                                    'like_num': res.data.like_num
                                 }
                             }
                         }
                         // 自己自定义的对象
-                        var obj03 = {
+                        var obj02 = {
                             data: {
-                                'member_nickname': obj02.data.member.member_nickname,
-                                'member_avatar': obj02.data.member.member_avatar,
-                                'age': obj02.data.member.age,
-                                'skin_color': obj02.data.member.skin_color,
-                                'skin_type': obj02.data.member.skin_type,
-                                'city_area_name': obj02.data.member.city_area_name,
-                                'title' : obj02.data.member.title
+                                'member_nickname': obj01.data.member.member_nickname,
+                                'member_avatar': obj01.data.member.member_avatar,
+                                'age': obj01.data.member.age,
+                                'skin_color': obj01.data.member.skin_color,
+                                'skin_type': obj01.data.member.skin_type,
+                                'city_area_name': obj01.data.member.city_area_name,
+                                'title': obj01.data.member.title,
+                                'category_name': obj01.data.member.category_name, //这里面有数组
+                                'comment_num': obj01.data.member.comment_num,
+                                'view_num': obj01.data.member.view_num,
+                                'like_num': obj01.data.member.like_num
                             }
                         }
+                        // console.log(obj01)
+                        // console.log(obj02)
                         // console.log(V3接口);    
-                        // console.log(res.data);
-                        // _this.msg = res.data;
-                        // _this.products = res.data.product[0];
-                        _this.msg = obj03.data;
-                        _this.products = res.data.product[0];
-                        // console.log(obj03.data)
+                        _this.msg = obj02.data;
+                        _this.products = obj02.data.category_name;
+
+                        // _this.share(); 
                     }
 
 
                 },
                 error: function (err) {
                     console.log(err)
+                }
+            })
+        },
+        // 在微信里面二次分享
+        share: function () {
+            $.ajax({
+                type: 'get',
+                url: weiXinUrl + '/wechat/v1/config?url=' + window.location.href,
+                success: function (res) {
+                    console.log(res.data)
+                    console.log(111);
+                    setShareInfo({
+                        title: res.data.share.title,
+                        summary: res.data.share.desc,
+                        pic: res.data.share.image,//分享图片
+                        url: res.data.share.link, // 分享链接'
+                        WXconfig: {
+                            swapTitleInWX: true,
+                            appId: res.data.appid,
+                            timestamp: res.data.timestamp,
+                            nonceStr: res.data.noncestr,
+                            signature: res.data.signature
+                        }
+                    });
+                },
+                error: function (err) {
+                    console.log(err);
                 }
             })
         }

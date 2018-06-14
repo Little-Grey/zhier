@@ -169,6 +169,16 @@ body .requirement .information .information_right .info_gl a {
   line-height: .8rem;
   font-family: 'PingFang-SC-Medium';
 }
+body .requirement .information .information_right .info_gl button {
+  font-size: .32rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: .8rem;
+  font-family: 'PingFang-SC-Medium';
+  background: transparent;
+}
 body .requirement .strategy {
   width: 8.4rem;
   height: 1.2rem;

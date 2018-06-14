@@ -42,8 +42,39 @@ new Vue({
                 url:url,
                 // url: baseUrl + '/v1/article/po?article_id=1641',
                 success: function (res) {
-                    // console.log(res);
-                    _this.msg = res.data;
+                    if(isNumber(article_id)){
+                        console.log('v1接口')
+                        _this.msg = res.data;
+                    }else{
+                        console.log('v3接口')
+                        var obj01 = {
+                            data : {
+                                member : {
+                                    'member_avatar' : res.data.member.avatar,
+                                    'member_nickname' : res.data.member.nickname,
+                                    'image' : res.data.image,
+                                    'content' : res.data.content,
+                                    'collection_num' : res.data.comment_num,
+                                    'view_num' : res.data.view_num,
+                                    'like_num' : res.data.like_num
+                                }
+                            }
+                        }
+                        var obj02 = {
+                            data : {
+                                'member_avatar' : obj01.data.member.member_avatar,
+                                'member_nickname' : obj01.data.member.member_nickname,
+                                'image' : obj01.data.member.image,
+                                'content' : obj01.data.member.content,
+                                'collection_num' : obj01.data.member.collection_num,
+                                'view_num' : obj01.data.member.view_num,
+                                'like_num' : obj01.data.member.like_num
+                            }
+                        }
+                        console.log(obj01)
+                        console.log(obj02)
+                        _this.msg = obj02.data;
+                    }
                 },
                 error: function (err) {
                     console.log(err);

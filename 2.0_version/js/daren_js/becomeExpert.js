@@ -34,14 +34,15 @@ new Vue({
                 url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
             } else {
                 // console.log('是字符串');
-                url = baseUrl + '/v3/member/info?member_id' + member_Id;
+                url = baseUrl + '/v3/member/info?member_id=' + member_Id;
+                // url = 'https://dev.api.zhiervip.com/app/v3/member/info?member_id=MzThUizeNrg2O0O0O0O0O0O1';
             };
             $.ajax({
                 type: 'get',
                 // baseUrl-接口在common.js
                 // url: baseUrl + '/v1/member/info?time=123&sign=ABC&target_member_id=1000',
                 // url: baseUrl + '/v1/member/info?target_member_id=' + member_Id,
-                url:url,
+                url: url,
                 beforeSend: function () {
                     $("#loading").show();
                 },

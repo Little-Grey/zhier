@@ -4,10 +4,27 @@ new Vue({
         msg: {},
         info: '申请达人',
         is: true,
-        isColro: false
+        isColro: false,
+        android: '',
+        iphone: '',
     },
     created() {
         this.getId();
+
+    },
+    mounted() {
+        // window.getId = this.getId;
+
+        // 判断移动端是安卓还是ios
+        var u = navigator.userAgent;
+        if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) { //安卓手机
+            console.log("安卓手机");
+            this.android = 1;
+        } else if (u.indexOf('iPhone') > -1) { //苹果手机
+            console.log("苹果手机");
+            this.iphone = 2;
+        };
+
     },
     methods: {
         getId: function () {
@@ -37,13 +54,13 @@ new Vue({
                 url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
             } else {
                 // console.log('是字符串');
-                url = baseUrl + '/v3/member/info?member_id' + member_Id;
+                url = baseUrl + '/v3/member/info?member_id=' + member_Id;
             };
             $.ajax({
                 type: 'get',
                 // url: baseUrl + '/v1/member/info?target_member_id=1000',
                 // url: baseUrl + '/v1/member/info?target_member_id=' + member_Id,
-                url:url,
+                url: url,
                 beforeSend: function () {
                     $("#loading").show();
                 },
@@ -100,7 +117,11 @@ new Vue({
             var inpOb = $('.info_gl>p>a').attr("data-id");
             inpOb = inpOb + "";
             console.log(inpOb);
-            window.android.get(inpOb);
+            // window.webkit.messageHandlers["Native"].postMessage()
+            window.webkit.messageHandlers["Native"].postMessage(inpOb);//ios方法
+            // window.android.get(inpOb);//安卓方法
+            // return inpOb;
+            // console.log(inpOb)
         },
         myFunction_strategy() {
             var inpObj = $('.strategy_gl>p>a').attr("data-id");
@@ -119,6 +140,12 @@ new Vue({
             inpObj = inpObj + "";
             console.log(inpObj);
             window.android.get(inpObj);
+        },
+        // ios方法
+        myIosFunction() {
+            var inpOb = $('.info_gl>p>button').attr("data-id");
+            inpOb = inpOb + "";
+            console.log(inpOb);
         }
     }
 })

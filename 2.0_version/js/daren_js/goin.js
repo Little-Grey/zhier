@@ -35,7 +35,7 @@ new Vue({
                 url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
             } else {
                 // console.log('是字符串');
-                url = baseUrl + '/v3/member/info?member_id' + member_Id;
+                url = baseUrl + '/v3/member/info?member_id=' + member_Id;
             };
 
             $.ajax({
