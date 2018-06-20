@@ -68,7 +68,20 @@ new Vue({
                     $("#loading").hide();
                 },
                 success: function (res) {
-                    // console.log(res.data);
+                    // console.log(res.code);
+                    // 状态码,判断状态吗,如果等于他,就返回消息给安卓
+                    if (res.code == 21005) {
+                        var inpObj = 'TOKEN_ERROR';
+                        inpObj = inpObj + "";
+                        console.log(inpObj)
+                        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                            window.webkit.messageHandlers["Native"].postMessage(inpObj);
+                        } else {
+                            // 安卓传输不了js json对象
+                            // console.log(inpObj)
+                            window.android.get(inpObj); //安卓方法
+                        }
+                    }
 
                     if (res.data.master == 'NONE') {
                         // console.log('none')
@@ -117,11 +130,11 @@ new Vue({
             var inpObj = $('.info_gl>p>input').attr("data-id");
             inpObj = inpObj + "";
             if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-            window.webkit.messageHandlers["Native"].postMessage(inpObj);
+                window.webkit.messageHandlers["Native"].postMessage(inpObj);
             } else {
-            // 安卓传输不了js json对象
-            console.log(inpObj)
-            window.android.get(inpObj); //安卓方法
+                // 安卓传输不了js json对象
+                console.log(inpObj)
+                window.android.get(inpObj); //安卓方法
             }
         },
         myFunction_strategy() {
@@ -131,9 +144,9 @@ new Vue({
             if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
                 window.webkit.messageHandlers["Native"].postMessage(inpObj);
             } else {
-            //安卓传输不了js json对象
-            console.log(inpObj)
-            window.android.get(inpObj); //安卓方法
+                //安卓传输不了js json对象
+                console.log(inpObj)
+                window.android.get(inpObj); //安卓方法
             }
         },
         myFunction_lesson() {
@@ -143,9 +156,9 @@ new Vue({
             if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
                 window.webkit.messageHandlers["Native"].postMessage(inpObj);
             } else {
-            //安卓传输不了js json对象
-            console.log(inpObj)
-            window.android.get(inpObj); //安卓方法
+                //安卓传输不了js json对象
+                console.log(inpObj)
+                window.android.get(inpObj); //安卓方法
             }
         },
         myFunction_stroll() {
@@ -155,9 +168,9 @@ new Vue({
             if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
                 window.webkit.messageHandlers["Native"].postMessage(inpObj);
             } else {
-            //安卓传输不了js json对象
-            console.log(inpObj)
-            window.android.get(inpObj); //安卓方法
+                //安卓传输不了js json对象
+                console.log(inpObj)
+                window.android.get(inpObj); //安卓方法
             }
         }
     }

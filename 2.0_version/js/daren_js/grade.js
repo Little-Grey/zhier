@@ -41,10 +41,10 @@ new Vue({
             var url = '';
             // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
             if (isNumber(member_Id)) {
-                console.log('是纯数字');
+                // console.log('是纯数字');
                 url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
             } else {
-                console.log('是字符串');
+                // console.log('是字符串');
                 url = baseUrl + '/v3/member/info?member_id=' + member_Id;
             };
 
@@ -100,7 +100,7 @@ new Vue({
 
                     // 把数据负值给定义的msg
                     _this.msg = res.data;
-                    console.log(res.data);
+                    // console.log(res.data);
 
                 },
 

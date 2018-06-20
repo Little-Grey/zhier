@@ -107,11 +107,12 @@ body .section_portrait .jy {
 }
 body .section_portrait .jy span {
   color: #222222;
-}
-body .section_portrait .jy span:nth-child(1) {
   font-size: .64rem;
 }
 body .section_portrait .jy span:nth-child(2) {
+  font-size: .346667rem;
+}
+body .section_portrait .jy span:nth-child(3) {
   font-size: .346667rem;
 }
 body .section_portrait .progress {
@@ -409,7 +410,7 @@ body .section_mission .mission_bottom .release_zhier .zhier_content h3 {
 body .section_mission .mission_bottom .release_zhier .zhier_content p {
   padding-top: .133333rem;
   color: #999999;
-  font-size: .106667rem;
+  font-size: .293333rem;
 }
 body .section_mission::after {
   content: '';
