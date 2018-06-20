@@ -21,11 +21,10 @@ new Vue({
             4: '../../images/666.jpeg',
             5: '../../images/timg (1).jpeg',
             6: '../../images/timg.jpeg'
-        },
-        qqq: {}
+        }
 
     },
-    created() {
+    mounted() {
         this.getExchange();
         // this.countee()  
     },
@@ -78,15 +77,7 @@ new Vue({
             // }
 
         },
-
-        // 假数据,点击上面的数据减一
-        // btn1(){
-        //     var _this = this;
-        //     _this.counts = _this.counts--;
-        //     console.log(_this.counts--);
-        // }
-
-
+        // 页面渲染的数据
         getExchange: function () {
             let _this = this;
             $.ajax({
@@ -100,36 +91,27 @@ new Vue({
                     _this.myTime(ss);
                     // 把总知币赋值给sumCurrency这个data里变量
                     _this.sumCurrency = res.data.currency;
-                    _this.qqq = res.data.carousel
-                    console.log(res.data.carousel);
-                    _this.msg = res.data; 
-                    // 初始轮播图
-                    var mySwiper = new Swiper('.swiper-container', {
-                        direction: 'horizontal', //横向切换
-                        loop: true, //无限循环
-                        // observer:true,//图片
-
-                        // initialSlide :0,
-                        observer:true,//修改swiper自己或子元素时，自动初始化swiper
-                        observeParents:true,//修改swiper的父元素时，自动初始化swiper
-                        // autoplay:true,//自动
-                        // 如果需要分页器
-                        pagination: {
-                            el: '.swiper-pagination',
-                            type: 'fraction', //小圆点的类型
-                        },
-                        onSlideChangeEnd: function (swiper) {
-                            swiper.update();
-                            mySwiper.startAutoplay();
-                            mySwiper.reLoop();
-                        }
-                    });
+                    _this.msg = res.data;
                 },
                 error: function (err) {
                     console.log(err + '失败')
                 }
             })
         },
+        // 初始轮播图
+        swiper1() {
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal', //横向切换
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction' //小圆点的类型
+                },
+                observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            })
+        },
+        // 点击立即申请
         succeedClick() {
             let _this = this;
             // 假数据
@@ -161,6 +143,9 @@ new Vue({
                 }
             })
         }
-
-    }
+    },
+    // updated,当重新渲染之后,这个函数就会执行
+    updated() {
+        this.swiper1();
+    },
 })

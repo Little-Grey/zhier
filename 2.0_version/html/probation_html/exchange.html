@@ -27,9 +27,11 @@
 
                         <!-- <div v-for="item in qwe" class="swiper-slide"> -->
                         <div v-for="item in msg.carousel" class="swiper-slide">
-                            <!-- <img src="../../images/probation_img/header_01.jpeg" alt=""> -->
                             <img :src="item" alt="">
                         </div>
+                        <!-- <div class="swiper-slide" v-show="lists.length" v-for="(item, index) in lists">
+                                <img :src="item" :alt="index">
+                            </div> -->
                     </div>
                     <!-- 如果需要分页器 -->
                     <div class="swiper-pagination"></div>
