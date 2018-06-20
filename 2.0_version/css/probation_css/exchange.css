@@ -19,9 +19,14 @@ body .header .header_carousel .swiper-container {
   height: 100%;
   /* 分页 */
 }
+body .header .header_carousel .swiper-container .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 7.466667rem;
+}
 body .header .header_carousel .swiper-container .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 body .header .header_carousel .swiper-container .swiper-pagination-fraction {
   bottom: .266667rem;

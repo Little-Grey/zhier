@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../css/probation_css/exchange.css">
     <script src="../../common/flexible.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <!-- 引入swiperjs -->
+    <script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -22,14 +24,11 @@
             <div class="header_carousel">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="../../images/probation_img/header_01.jpeg" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../../images/probation_img/header_01.jpeg" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../../images/probation_img/header_01.jpeg" alt="">
+
+                        <!-- <div v-for="item in qwe" class="swiper-slide"> -->
+                        <div v-for="item in msg.carousel" class="swiper-slide">
+                            <!-- <img src="../../images/probation_img/header_01.jpeg" alt=""> -->
+                            <img :src="item" alt="">
                         </div>
                     </div>
                     <!-- 如果需要分页器 -->
@@ -50,15 +49,15 @@
                 </div>
                 <!-- 倒计时结束之后,就系活动开始,显示数量.surplus -->
                 <div v-show="count" class="surplus">
-                        <p>剩余数量</p>
-                        <p>{{counts}}/100</p>
-                        <!-- <p>64/100</p> -->
-                    </div>
+                    <p>剩余数量</p>
+                    <p>{{counts}}/100</p>
+                    <!-- <p>64/100</p> -->
+                </div>
                 <!-- 数量为空的时候,显示这个 -->
                 <div v-show="over" class="loot_all">
-                        <p>已结束</p>
-                        <p>被抢光啦</p>
-                    </div>
+                    <p>已结束</p>
+                    <p>被抢光啦</p>
+                </div>
             </div>
             <!-- 轮播图下面的说明 -->
             <div class="header_state">
@@ -68,7 +67,7 @@
                 <div class="header_state_center">
                     <div class="requirement">
                         <span>申请条件：</span>
-                        <span>900</span>
+                        <span>{{msg.currency}}</span>
                         <span>知币</span>
                     </div>
                     <!-- 小头像 -->
@@ -94,11 +93,11 @@
                 <div class="header_state_bottom">
                     <div class="quantity_left">
                         <span>限量</span>
-                        <span>100</span>
+                        <span>{{msg.stock}}</span>
                         <span>份</span>
                     </div>
                     <div class="quantity_right">
-                        <span>389</span>
+                        <span>{{msg.member_num}}</span>
                         <span>人参与</span>
                     </div>
                 </div>
@@ -117,9 +116,15 @@
                     <p>3.该活动的解释权归知耳所有。</p>
                 </div>
                 <!-- 按钮 -->
-                <div class="activity_declare_btn">
+                <!-- 立即申请 -->
+                <div v-show="click" @click="succeedClick" class="activity_declare_btn">
                     <a href="javascripg:;">立即申请
                         <span>(900知币)</span>
+                    </a>
+                </div>
+                <!-- 点击立即申请,判断当前知币是否等于需要的知币.如果等于,或者大于,那么就显示这个按钮 -->
+                <div v-show="succeed" class="activity_declare_btn">
+                    <a href="javascripg:;">兑换成功
                     </a>
                 </div>
             </div>
@@ -128,21 +133,29 @@
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-    <!-- 引入swiperjs -->
-    <script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
+    <script src="../../common/common.js"></script>
     <script src="../../js/probation_js/exchange.js"></script>
-    <script>
+    <!-- <script>
         var mySwiper = new Swiper('.swiper-container', {
             direction: 'horizontal', //横向切换
             loop: true, //无限循环
+            // observer:true,//图片
 
+            observer: true, //修改swiper自己或子元素时，自动初始化swiper
+            observeParents: true, //修改swiper的父元素时，自动初始化swiper
+            // autoplay:true,//自动
             // 如果需要分页器
             pagination: {
                 el: '.swiper-pagination',
                 type: 'fraction', //小圆点的类型
+            },
+            onSlideChangeEnd: function (swiper) {
+                swiper.update();
+                mySwiper.startAutoplay();
+                mySwiper.reLoop();
             }
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
