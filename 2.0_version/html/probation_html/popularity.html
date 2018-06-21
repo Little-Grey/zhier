@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../css/probation_css/popularity.css">
     <script src="../../common/flexible.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <!-- 引入swiperjs -->
+    <script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -22,15 +24,15 @@
             <div class="header_carousel">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div v-for="item in msg.carousel" class="swiper-slide">
+                            <img :src="item" alt="">
+                        </div>
+                        <!-- <div class="swiper-slide">
                             <img src="../../images/probation_img/header_01.jpeg" alt="">
                         </div>
                         <div class="swiper-slide">
                             <img src="../../images/probation_img/header_01.jpeg" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../../images/probation_img/header_01.jpeg" alt="">
-                        </div>
+                        </div> -->
                     </div>
                     <!-- 如果需要分页器 -->
                     <div class="swiper-pagination"></div>
@@ -46,33 +48,32 @@
                     <p>开始倒计时</p>
                     <p>70:54:32</p>
                 </div> -->
-                 <!-- 未开始的时候,倒计时 -->
-                 <div v-show="time" class="count_down">
-                        <p>开始倒计时</p>
-                        <p class="time_p"></p>
-                        <!-- <p class="time_p">70:54:32</p> -->
-                    </div>
-                    <!-- 倒计时结束之后,就系活动开始,显示数量.surplus -->
-                    <div v-show="count" class="surplus">
-                            <p>剩余数量</p>
-                            <p>{{counts}}/100</p>
-                            <!-- <p>64/100</p> -->
-                        </div>
-                    <!-- 数量为空的时候,显示这个 -->
-                    <div v-show="over" class="loot_all">
-                            <p>已结束</p>
-                            <p>被抢光啦</p>
-                        </div>
+                <!-- 未开始的时候,倒计时 -->
+                <div v-show="time" class="count_down">
+                    <p>开始倒计时</p>
+                    <p class="time_p"></p>
+                    <!-- <p class="time_p">70:54:32</p> -->
+                </div>
+                <!-- 倒计时结束之后,就系活动开始,显示数量.surplus -->
+                <div v-show="count" class="surplus">
+                    <p>剩余数量</p>
+                    <p>{{msg.stock - msg.member_num}}/100</p>
+                </div>
+                <!-- 数量为空的时候,显示这个 -->
+                <div v-show="over" class="loot_all">
+                    <p>已结束</p>
+                    <p>被抢光啦</p>
+                </div>
             </div>
             <!-- 轮播图下面的说明 -->
             <div class="header_state">
                 <div class="header_state_top">
-                    <p>IPSA明净亮肌磨砂面膜IPSA明净亮肌磨砂面膜IPSA明净亮肌磨砂面膜IPSA明净亮肌磨砂面膜</p>
+                    <p>{{name}}</p>
                 </div>
                 <div class="header_state_center">
                     <div class="requirement">
                         <span>申请条件：</span>
-                        <span>900</span>
+                        <span>{{msg.currency}}</span>
                         <span>知币</span>
                     </div>
                     <!-- 小头像 -->
@@ -98,11 +99,12 @@
                 <div class="header_state_bottom">
                     <div class="quantity_left">
                         <span>限量</span>
-                        <span>100</span>
+                        <!-- <span></span> -->
+                        <span>{{msg.stock}}</span>
                         <span>份</span>
                     </div>
                     <div class="quantity_right">
-                        <span>389</span>
+                        <span>{{msg.member_num}}</span>
                         <span>人参与</span>
                     </div>
                 </div>
@@ -134,7 +136,9 @@
                         <i class="myHeat_i">-</i>
                         <img class="myHeat_img" src="../../images/probation_img/header_01.jpeg" alt="">
                         <span>Twelve_12</span>
-                        <span><a href="javascript:;">立即申请</a></span>
+                        <span>
+                            <a href="javascript:;">立即申请</a>
+                        </span>
                     </div>
                     <!-- 排行榜 -->
                     <ul class="heatUl">
@@ -206,15 +210,15 @@
         <!-- 下面部分 -->
         <section class="activity">
             <div class="activity_img">
-                <img src="../../images/probation_img/header_02.jpeg" alt="">
+                <img src="../../images/probation_img/WechatIMG13.jpeg" alt="">
             </div>
             <div class="activity_declare">
-                <div class="activity_declare_top">
+                <!-- <div class="activity_declare_top">
                     <h2>活动说明</h2>
                     <p>1.将从申请热度榜的用户中抽出试用数量的名额。</p>
                     <p>2.可以通过分享我的热度页面给好友，增加自己在申请榜中的排名。</p>
                     <p>3.该活动的解释权归知耳所有。</p>
-                </div>
+                </div> -->
                 <!-- 按钮 -->
                 <div class="activity_declare_btn">
                     <a href="javascripg:;">立即申请
@@ -227,20 +231,10 @@
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-    <!-- 引入swiperjs -->
-    <script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
+    <script src="../../common/common.js"></script>
     <script src="../../js/probation_js/popularity.js"></script>
     <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            direction: 'horizontal', //横向切换
-            loop: true, //无限循环
-
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction', //小圆点的类型
-            }
-        })
+      
     </script>
 </body>
 

@@ -23,6 +23,7 @@ body .header .header_carousel .swiper-container {
 body .header .header_carousel .swiper-container .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 body .header .header_carousel .swiper-container .swiper-pagination-fraction {
   bottom: .266667rem;
@@ -415,7 +416,7 @@ body .activity {
 }
 body .activity .activity_img {
   width: 100%;
-  height: 12.72rem;
+  height: 16.626667rem;
 }
 body .activity .activity_img img {
   width: 100%;
@@ -424,24 +425,6 @@ body .activity .activity_img img {
 body .activity .activity_declare {
   width: 100%;
   /* 按钮 */
-}
-body .activity .activity_declare .activity_declare_top {
-  width: 100%;
-}
-body .activity .activity_declare .activity_declare_top h2 {
-  color: #000;
-  font-size: .4rem;
-  text-align: center;
-  font-weight: 600;
-  padding: .4rem 0 .266667rem 0;
-}
-body .activity .activity_declare .activity_declare_top p {
-  color: #000;
-  font-size: .373333rem;
-  padding: 0 .4rem;
-}
-body .activity .activity_declare .activity_declare_top p:nth-child(4) {
-  padding-bottom: 1.626667rem;
 }
 body .activity .activity_declare .activity_declare_btn {
   width: 100%;

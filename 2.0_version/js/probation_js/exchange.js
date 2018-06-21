@@ -2,15 +2,16 @@ new Vue({
     el: '#app',
     data: {
         msg: {},
+        name:{},//品牌的名称
         time: true, //计时
         count: false, //数量
         over: false, //结束
-        time_s: '', //时间
+        // time_s: '', //时间
         sumCurrency: '', //兑换的总知币数量
+        remaining: '', //剩余数量,把接口数据拿过来
         // ------------假数据
-        counts: 10,
-        click: true, //立即申请
-        succeed: false, //兑换成功
+        ssssss: 0, //剩余数量
+        counts: 0,
         currency: 900, //所需要的知币
         xianyou: 901, //现有的知币
         qwe: {
@@ -62,13 +63,14 @@ new Vue({
                     clearInterval(timer);
                     console.log('清除定时器');
                     _this.time = false;
-                    if (_this.counts <= 0) {
-                        _this.count = false;
-                        console.log(_this.count);
+                    // 判断,如果当库存小于或等于0,显示数量就隐藏,然后结束样式出来,否则:数量样式出来.
+                    if (_this.remaining <= 0) {
+                        _this.count = false;//数量隐藏
                         _this.over = true; //结束样式出来
                     } else {
                         _this.count = true; //数量样式出来
                     }
+                    console.log(_this.remaining)
                 }
             }, 1000);
             // if (times <= -1) {
@@ -86,12 +88,32 @@ new Vue({
                 success: function (res) {
                     //  把结束时间减去当前时间
                     var ss = res.data.end_time - res.data.start_time;
-                    console.log(res.data.end_time - res.data.start_time)
+                    // console.log(res.data.end_time - res.data.start_time)
+                    // var a= 4;
+                    // if (a <= 0) {
+                    if (ss <= 0) {
+                        console.log('倒计时为0');
+                        _this.time = false;
+                    }
                     // 调用倒计时插件
                     _this.myTime(ss);
+
                     // 把总知币赋值给sumCurrency这个data里变量
-                    _this.sumCurrency = res.data.currency;
+                    // _this.sumCurrency = res.data.currency;
+                    //把当前库存stock给这个remaining变量
+                    _this.remaining = res.data.stock - res.data.member_num;
+                    // 产品名称
+                    _this.name = res.data.brand.name;
+
                     _this.msg = res.data;
+                    // 判断当前状态,如果none就return出去,如果wait,就系申请成功
+                    if (res.data.enroll.status == 'NONE') {
+                        return;
+                    }
+                    if (res.data.enroll.status == 'WAIT') {
+                        _this.click = false; //立即申请
+                        _this.succeed = true; //兑换成功
+                    }
                 },
                 error: function (err) {
                     console.log(err + '失败')
@@ -111,38 +133,38 @@ new Vue({
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
             })
         },
-        // 点击立即申请
-        succeedClick() {
-            let _this = this;
-            // 假数据
-            // if(_this.xianyou >= _this.currency){
-            //     console.log(1)
-            //     _this.click = false;
-            //     _this.succeed = true;
-            // }else{
-            //     console.log('当前知币不够900')
-            // }
-            // console.log(_this.sumCurrency)
-            $.ajax({
-                type: 'get',
-                url: baseUrl + '/v3//member/info?member_id=MzThUizeNrg2O0O0O0O0O0O1',
-                success: function (res) {
-                    console.log(res.data);
-                    console.log(res.data.currency + '当前的知币');
-                    console.log(_this.sumCurrency + '总知币');
-                    if (res.data.currency >= _this.sumCurrency) {
-                        // console.log(1)
-                        _this.click = false;
-                        _this.succeed = true;
-                    } else {
-                        console.log('当前知币不够900')
-                    }
-                },
-                error: function (err) {
-                    console.log(err + '失败')
-                }
-            })
-        }
+        // 点击立即申请(不需要,点击只需要跳转下载页面)
+        // succeedClick() {
+        //     let _this = this;
+        //     // 假数据
+        //     // if(_this.xianyou >= _this.currency){
+        //     //     console.log(1)
+        //     //     _this.click = false;
+        //     //     _this.succeed = true;
+        //     // }else{
+        //     //     console.log('当前知币不够900')
+        //     // }
+        //     // console.log(_this.sumCurrency)
+        //     $.ajax({
+        //         type: 'get',
+        //         url: baseUrl + '/v3//member/info?member_id=MzThUizeNrg2O0O0O0O0O0O1',
+        //         success: function (res) {
+        //             // console.log(res.data);
+        //             // console.log(res.data.currency + '当前的知币');
+        //             // console.log(_this.sumCurrency + '总知币');
+        //             if (res.data.currency >= _this.sumCurrency) {
+        //                 // console.log(1)
+        //                 _this.click = false; //立即申请
+        //                 _this.succeed = true; //兑换成功
+        //             } else {
+        //                 console.log('当前知币不够900')
+        //             }
+        //         },
+        //         error: function (err) {
+        //             console.log(err + '失败')
+        //         }
+        //     })
+        // }
     },
     // updated,当重新渲染之后,这个函数就会执行
     updated() {

@@ -43,16 +43,18 @@
                     </div>
                 </div>
                 <div class="footer_bottom">
+                    <!-- 邀请好友阻力状态 -->
                     <div v-show="help" class="footer_btn">
                         <a href="javascript:;">查看我的排行</a>
                         <a @click="btnClickFriend" href="javascript:;">邀请好友助力</a>
                     </div>
-
+                    <!-- 登录页面状态 -->
                     <!-- 思路:判断,后台返回一个字段,如果分享出去了,我就判断是不是这个原来的id进来,如果是原来的id进来,就显示上面的,如果是一个其他的id,就显示这个,要让他先登录 -->
                     <div v-show="register" class="footer_btn logIn">
                         <a href="javascript:;">我也要参加</a>
                         <a @click="btnLogIn" href="javascript:;">登录</a>
                     </div>
+                    <!-- 登录成功的状态 -->
                     <!-- 登录猴,就显示这个状态,其他隐藏,然后点击支持ta,就调用接口,把数据穿过后台 -->
                     <div v-show="support" class="footer_btn">
                         <a href="javascript:;">我也要参加</a>
@@ -61,7 +63,7 @@
                 </div>
             </footer>
 
-            <!-- 登录页面 -->
+            <!-- 登录页面状态,点击上面登录,才会出现 -->
             <section class="enter">
                 <!-- 模态框- 点击模态框,按钮退回去. -->
                 <div @click="btnModal" class="modal"></div>

@@ -54,13 +54,13 @@ new Vue({
         // 点击邀请好友助力
         btnClickFriend(){
             var _this = this;
-            console.log('点击好友');
+            console.log('点击好友助力,显示出来的模态');
             _this.globals = true;
         },
         //点击邀请好友阻力,然后出现的模态框,再点击,隐藏
         btnClickGloval(){
             var _this = this;
-            console.log('点击好友助力,显示出来的模态');
+            console.log('点击屏幕,隐藏模态');
             _this.globals = false;
         }
     }
