@@ -30,12 +30,11 @@ new Vue({
             var url = '';
             // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
             if (isNumber(article_id)) {
-                // console.log('是纯数字');
+                console.log('是纯数字');
                 url = baseUrl + '/v1/article/question?article_id=' + article_id;
             } else {
-                // console.log('是字符串');
+                console.log('是字符串');
                 url = baseUrl + '/v3/article_question?article_id=' + article_id;
-                // url = 'https://dev.api.zhiervip.com/app/v3/article_question?article_id=MzThki1eMrQ2O0O0O0O0O0O1'
             };
             $.ajax({
                 type: 'get',
@@ -133,7 +132,7 @@ new Vue({
                         // console.log(obj01)
                         // console.log(obj02)
                         _this.msg = obj02.data;
-
+                        // console.log(obj02.data)
                         var desc = obj02.data.desc;
                         var image = obj02.data.image;
                         var link = obj02.data.link;

@@ -27,12 +27,6 @@
                         <div v-for="item in msg.carousel" class="swiper-slide">
                             <img :src="item" alt="">
                         </div>
-                        <!-- <div class="swiper-slide">
-                            <img src="../../images/probation_img/header_01.jpeg" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../../images/probation_img/header_01.jpeg" alt="">
-                        </div> -->
                     </div>
                     <!-- 如果需要分页器 -->
                     <div class="swiper-pagination"></div>
@@ -134,23 +128,30 @@
                     <!-- 自己 -->
                     <div class="myHeat">
                         <i class="myHeat_i">-</i>
-                        <img class="myHeat_img" src="../../images/probation_img/header_01.jpeg" alt="">
-                        <span>Twelve_12</span>
+                        <img class="myHeat_img" v-show="msg.avatar" :src="msg.avatar" alt="">
+                        <img class="myHeat_img" v-show="!msg.avatar" src="../../images/daren_img/default.png" alt="">
+                        <!-- <img class="myHeat_img" src="../../images/probation_img/header_01.jpeg" alt=""> -->
+                        <span v-show="msg.nickname">{{msg.nickname}}</span>
+                        <span v-show="!msg.nickname">gery</span>
                         <span>
                             <a href="javascript:;">立即申请</a>
                         </span>
                     </div>
                     <!-- 排行榜 -->
                     <ul class="heatUl">
-                        <li>
+                        <li v-for="item in list">
                             <div class="heatUl_seniority">
                                 <i class="heatUl_i"></i>
-                                <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt="">
-                                <span>Twelve_12</span>
-                                <span>122018</span>
+                                <img class="heatUl_img" :src="item.avatar" alt="">
+                                <!-- <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt=""> -->
+                                <span>{{item.member.id}}</span>
+                                <!-- <span>Twelve_12</span> -->
+                                <span>{{item.support_num}}</span>
+                                <!-- <span>122018</span> -->
                             </div>
                         </li>
-                        <li>
+
+                        <!-- <li>
                             <div class="heatUl_seniority">
                                 <i class="heatUl_i"></i>
                                 <img class="heatUl_img" src="../../images/probation_img/header_01.jpeg" alt="">
@@ -197,7 +198,8 @@
                                 <span>Twelve_12</span>
                                 <span>122018</span>
                             </div>
-                        </li>
+                        </li> -->
+                    
                     </ul>
                     <!-- 查看全部 判断数据,如果大于7条或等于7条,然后显示出来,点击这个按钮,就会跳转到app里面 -->
                     <div class="start_btn">
@@ -234,7 +236,6 @@
     <script src="../../common/common.js"></script>
     <script src="../../js/probation_js/popularity.js"></script>
     <script>
-      
     </script>
 </body>
 

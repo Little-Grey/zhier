@@ -1,1 +1,0 @@
-"use strict";var baseUrl="https://api.zhiervip.com/app",weiXinUrl="https://api.zhiervip.com";

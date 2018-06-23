@@ -297,6 +297,7 @@ body .heat .start .heat_bottom .myHeat {
   background: #e4e5e5;
   height: 1.6rem;
   overflow: hidden;
+  display: none;
 }
 body .heat .start .heat_bottom .myHeat .myHeat_i {
   font-size: .4rem;
@@ -317,17 +318,22 @@ body .heat .start .heat_bottom .myHeat .myHeat_img img {
 body .heat .start .heat_bottom .myHeat span {
   float: left;
 }
-body .heat .start .heat_bottom .myHeat span:nth-child(3) {
+body .heat .start .heat_bottom .myHeat span:nth-child(4) {
   font-size: .4rem;
   color: #222;
   padding: .533333rem 0 .586667rem .266667rem;
 }
-body .heat .start .heat_bottom .myHeat span:nth-child(4) {
+body .heat .start .heat_bottom .myHeat span:nth-child(5) {
+  font-size: .4rem;
+  color: #222;
+  padding: .533333rem 0 .586667rem .266667rem;
+}
+body .heat .start .heat_bottom .myHeat span:nth-child(6) {
   font-size: .346667rem;
   float: right;
   padding: .533333rem .266667rem .64rem 0;
 }
-body .heat .start .heat_bottom .myHeat span:nth-child(4) a {
+body .heat .start .heat_bottom .myHeat span:nth-child(6) a {
   display: block;
   width: 100%;
   height: 100%;

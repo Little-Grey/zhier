@@ -2,6 +2,7 @@ new Vue({
     el: '#app',
     data: {
         msg: {},
+        list:{},
         name: {},
         time: true, //计时
         count: false, //数量
@@ -12,11 +13,13 @@ new Vue({
         // ------------假数据
         counts: 10,
         ssssss: 1, //剩余数量
+        lists:{}
     },
     mounted() {
         // this.myTime(6);
         // this.countee()
         this.getPopularity();
+        this.getRedu();
     },
     methods: {
         // 倒计时插件
@@ -86,7 +89,7 @@ new Vue({
                     _this.remaining = res.data.stock - res.data.member_num;
 
                     _this.msg = res.data;
-                    console.log(_this.msg)
+                    // console.log(_this.msg)
                 },
                 error: function (err) {
 
@@ -106,12 +109,32 @@ new Vue({
                 observeParents: true, //修改swiper的父元素时，自动初始化swiper
             })
         },
-        // 假数据,点击上面的数据减一
-        // btn1(){
-        //     var _this = this;
-        //     _this.counts = _this.counts--;
-        //     console.log(_this.counts--);
-        // }
+        // 申请热度榜接口渲染
+        getRedu:function(){
+            let _this = this;
+            $.ajax({
+                type:'get',
+                url:baseUrl + '/v3/trial/enroll/support?trial_enroll_id=MzThAiweMrA2O0O0O0O0O0O1',
+                success:function(res){
+                    // _this.list = res.data;
+                    console.log(res.data);
+                    var obj = {
+                        "member":{
+                            "id":"z",
+                            "nickname":null,
+                            "avatar":""
+                        },
+                        "support_num":0
+                    }
+                    for(var i = 0; i<20;i++){
+                        _this.lists.push(obj);
+                    }
+                },
+                error:function(err){
+                    console.log(err);
+                }
+            })
+        }
     },
     updated() {
         this.swiper1();

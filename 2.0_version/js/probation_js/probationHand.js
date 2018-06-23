@@ -2,9 +2,9 @@ new Vue({
     el: '#app',
     data: {
         msg: {},
-        help: true,
-        register: false,
-        support: false,
+        help: true,//邀请好友助力
+        register: false,//登陆按钮
+        support: false,//支持他
         // popup:true,//登录模块
         globals:false,// 点击好友助力,显示出来的模态 
     },

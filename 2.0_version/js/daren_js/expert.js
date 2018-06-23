@@ -46,28 +46,28 @@ new Vue({
                 if (r != null) return unescape(r[2]);
                 return null;
             }
-            var member_id = getQueryString("member_id");
-            var target_member_id = getQueryString("target_member_id");
-            var url = '';
-            // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
-            if (isNumber(target_member_id)) {
-                // console.log('是纯数字');
-                url = baseUrl + '/v1/member/info?target_member_id=' + target_member_id;
-            } else {
-                // console.log('是字符串');
-                url = baseUrl + '/v3/member/info?member_id=' + member_id;
-                // url = 'https://dev.api.zhiervip.com/app/v3/member/info?member_id=MzThUizeNrg2O0O0O0O0O0O1';
-            };
-            // var member_Id = getQueryString("member_id");
+            // var member_id = getQueryString("member_id");
+            // // var target_member_id = getQueryString("target_member_id");
             // var url = '';
             // // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
-            // if (isNumber(member_Id)) {
-            //     // console.log('是纯数字');
-            //     url = baseUrl + '/v1/member/info?target_member_id=' + member_Id;
+            // if (isNumber(member_id)) {
+            //     console.log('是纯数字');
+            //     url = baseUrl + '/v1/member/info?target_member_id=' + member_id;
             // } else {
-            //     // console.log('是字符串');
-            //     url = baseUrl + '/v3/member/info?member_id=' + member_Id;
+            //     console.log('是字符串');
+            //     url = baseUrl + '/v3/member/info?member_id=' + member_id;
+            //     // url = 'https://dev.api.zhiervip.com/app/v3/member/info?member_id=MzThUizeNrg2O0O0O0O0O0O1';
             // };
+            var member_id = getQueryString("member_id");
+            var url = '';
+            // 判断传过来的id,是不是存数字,是纯数字,就执行第一个v1接口,不是纯数字,就是执行v3接口.
+            if (isNumber(member_id)) {
+                console.log('是纯数字');
+                url = baseUrl + '/v1/member/info?target_member_id=' + member_id;
+            } else {
+                console.log('是字符串');
+                url = baseUrl + '/v3/member/info?member_id=' + member_id;
+            };
             $.ajax({
                 type: 'get',
                 // url: baseUrl + '/v1/member/info?target_member_id=1000',
@@ -80,7 +80,7 @@ new Vue({
                     $("#loading").hide();
                 },
                 success: function (res) {
-                    console.log(res.data);
+                    // console.log(res.data);
                     // 状态码,判断状态吗,如果等于他,就返回消息给安卓
                     if (res.code == 21005) {
                         var inpObj = 'TOKEN_ERROR';
@@ -95,12 +95,13 @@ new Vue({
                         }
                     }
 
+
                     if (res.data.master == 'REVIEW') {
                         _this.info = '审核中';
                         _this.isColro = true;
                     };
                     if (res.data.master == 'COMMON' || res.data.master == 'OFFICIAL') {
-                        window.location.href = "becomeExpert.html?member_id=" + member_Id;
+                        window.location.href = "becomeExpert.html?member_id=" + member_id;
                     };
                     // 把数据负值给data的定义的空对象
                     _this.msg = res.data;
